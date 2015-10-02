@@ -1,0 +1,11 @@
+# Site settings
+title: Kristijonas Urbaitis 
+email: webmaster@games-monitor.net
+description: Senior Ruby Developer
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://kurbaitis.io" # the base hostname & protocol for your site
+twitter_username: KristijonasU
+github_username:  kurbaitis
+
+# Build settings
+markdown: kramdown

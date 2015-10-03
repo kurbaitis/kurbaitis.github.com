@@ -3,3 +3,13 @@
   umap:
     test: http://test.com 
     test2: http://test.com 
+'2015-10-03':
+  text: >
+    Hello world [Test][test]
+  hrefs:
+    test: http://test.com
+'2015-10-03':
+  text: >
+    Hello world2 [Test2][test]    
+  hrefs:
+    test: /

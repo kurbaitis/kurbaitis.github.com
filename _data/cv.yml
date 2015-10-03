@@ -1,0 +1,63 @@
+position: Senior Ruby Developer
+profile: >
+   I'm an experienced Ruby Developer with knowledge in a lot of other programming languages. My portfolio consists of contractor, permanent, consultations and part-time work. The businesses that I had a chance to work in were in various fields: innovations, finance, SMEs. My attitude to work is to give 100% of my skills and available time to achieve maximum efficiency for product development and client usage.
+skills:
+  - Unix 
+  - Bash
+  - Ruby
+  - PHP
+  - Java
+  - Rails
+  - Sinatra
+  - HTML
+  - CSS
+  - JavaScript
+  - TLS
+  - RDBMS
+  - NoSQL
+  - Key cloud computing services
+  - Key JavaScript frameworks
+  - Key 3rd party APIs
+  - TDD
+  - BDD
+experience:
+  - employer: Freelancing
+    position: Senior WEB Developer
+    period: 2015-present
+    description: Working on Open Source products and investigating HTTP(S) security layers.
+    site: http://www.kurbaitis.io
+  - employer: Smart Pension Ltd 
+    position: Senior Ruby Developer
+    period: 2014-2015
+    description: Worked as a Senior Ruby / Javascript (AngularJS) developer in a project related with UK pensions in London, UK. We used hexagonal architecture with some HTTP micro-services and I was responsible for DevOps tasks. 
+    site: https://www.autoenrolment.co.uk
+  - employer: Freelancing
+    position: Senior WEB Developer
+    period: 2013-2014
+    description: Worked as a freelance Senior WEB developer in a number of Lithuania’s companies using Ruby, PHP technologies.
+    site: http://www.insidewarehouse.com
+  - employer: Bit Zesty Ltd
+    position: Senior Ruby Developer
+    period: 2012-2013
+    description: Worked as a Senior Ruby developer in a startup located in UK, London remotely. I got some experience there with NoSQL. 
+    site: http://bitzesty.com
+  - employer: Exvo.com
+    position: Lead Ruby Developer
+    period: 2008-2012 
+    description: Leaded a team of 4 developers based in Netherlands. The product was based on SOA and I had a chance to make major architecture decisions.
+    site: http://www.exvo.com
+  - employer: UAB “Internet Studio”
+    position: Lead PHP Developer
+    period: 2007-2008
+    description: Leaded the development of variuos WEB projects based on LAMP in the country’s best designing company.
+    site: http://www.zoomcreative.lt
+  - employer: UAB “Jusada”
+    position: Lead PHP Developer
+    period: 2007-2008
+    description: Leaded the development of various internet projects based on LAMP.
+    site: http://e-svetaines.lt
+  - employer: UAB “Computer Projects”
+    position: CEO
+    period: 2004-2007
+    description: Created a startup of online gaming with community of 10000 users. The internet portal was based on LAMP technologies. It included the game modification software to make the portal and game working in realtime.
+    site: http://www.servisas-kompro.lt

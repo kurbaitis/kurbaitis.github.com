@@ -1,0 +1,31 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+<table border="0" cellspacing="10">
+  <tr valign="top">
+    <th>Personal Profile</th>
+    <td>{{ site.data.cv.profile }}</td>
+  </tr>
+  <tr valign="top">
+    <th>Key skills</th>
+    <td>
+      {% for s in site.data.cv.skills %}
+      {{ s }}      
+      <br />
+      {% endfor %}
+    </td>
+  </tr>
+  <tr valign="top">
+    <th>Relevant Experience</th>
+    <td>
+      {% for e in site.data.cv.experience %}
+      <strong>{{ e.employer }}</strong><br />
+      <em>{{ e.period }}</em><br />
+      {{ e.description }}<br />
+      <a href="{{ e.site }}" target="_blank">{{ e.site }}</a>
+      <br />
+      {% endfor %}
+    </td>
+</table>

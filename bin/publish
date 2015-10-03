@@ -3,7 +3,6 @@ m=`find _site -name \*.html -print | head -1 | cut -d '/' -f 5 | cut -d '.' -f 1
 cd _site
 git init
 >.gitignore
-echo "/publish" >> .gitignore
 echo "/bin" >> .gitignore
 git checkout -b gh-pages
 git remote add origin https://github.com/kurbaitis/v2.git

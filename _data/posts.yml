@@ -13,3 +13,8 @@
     Hello world2 [Test2][test]    
   hrefs:
     test: /
+'2015-10-03':
+  text: >
+    Text [Text][text]
+  hrefs:
+    text: http://text.com

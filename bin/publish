@@ -4,6 +4,7 @@ cd _site
 git init
 >.gitignore
 echo "/publish" >> .gitignore
+echo "/bin" >> .gitignore
 git checkout -b gh-pages
 git remote add origin https://github.com/kurbaitis/v2.git
 git add .

@@ -6,49 +6,22 @@
     <br />
     Requirements: `Mac OSX (~> 10.10.3), Brew (~> 0.9.5), Ruby (~> 2.2.2)`
     <br />
-    <br />
     Install Tmux: `brew install tmux`
-    <br />
     <br />
     Install Tmuxinator: `gem install tmuxinator`
     <br />
-    <br />
     Create tmuxinator project: [gist][g1]
-     # ~/.tmuxinator/project_name.yml
-    
-     name: project_name
-     root: ~/Sites/your-services-root-dir
-    
-     # Optional tmux socket
-     # socket_name: foo
-    
-     # Runs before everything. Use it to start daemons etc.
-     pre: cd ~/ && nohup ./bin/redis >/dev/null 2>&1 &
-    
-     # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-     pre_window: rbenv local 2.2.2
-    
-     # Pass command line options to tmux. Useful for specifying a different tmux.conf.
-     # tmux_options: -f ~/.tmux.mac.conf
-    
-     # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-     # tmux_command: byobu
-    
-     # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-     # startup_window: logs
-     # tmux kill-session -t
-     # Controls whether the tmux session should be attached to automatically. Defaults to true.
-     # attach: false
-    
-     # Runs after everything. Use it to attach to tmux with custom options etc.
-     # post: tmux -CC attach -t project_name
-    
-     # Start a new window for each project service
-     windows:
-       - service1: cd service1 && be foreman start
-       - service2: cd service2 && be foreman start
-       - service3: cd service3 && be foreman start
-    {% endhighlight %}
+    <br />
+    Connect bash to tmux: download tmuxinator.bash [here][tb] and put it in `~/.bin` directory.
+    <br />
+    Add this to your `~/.bash_profile`: `source ~/.bin/tmuxinator.bash`
+    <br />
+    Run your project: `mux project_name`
+    <br />
+    <br />
+    Now you have all your setup accessible via one bash command.
   hrefs:
     t: https://tmux.github.io
     tr: https://github.com/tmuxinator/tmuxinator
+    g1: https://gist.github.com/e5f5c06b69a09bf6b3fc
+    tb: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.bash

@@ -1,20 +1,54 @@
-'2015-10-02':
-  test: test
-  umap:
-    test: http://test.com 
-    test2: http://test.com 
 '2015-10-03':
   text: >
-    Hello world [Test][test]
+    This post is for those who work using SOA or other kind of distributed architecture.
+    The biggest challenge for developers when working with this kind of architecture is to make development process as easy as possible. To achieve this goal there are a lot of tools but in this post I'll show how to do that with [Tmux][t] and [Tmuxinator][tr]. 
+    <br />
+    <br />
+    Requirements: `Mac OSX (~> 10.10.3), Brew (~> 0.9.5), Ruby (~> 2.2.2)`
+    <br />
+    <br />
+    Install Tmux: `brew install tmux`
+    <br />
+    <br />
+    Install Tmuxinator: `gem install tmuxinator`
+    <br />
+    <br />
+    Create tmuxinator project: [gist][g1]
+     # ~/.tmuxinator/project_name.yml
+    
+     name: project_name
+     root: ~/Sites/your-services-root-dir
+    
+     # Optional tmux socket
+     # socket_name: foo
+    
+     # Runs before everything. Use it to start daemons etc.
+     pre: cd ~/ && nohup ./bin/redis >/dev/null 2>&1 &
+    
+     # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+     pre_window: rbenv local 2.2.2
+    
+     # Pass command line options to tmux. Useful for specifying a different tmux.conf.
+     # tmux_options: -f ~/.tmux.mac.conf
+    
+     # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+     # tmux_command: byobu
+    
+     # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+     # startup_window: logs
+     # tmux kill-session -t
+     # Controls whether the tmux session should be attached to automatically. Defaults to true.
+     # attach: false
+    
+     # Runs after everything. Use it to attach to tmux with custom options etc.
+     # post: tmux -CC attach -t project_name
+    
+     # Start a new window for each project service
+     windows:
+       - service1: cd service1 && be foreman start
+       - service2: cd service2 && be foreman start
+       - service3: cd service3 && be foreman start
+    {% endhighlight %}
   hrefs:
-    test: http://test.com
-'2015-10-03':
-  text: >
-    Hello world2 [Test2][test]    
-  hrefs:
-    test: /
-'2015-10-03':
-  text: >
-    Text [Text][text]
-  hrefs:
-    text: http://text.com
+    t: https://tmux.github.io
+    tr: https://github.com/tmuxinator/tmuxinator

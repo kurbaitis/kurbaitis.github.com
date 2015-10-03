@@ -2,7 +2,6 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-10-02 00:00:00 +300
-categories: jekyll update
 ---
 {% assign d = page.date | date: "%Y-%m-%d" %}
 {{ d }}

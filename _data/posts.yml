@@ -1,7 +1,7 @@
-'2015-10-03':
+'2015-07-21':
   text: >
     This post is for those who work using SOA or other kind of distributed architecture.
-    The biggest challenge for developers when working with this kind of architecture is to make development process as easy as possible. To achieve this goal there are a lot of tools but in this post I'll show how to do that with [Tmux][t] and [Tmuxinator][tr]. 
+    The biggest challenge for developers when working with this kind of architecture is to make development process as easy as possible. To achieve this goal there are a lot of tools but in this post I will show how to do that with [Tmux][t] and [Tmuxinator][tr]. 
     <br />
     <br />
     Requirements: `Mac OSX (~> 10.10.3), Brew (~> 0.9.5), Ruby (~> 2.2.2)`
@@ -25,3 +25,78 @@
     tr: https://github.com/tmuxinator/tmuxinator
     g1: https://gist.github.com/e5f5c06b69a09bf6b3fc
     tb: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.bash
+
+'2015-07-22':
+  text: >
+    <p>
+      To be honest, last time I worked on a project based on SOA (Service Oriented Architecture) was a few years ago, but I think it's a good idea to share my 
+      experience with it. There are a lot of advantages of SOA but for me these three are the most important: scaling, speed and decoupling.
+    </p>
+    <h2>Scaling</h2>
+    <p>
+       Scaling comes into play when your traffic grows. If you have monolithic application you can scale all of it independently of the parts that have high traffic.
+       But this way is not efficient as unused parts of the project will eat your resources while scaling.
+    </p>
+    <p>SOA helps to scale only the needed parts of your project and keep the system efficient.</p>
+    <h2>Speed</h2>
+    <p>
+       Small modular resources, optimized for particular role in a system, helps to achieve speed of accessing that resources and creates value by saving your customers 
+       time. You need statistics? Create a service on top of MongoDB. Need to work with bank transactions? Create a service on top of RDBMS.</p>
+    <h2>Decoupling</h2>
+    <p>
+       In general, decoupling is a good practice at any level of development. No one wants to work in a mess. It also serves very well when it comes to distributed 
+       teams as you can control access of your services and divide development work to external teams without worrying that someone access not permitted data or code.
+    </p>
+
+'2015-07-24':
+  text: >
+    From the first days of my career as a programmer, I was using sophisticated and heavy tools for writing code. Actually, the first editor I tried was 
+    [Adobe Dreamweaver][ad]. It's still alive and does its job quite well I suppose. Later on [TextMate][tm] which is one of my favorites code writing tools.
+    A few months ago I tried [Atom][a] which is pretty nice too and comes with not so laggy text search as TextMate's.
+    But this post is important not because of this story but because I've found a setup that makes me happy.
+    
+    <h2>Operating System</h2>
+    <p>Let's be honest, the majority of medium experienced web developers like Mac OS X. I like it too. It's simple, beautiful for eye and is Unix family member.</p>
+    <h2>Editor</h2>
+    <p>Like mentioned in the intro, editor is the key for hapiness.</p>
+    <p>
+      Sometimes I catch myself thinking that web developer is a weak programmer. It's like a challenge and honor thing for each programmer to do as much cool stuff 
+      as possible. However, I believe that there is a trade-off between cool stuff and the value you're really creating. To make it clear: not always cool stuff 
+      creates more value.
+    </p>
+    But this post is about fun. Fun is to do something cool. Cool is something simple and easy. If you're a developer, probably you'd agree that the simpliest but 
+    maybe not easiest editor is [Vim][v].
+    When using Vim you use only keyboard to write, navigate and do other cool stuff. No mouse or trackpad clicking, just pure sound of your keyboard.
+    As I'm a Ruby developer, [here's][s] the setup of Vim for rubyists on Mac OS X.
+    
+    <h2>Workflow</h2>
+    Sometimes developers tend to overcomplicate things. This is why I like Ruby, although, it has it's own drawbacks too. Anyway, while writing any kind of code,
+    it is important how do you manage your codebase and navigate across files while working.
+
+    <p>Someone would say, just install some plugins to Vim and forget it. But this is not so efficient. Sounds weird but that's my opinion.</p>
+    <p>If you need to switch among files a lot of times while working, that means that you're not following TDD/BDD and doing things with inertia, hurrying.</p>
+    Good code takes time to write and think. Good naming helps to save time while connecting various bits of code and if you do this correctly, this kind of coding 
+    starts to make sense.
+    For code versioning I use [Git][g], editor - Vim, for file previewing, in case you need quickly look at some other than current Vim opened file - [Highlight][h]. 
+    All these components are in separate Terminal tabs to make easier to navigate among those.
+    
+    <h2>Highlight</h2>
+    <p>Sometimes while working on complicated part of application you need to view other files quickly. For this purpose I use Highlight.</p>
+
+    Install Highlight: `brew install highlight`
+    <br />
+    Add alias to your `~/.bash_profile`: `alias c='highlight -O ansi -l'`
+    <br />
+    Usage: `c path/to/filename`
+
+    <h2>Sum up</h2>
+    <p>Although this works for me and helps to follow TDD/BDD practices, every developer has his/her own preferences. Happy coding!</p>
+  hrefs:
+    ad: http://www.adobe.com/products/dreamweaver.html
+    tm: https://macromates.com
+    a: https://atom.io
+    v: http://www.vim.org
+    s: https://gist.github.com/e4b526dffc109ab5384c
+    g: https://git-scm.com
+    h: http://www.andre-simon.de
+  

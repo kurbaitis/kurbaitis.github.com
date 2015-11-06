@@ -229,3 +229,138 @@
     o: http://oauth.net/core/1.0
     s: https://en.wikipedia.org/wiki/Service-oriented_architecture
     t: https://github.com/typhoeus/typhoeus
+'2015-08-06':
+  text: >
+    Nowadays, there are a lot of hosting providers that offer variuos service packages in variuos regions. To be honest, it's a hard topic because the decision which hosting provider to choose very depends on business factors. Let's try to review some use cases and hosting providers.
+
+    <h2>Small business / e-commerce shop</h2>
+    
+    Small electronic shops or representative webpages don't need to be placed on sophisticated hosting platforms. I'd recommend to choose <a href="https://en.wikipedia.org/wiki/Solid-state_drive" target="_blank">SSD</a> (storage) hosting for faster <a href="https://en.wikipedia.org/wiki/Input/output" target="_blank">I/O</a> and a hosting provider in the region where your business operate.
+    
+    <h2>Medium size / big e-commerce shops / PaaS / SaaS</h2>
+    
+    For such kind of projects, recommendation is to use <a href="https://en.wikipedia.org/wiki/Cloud_computing">Cloud-computing</a> or more specifically <a href="https://en.wikipedia.org/wiki/Platform_as_a_service" target="_blank">PaaS</a>. Some examples of such services: <a href="https://www.heroku.com" target="_blank">Heroku</a>, <a href="https://aws.amazon.com" target="_blank">AWS</a>, <a href="http://www.rackspace.com" target="_blank">RackSpace</a>.
+    
+    <h2>Projects with high security need</h2>
+    
+    If there is a project with very high security and uptime need, better place your own server somewhere in data center with the <a href="https://en.wikipedia.org/wiki/Service-level_agreement" target="_blank">SLA</a> which is acceptable for your business. Unfortunatelly, such cloud computing services as AWS or PaaS like Heroku (based on AWS cloud) sometimes is not stable 100% of the time, so please consider this option for very high SLA level.
+
+    <h2>Some hosting providers</h2>
+    
+    Some providers that worth of trust: <a href="https://www.linode.com" target="_blank">Linode</a>, <a href="http://www.peer1.com" target="_blank">Peer1</a>, <a href="https://www.tilaa.com" target="_blank">Tilaa</a>. Before choosing any plan for hosting of any these, please read carefully SLAs and do not hesitate to search for a data center with your own separate server if your business has high security requirements.
+
+    <h2>AWS</h2>
+    
+    Personally I like AWS because it offers space for creativity when it comes to sophisticated and distributed systems. If you are interested in creating something cool, big and fun, try it out. It comes with Database (<a href="https://aws.amazon.com/rds" target="_blank">RDS</a>), Caching (<a href="https://aws.amazon.com/elasticache/" target="_blank">ElastiCache</a>), Computing Cloud (<a href="https://aws.amazon.com/ec2" target="_blank">EC2</a>) and much more. Connecting all that parts gives a lot of fun!
+  hrefs:
+    
+'2015-08-07':
+  text: >
+    If you're familiar with <a href="" target="_blank">Heroku</a>, you know how it's easy to manage deployments. Simple push to a <a href="" target="_blank">Git</a> repo and your deployment is in process. With <a href="" target="_blank">AWS</a> it's a bit different. This blog post will introduce you with simple way of creating similar homemade tool for easy deployments. Important to mention that AWS is much cheaper than Heroku. 
+
+    <h2>Concepts</h2>
+    <strong>AWS</strong> is a tool designed to give as much space for dynamic resources manipulation as possible. This allows developers to create products designed for exact business needs and avoid waste.
+    
+    <p>
+      <strong>EC2</strong> is a service that allows developers to operate on cloud computing resources (create EC2 instances and put there your application to be accessible from outside). 
+    </p>
+    <p>
+      <strong>RDS</strong> is a service that allows to create data store instances.
+    </p>
+    <p>
+      <strong>CloudFormation</strong> is a tool that connects all AWS services and allows to create / edit / delete instances of specified services. In simple words, it allows to create necessary EC2 / RDS / ElastiCache instances for application by one take and later modify that if needed.
+    </p>
+
+    <h2>Blueprint</h2>
+    
+    The scheme below shows how the deployment PaaS works. It's pretty straightforward but needs some Ruby based implementation tools to create all the stack easily.
+    <br /><br />
+    <img src="/assets/img/deployment-paas1.png" />
+    <br /><br />
+      <strong>(1)</strong> - you hit the EC2 instance which is responsible for deploys (connected to a small RDS for deployment related data) via HTTPS with parameters which application to deploy. The PaaS contains CloudFormation scripts for each application. In this case, the deployment request is made for <strong>application 2</strong> which has a RDS instance attached, so when the request comes from your local machine to PaaS, it chooses CloudFormation script specific for the chosen application and starts deployment <strong>(2)</strong>. 
+    <p>
+     As you can see, <strong>application 1</strong> has no RDS instance attached, therefore it has a different CloudFormation script and is ready to be deployed if PaaS gets a request to do that.
+    </p>
+
+    <h2>Implementation</h2>
+    
+    <p>
+      There are some handy tools writen in Ruby to make this scheme working, but default <a href="https://aws.amazon.com/cli" target="_blank">AWS CLI</a> tools are also needed.
+    </p>
+    <p>
+     Please check out <a href="https://github.com/ThoughtWorksStudios/eb_deployer" target="_blank">EB deployer</a> which helps to create application stacks using <a href="http://aws.amazon.com/elasticbeanstalk" target="_blank">Elastic Beanstalk</a> and supports CloudFormation scripts to operate on multiple types of AWS services.
+    </p>
+    <p>
+      The main implementation happens in the PaaS as it will store all the configuration details for each application and just give commands to ElasticBeanstalk and CloudFormation services to create stacks for each application.
+    </p>
+
+    <h2>Some ideas</h2>
+    When you will have the initial version of this PaaS working, you can add to it whatever you want: HTTPS based logs, DB backups, periodical events (deploys, db backups), more advanced HTTPS API for making the service more easy to use. Unfortunatelly, the current version of this PaaS that I have access to is not ready for production, so please do it by yourself, share and maybe one day we'll merge our ideas to make this open source for everyone. Cheers!
+  hrefs:
+    
+'2015-08-08':
+  text: >
+    <a href="https://aws.amazon.com/elasticbeanstalk"  target="_blank">Elastic Beanstalk</a> is a AWS service which helps to ease deployments of applications. Often we need to deploy applications without downtime and have failover which is always ready to be used to make sure the system stays operational all the time. Elastic Beanstalk is exactly designed for this purpose. This blog post will review the main features of this service and help you to get better understanding of robust and easy deployments with AWS.
+
+    <h2>Deployment strategies</h2>
+    
+    Elastic Beanstalk supports multiple deployment strategies, load balancing and all other cool stuff that allows you to forget about details that is not very important for your product development.
+    
+    <h3>In place deployment</h3>
+    In place deployment is a bit risky strategy of EB. It's fast from that perspective, that you work only with one EB instance but started deployment is running while your production environment is online. This is not too bad for low load having applications but if your product has high traffic, it may occur some unexpected errors and you won't have failover to manage the accident.
+    
+    <h3>Blue Green deployment</h3>
+    This strategy is better for high-medium traffic having applications. The principle is simple: you have two EB instances and when performing a deploy, one of those is still active (with all EC2 instances). After deployment has been done, the instances' CNAMEs are switched and the deployed version of application goes live.
+
+    <h2>Deployment security</h2>
+   
+      When performing deploys, in EB instance settings you can define HTTP(S) check URL. It is recommended to use it to make sure your deployed EB instance is responsive from outside. In this way EB core determines if deployed EB instance is available for the switch (Blue Green) or just available (In place).
+    <p>
+      If something bads happen, Blue Green deploy has the advantage of failover and ability to switch the EB instances manually by using AWS interface or CLI. In theory, if application has been built correctly, this should never happen.
+    </p>
+    
+    <h2>Final word</h2>
+      To be honest, I like Elastic Beanstalk for its simplicity and capabilities. If you're starting to build something standard, you should choose it together with the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html" target="_blank">supported development platforms</a>. For more advanced systems with more sophisticated purposes, please consider using <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html" target="_blank">Amazon Machine Images (AMI)</a> which allows to build your custom EC2 instances and of course use for scaling like Elastic Beanstalk.
+
+  hrefs:
+    
+'2015-08-11':
+  text: >
+    <a href='https://aws.amazon.com/rds' target='_blank'>AWS RDS</a> is a service for data store. It has a lot of cool features, like periodic data server snapshots, monitoring, a lot of security options and so on. The problem with it comes out when you need to switch to a different provider or do some data migration for a specific database in an instance. Currently this feature is not supported natively, so this blog post is about how to make a work around. If you need a simple DB backup from your RDS instance, please keep reading.
+    
+    <h2>Blueprint</h2>
+    
+    <ol>
+      <li>From your application console, rake task or application gem hits the RDS instance to create a clone of it.</li>
+      <li>The duplicate of the instance starts to be created, it takes some time depending on your RDS instance size, type etc.</li>
+      <li>After the temporary RDS instance is created, the application fetches a chosen database to localhost (mysqldump, pg_dump etc.) and uploads it to a <a href='https://aws.amazon.com/s3' target='_blank'>S3</a> bucket where it is protected by S3 security policies.</li>
+      <li>Now your local machine or any kind of other server can fetch the DB backup from S3.</li>
+    </ol>
+    
+    <p>
+      After the DB backup creation process completes, the temporary RDS instance is shutdown to save the cost of the operation.
+    </p>
+   
+     <h2>The gem</h2>
+      Somewhere on the internet this kind of work around has already been described but it's just a pure list of bash commands. To make things easier, I've created a Ruby <a href='https://github.com/kurbaitis/rds_db_backup' target='_blank'>gem</a> which is currently at beta version stage so please don't hesitate to fork it and send pull requests.
+
+  hrefs:
+    
+'2015-08-23':
+  text: >
+    <a href="https://digitalocean.com" target="_blank">DigitalOcean</a> is a cloud computing service which has amazingly beautiful API for all resources administration.
+
+    <h2>Structure</h2>
+      The service has a lot of cool features, but I'll mention just two the most important ones for me: Droplets (server instances) and Images (inactive server stacks for scaling).
+    
+    <p>
+      <strong>Droplets</strong> - is a service for server instances, it allows to create instances based on some predefined stacks that is very handy for creating specialized instances for data store, caching or load balancing etc. It also supports multiple regions to make your application faster for clients.<br />
+      <strong>Images</strong> - is a service for creating "templates" based on created Droplets. These created stacks that can contain your own modifications are useful for scaling your application.
+    </p>
+    
+    <h2>The gem</h2>
+
+    There is <a href="https://github.com/rmoriz/knife-digital_ocean" target="_blank">a Ruby gem</a> for the API but it works only using console so I modified it to be used directly from Ruby interface. It's not perfect due to the lack of time so please consider forking and improving it. Please check it out <a href="https://github.com/kurbaitis/knife-digital_ocean" target="_blank">here</a>.
+
+  hrefs:
+    

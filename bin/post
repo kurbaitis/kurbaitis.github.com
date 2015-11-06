@@ -15,7 +15,7 @@ layout: post
 title:  "$1"
 date:   $d2
 ---
-{% include post.html site=site d='$d' %}
+{% include post.html site=site page=page %}
 EOF
 vi _data/posts.yml
 jekyll serve -w

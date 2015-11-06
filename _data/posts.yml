@@ -100,3 +100,132 @@
     g: https://git-scm.com
     h: http://www.andre-simon.de
   
+'2015-10-04':
+  text: >
+    After installing [Tmux][t] I felt a bit confused. There is just plain "man" style documentation. I like things simple and explained clearly for a tool that is used by someone for the first time. Well that's not a big deal, I just needed to get deeper into the text and here is what I've found.
+    
+    <h2>Commands</h2>
+    
+    The first thing which was not clear to me was the switching among windows. To make that happen you need to use commands. Actually, that was not working at the beginning as I was missing `~./bin/tmuxinator.bash` file. Anyway, after some time I managed to figure out how to enter commands, switch among windows, split windows etc. To enter a command you need to use `Ctrl + b` and enter the command's character. [Here][h] is the list of commands.
+    
+    <h2>Sum up</h2>
+    
+    A bit pitty that there is no straight shortcuts like in Vim, but Tmux is still a handy tool for making things easier.
+  hrefs:
+    t: https://tmux.github.io
+    h: 
+'2015-08-02':
+  text: >
+    When working with Ruby together with team on a project, everyone should follow the same code standards to avoid mess and achieve better development speed. Usually, Ruby developers follow common rules and try to avoid rare operators, expressions and so on. But sometimes it's fun to play, explore and use variuos exotic Ruby capabilities to make development more interesting. 
+    
+    <h2>Standards</h2>
+    
+    <p>
+      Usually, standards are pretty simple when it comes to editor configuration. 2 space soft tabs, tidy indentation and new line at the end of a file.
+    </p>
+      Proper code styling is a bit more sophisticated part. There are a lot of style guides that could be used by companies but I choose [Thoughbot][t] which is quite nice. If needed, of course, it can be adjusted by forking the repo.
+    
+    <p>
+      Although it's good to follow standards, Ruby has a lot of power for fun.
+    </p>
+
+    <h2>Operators</h2>
+   
+    <p>
+      If you're reading this blog, you should understand what are operators about and how to use them. Ruby has a lot of operators that can work independently among variuos kind of objects but in this blog post I'll mention just some interesting operators and use cases that could be used to have fun.
+    </p> 
+
+    <h3>*</h3>
+    [Array#join][j] is a method for joining elements (String) to a row separated by the given argument. Example of usage:
+    <br /><br /> 
+    ```
+    irb(main):001:0> ['a', 'b', 'c'].join(',')
+    ```
+    <br />
+    ```
+    => "a,b,c"
+    ```
+ 
+    <p>
+      Shortcut <strong>*</strong> makes the syntax more fun:
+    </p>
+    ```
+    irb(main):002:0> ['a', 'b', 'c'] * ','
+    ```
+    <br />
+    ```=> "a,b,c"
+    ```
+
+    <h3>%</h3>
+    [Numeric#modulo][m] is a math function which is very useful for arrays iterations when needed to insert something periodically into output.
+    <br />
+    Example:
+    <br /> 
+    ```irb(main):001:0> 22.modulo(10)```
+    <br />
+    ```=> 2```
+   
+    <p>
+      Shortcut:
+    </p>
+    
+    ```irb(main):002:0> 22 % 10```
+    <br /> 
+    ```=> 2```
+  hrefs:
+    m: http://ruby-doc.org/core-2.2.2/Numeric.html#method-i-modulo
+    j: http://ruby-doc.org/core-2.2.2/Array.html#method-i-join
+    t: https://github.com/thoughtbot/guides/tree/master/style/ruby 
+'2015-08-05':
+  text: >
+    When starting to build a SOA (Service Oriented Architecture) project, sometimes it's hard to choose the right tools for it. 
+    My first SOA project where I had a chance to participate was started a few years ago. 
+    At that time there was no ready for production out-of-box solution for this kind of Ruby based systems. 
+    Well, that was not a big problem for our team because we just builded the solution from scratch by ourselves.
+
+    <h2>Blueprint</h2>
+
+    The goal for our team was to create distributed, isolated and fast working architecture with capabilities for quick expansion. 
+    It was needed to outsource some parts of the project for external teams, so the security was one of the main priorities.
+    To achieve that, we needed to create something like [OAuth 1.0][o]. 
+    It's a simple protocol which works very nicely when implementing together with concurrent requests for multiple resources fetching.
+      
+    <p>
+     The schema below shows simplified version of the principle how it works.
+    </p>
+
+    <img src="/assets/img/soa-schema1.png" />
+
+    <p>
+      <strong>(1)</strong> - Before fetching resources (Service 1) must connect to Auth service and ask if it has permissions to operate on the Service 2.
+      If it has, Auth provides authentication token to use for limited amount of time (30 mins etc) and, using that token <strong>(2)</strong>,
+      Service 1 is able to connect to Service 2 and operate on the resources.
+    </p> 
+
+    <h2>Database structure</h2>
+    The main architecture's structure is kept in Auth service as it decides about services communication security.
+      
+    <p>
+     The fields in Auth <strong>clients</strong> table were these: <em>client_id, service_id, scope</em>.
+     One more table was needed for the temporary access tokens, let's call it <strong>tokens</strong>: 
+     <em>
+       client_id (table's <strong>clients</strong> id), token, created_at
+     </em>.
+    </p>
+
+    <h2>Client gem</h2>
+       
+    To make things faster and ease the communication among services including Auth gateway, we created a gem (not available as opensource anymore). 
+    It includes caching of temporary tokens, concurrent HTTPS requests ([Typhoeus][t]) 
+    and nice API for configuration of the services.
+
+    <h2>Try yourself</h2>
+
+    These days the situation is a bit different. I'm sure there are a lot of nice gems that could be combined together to achieve the same purpose.
+    But before getting on this work, please read carefully about <a href="" target="_blank">[SOA][s]</a>
+    and decide if it's a good choice for your project. Don't hesitate to use my proposed solution because it's pretty simple and you make sure that you know
+    100% how your system works by doing the system from scratch.
+  hrefs:
+    o: http://oauth.net/core/1.0
+    s: https://en.wikipedia.org/wiki/Service-oriented_architecture
+    t: https://github.com/typhoeus/typhoeus

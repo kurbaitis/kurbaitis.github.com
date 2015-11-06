@@ -5,4 +5,4 @@ do
   g="$g$l\n"
   trap "break" INT
 done
-curl -H "Authorization: token $1" -d "{\"public\": true,\"files\":{\"g\":{\"content\":\"$g\"}}" https://api.github.com/gists | grep 'html_url' | head -1 | cut -d '"' -f 4
+curl -H "Authorization: token $1" -d "{\"public\": true,\"files\":{\"g\":{\"content\":\"${g//"/\\"}\"}}" https://api.github.com/gists 

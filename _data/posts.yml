@@ -833,3 +833,30 @@
 
   hrefs:
     w: https://gist.github.com/kurbaitis/04ad6027b19fea8a54d6
+'2015-11-08':
+  text: >
+    [Jekyll][j] is a powerful tool for static HTTP webpages. The concept is that you generate content dynamically on your local machine and push the result to your hosting. It can work well on any hosting provider platform. The content itself must be static though. In this short blog post I'll share some ideas how it started to work like I want.
+    
+    <h2>Posting</h2>
+
+    Posting should be fun and easy. This is why I created an executable for my posting process. It creates post files and stores all data in one data file. I dislike when data is distributed among a lot of files. Maybe you think different and that's ok, less complications with the default jekyll approach.
+    
+    Jekyll supports data storing in various formats, I like ```.yml``` so I decided to put there my posts data and call it ```_data/posts.yml```. The format of that data is simple:
+    <br /><br />
+    1. date in YYYY-mm-dd format
+    <br />
+    2. post text
+    <br />
+    3. hrefs with urls (key-value) used for links in post text
+    <br /><br />
+
+    [Here][h] it is the ```bin/post``` file which should be run like this: ```bash bin/post "The title of your new post"```. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your data post information will be stored in Vim interface and after completing the writing part you're redirected to shell where your jekyll boots up. 
+   
+    <h2>Some thoughts for future</h2>
+   
+    It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is [kramdown][k] which is not working as expected if using ```_includes``` directory contents. Anyway, for now Github Gists is working good.
+
+  hrefs:
+    j: https://jekyllrb.com
+    k: http://kramdown.gettalong.org
+    h: https://gist.github.com/kurbaitis/210bb198a573026f301f 

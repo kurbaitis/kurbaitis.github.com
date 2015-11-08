@@ -364,3 +364,177 @@
 
   hrefs:
     
+'2015-08-26':
+  text: >
+    This blog post will be a bit different than the ones before because I won't mention any big data centers or optimization recipes etc. This blog post is about serious stuff. No micky mouse stuff about beautiful frontend, javascript or whatever. After 11-12 years of working as a programmer, I slowly started to understand one thing: no matter what, your client must go through your created process as fast as possible and without any distractions. To achieve this, you don't need powerful hardware, application architecture or whatever. I'd like to share some thoughts about simplicity of system architecture that comes to probably each developer's brains at some point. 
+
+    <h2>Hardware</h2>
+      
+    Did you notice where all world is going to with such technology development speed? Yes, it's evolution, we all know that there is no way back, but there is a better way which leads to true love of development work for developers and to time saving for the clients. 
+    
+    <p>
+      Well, let's start from storage, one word: SSD. No more burning HDD or playing with RAID. It's just not efficient from all perspectives.
+    </p>
+    <p>
+      No matter what internet connection or hardware you have, the end point is your ethernet adapter throughput which determines how many clients you can serve. Try to find the best option with the biggest throughput. There are just some limits in this world when it comes to effective technologies. This is where the load balancing and scaling comes into play. In short: just give some cash for capitalists if you don't know what you're doing.
+    </p>
+    <p>
+      Processor doesn't matter too much as long as you choose appropriate programming language and know how to use it properly. 
+    </p>
+
+    <h2>OS</h2>
+    
+    Ideally, developers could use an operating system which would be designed exactly for HTTP. But I haven't heard about any of these so far. Double check please, if you can't find it, then MIT is just making jokes of earth resources.
+   
+    <p>
+      Ok, plan B: use one of BSD family operating systems.
+    </p>
+
+    <h2>Programming language</h2>
+
+    I have to confess, I'm biased when it comes to programming language because I love Ruby for simplicity. Some of you can say that it's too slow or not efficient. I disagree. If you build systems based on the simplicity principles, there should not be any problems to achieve efficiency of development and needed performance. Just don't overcomplicate things at the beginning and maybe later rewrite everything on native operating system language (Assembler could work too if you know what I mean). 
+
+    <h2>Frontend</h2>
+   
+    For my last project I used one of those responsive CSS/JS frameworks that could have been not needed if technology would took more standards based way of development. Seriuosly: if a country produce its technology (cell phones, laptops, tablets) why to export to other countries and make more mess in all the world when it comes to efficiency? More standards - more shitty workarounds for all developers and more cash for clients. Not purposeful.
+    
+    <p>
+      Anyway, we have what we have. The best what you can do is to try to build a website based on simple HTML and tables which provides you with home made responsive templates.
+    </p>
+
+    <h2>Final thoughts</h2>
+   
+    When you work on something, you put your heart into the work. Your heart belongs to what you believe. I believe in specialization and effective resources usage.
+
+    <p>
+      Hopefully, one day there will be one hardware, one OS and one programming language for web development. If that would be kept in the biggest data center in the world, that would be a revolution in IT which would help to save energy for all sides (developer - client). Anyway, don't think about this too much, it's our time to have fun with all that different standards and all that security traps. Cheers!
+    </p>
+
+  hrefs:
+    
+'2015-08-31':
+  text: >
+    Usually in web development everyone is using HTTP servers like <a href="http://apache.org" target="_blank">Apache</a> of <a href="http://nginx.org" target="_blank">Nginx</a>, of course with HTTPS support if needed. In short: it's wasteful. In this blog post I'll introduce you with some useful open source Ruby products that can be used as a standalone HTTP(S) servers.
+
+    <h2>Web frameworks</h2>
+    
+    In my opinion there are three decent Ruby web frameworks that are useful for separate purposes: <a href="http://rubyonrails.org" target="_blank">Rails</a> (beautiful frontend products), <a href="http://www.sinatrarb.com" target="_blank">Sinatra</a> (simple and easy to use products), <a href="http://intridea.github.io/grape" target="_blank">Grape</a> (mostly for APIs, decide yourself if you need that). All of these have <a href="http://rack.github.io" target="_blank">Rack</a> gem inside which is placed on top of HTTP(S) server (<a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/webrick/rdoc/WEBrick.html" target="_blank">WEBrick</a>, <a href="http://code.macournoyer.com/thin" target="_blank">Thin</a>, <a href="https://github.com/mongrel/mongrel" target="_blank">Mongrel</a> etc.) and all that stack successfully runs together. It's a bit pitty that there is no common standard for all needs together, but that's a different story.
+    
+    <h3>WEBrick</h3>
+    WEBrick is the default server for Rails and Sinatra for sure, please check if Grape is using the same if you're interested in SOA.
+    
+    <p>
+      Well, it took a bit of time to setup WEBrick on Sinatra with HTTPS support for me but finally I made it work. The problem is that when there are multiple layers for one purpose, you have to connect all parts and it takes your precious time, however, it's a kind of fun.
+    </p>
+  
+    <h3>Thin</h3>
+
+    To be honest, I tried Thin too but for HTTPS it didn't work out. Maybe for HTTP it's good but we're currently not in perfect world so if you try to make a secure product, please choose WEBrick or any other web server that works for you. However, Thin also supports Vhosts that allows to run multiple sites on the same IP, please be careful with that because it's not secure and not efficient.
+
+    <h2>Some thoughs</h2>
+    
+    Like it's mentioned in the last blog post, I'm working on a small product which will be released as an open source framework for any kind of products selling online but initially it is being created for game servers hosting services.
+    
+    <p>
+      Comming back to the "ideal world" idea is that currently Ruby community has some problems with making things simple and oriented to one direction. Yes, Rails became like a brand of Ruby and the language itself is known as a web development tool but there is no strict leadership and limits to publify gems or products which leads to a lot of standards, not useful gems and tools. Anyway, those who know how to work with Ruby, will find their way to easy development, wish you that and don't forget to check out the release that I'm working on at the moment.
+    </p>
+
+  hrefs:
+    
+'2015-09-01':
+  text: >
+    <a href='https://en.wikipedia.org/wiki/Transport_Layer_Security' target='_blank'>SSL</a> or TLS (more modern version) is a handy tool to protect yourself from mid-level hackers. Well, relatively. There is no protection from experienced hackers that can play with your data. Why? Simply because there is the 2nd party that provides you with the certificate. However, it's better to protect yourself from that mid-level hackers. For my project, I bought the certificate from my favorite Lithuanian hosting provider which basically is just reselling <a href='https://www.comodo.com' target='_blank'>Comodo</a> certificates. Anyway, everyone should support its country, right?
+
+    <h2>Unix environment</h2>
+    
+    I like <a href='https://en.wikipedia.org/wiki/Unix' target='_blank'>Unix</a> family OSes, every developer likes because it's simple, robust and fast. But not so secure as everyone is thinking. It's again about focusing. Multiple users systems are desinged for making mistakes and hassle. Even if you want to bind low level ports to your application with not root user, you encounter a problem. There are workarounds, but it's just a game again, hopefully experienced hacker will give you some mercy and leave the system the same as it was before entering it if you make things at least clean and right.
+    
+    <h2>The workaround</h2>
+    
+    The workaround I'm using is called <a href='http://linux.die.net/man/8/setcap' target='_blank'>setcap</a>. It's a <a href='https://www.debian.org' target='_blank'>Debian</a> package which provides you with ability to permit low level ports for any user in your system.
+    
+    <h2>What is recommended</h2>
+
+    Again, all the documentation for developers are complicated. It says that if you install any software, you shouldn't run it on root user. But you still need root user by default to run your applications. Anyway, just after some time when you get used to the Unix tools you start to understand, that it has some problems with efficiency and security. Hopefully one day that will change. Until that all beginner developers are just destroying their eye vision.
+
+  hrefs:
+    
+'2015-09-04':
+  text: >
+    Before making my first serious product release, I started to think about my way to this level of programming mastery. It took me around 11 years to get the necessary skills for making good software. Anyway, better to start earlier than never. As it seems I'm 25 years old now, I can share some thoughts how to become a good programmer, no matter what language.
+
+    <h2>Education</h2>
+    
+    Not needed. Well, at least high school or something what belongs to you by law. Simple and efficient, everything what you need is in your pocket. If you work, better use computer of course.
+    
+    <h2>Values</h2>
+    
+    Not everyone can be a good software engineer, it must be in your blood. It's a bit like art and some physics to make everything efficient. But simple enough to learn for everyone. The inner software engineer values must be balanced. Your character must be very pragmatic. But you get your dose of fun when reach the goal and make your program to work. This is the true hapiness for each true, no matter, a software engineer, or just a developer.
+   
+    <h2>Life</h2>
+    
+    It sucks because your brains are growing like on steroids. Usually you don't have to talk about anything with your mates. Believe me, I've tried studying international business and it doesn't help. Still nothing to get from others. Just boring talks about the same things. If you have kids, better don't teach them programming early. They might become mental if not possible to switch to other occupations.
+    
+    <h2>Technical development</h2>
+  
+    Well, it's my personal opinion, but you must become a good programmer at first. You can't just start from getting deep into OSes while not knowing how to write software properly. But it's just recommendation. Mobile applications: wasteful. If you respect your forests in your country, please stick to HTTP(S). WEB is so far the most balanced decision to use for all kind of devices.
+    
+    <h2>The secret</h2>
+    
+    Writing software is interesting, writing it good also, but at some point you start to understand, that you must write it by giving 100% of yourself because it's the only way to respect your 11 years of wasting eye vision. But don't start to read books if you're a beginner. Start slowly, experiment, make mistakes, have fun, start to love coding.
+  
+    <h2>Sum up</h2>
+
+    It's all about the balance in life, sometimes it's harder, sometimes it's easier. The most important thing that you do what you're born to do. Better to start search for your way earlier than never. Time for a smoke... 
+
+  hrefs:
+    
+'2015-09-03':
+  text: >
+    As I promised to release the game hosting engine, in this blog post I'll share some details about it. The main goal was to make it as secure and simple as possible. Anyway, it took a lot of time to come up with a balanced solution which will provide players/hosters with very nice tool to make game hosting services easy to use. 
+
+    <h2>Security</h2>
+    
+     The security layer in the product, as I've mentioned before, is simple and standard: everywhere <a href='https://tools.ietf.org/html/rfc5246' target='_blank'>TLS v1.2</a>. It uses the protocol for <a href='http://dev.maxmind.com/geoip/legacy/geolite'>GeoIP</a> data fetching, payments, error reporting and data centers connection.
+    
+    <h2>Error reporting</h2>
+  
+    For error reporting I've chosen <a href='https://www.twilio.com' target='_blank'>Twilio</a> which is well known for everyone. It supports voice and SMS messaging, but for now I've chosen just SMS reporting as it provides the product with everything what it needs: file path and line number which is responsible for the error. As the encapsulation is proper, this amount of information is enough to find the mistake. If error occurs, the report is sent to defined mobile phone and the HTTP/HTTPS server is shut down to make sure that no one will hit the same bug again.
+    
+    <h2>Database</h2>
+    
+    No database. Thanks to <a href='https://stripe.com' target='_blank'>Stripe</a> which it seems works fine at least with my credit card (<a href='https://usa.visa.com/personal/cards/debit' target='_blank'>Visa Debit</a>).
+    
+    <h2>Logging</h2>
+    
+    Logging is optional as almost everything in the system. You can define where to log, for now it just logs to /dev/null (nowhere).
+    
+    <h2>Interface</h2>
+    
+    Simple tables which gives responsivness. No JavaSript (well just for some social networks share buttons).
+    
+    <h2>Sum up</h2>
+
+    The product will be shared on GitHub but the prototype will be hosted on my side. Hopefully, I'll finish this job in a few days. Until that time, please comment, suggest ideas and help me to make this product more beautiful.
+
+  hrefs:
+    
+'2015-09-05':
+  text: >
+    Finally, I've just uploaded the source to <a href='https://github.com/kurbaitis/hosting' target='_blank'>GitHub</a>. To make it work you need to read the README, setup the dependencies and configure your .env file which will provide you with some knowledge how the product is working. Don't hesitate to explore the source code as it would be nice to get some help for making this project beautiful. 
+
+    <h2>The .env file</h2>
+    
+    Check it out [here][h] please.
+    
+    <h2>Notes</h2>
+    
+    To get better understanding, if it's hard to see from the source and the .env file, please take a look at <a href='/2015/09/03/The-preview-of-hosting-engine.html' target='_blank'>the preview blog post</a>.
+    
+    <h2>Demo</h2>
+    
+    To see how the project works, please go to <a href='https://hosting.games-monitor.net' target='_blank'>this page</a>. [Credentials for the payment][p]:
+
+  hrefs:
+    h: https://gist.github.com/78e3de3b63f7f4e4619e
+    p: https://gist.github.com/e9b415bd783eaa3de152

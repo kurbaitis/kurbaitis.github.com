@@ -1,7 +1,14 @@
 {% assign d=page.date | date_to_xmlschema | split: 'T' | first %}
 {% assign p=site.data.posts[d] %}
 {{ p.text }}
-<div id="disqus_thread" class="np"></div>
+
+<div id="share-page">
+  Share this on &rarr; 
+  <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+</div>
+<div id="disqus_thread"></div>
 <script type="text/javascript">
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname

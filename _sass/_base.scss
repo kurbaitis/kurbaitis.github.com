@@ -207,10 +207,16 @@ pre {
   margin-top: 20px;
 }
 
+#share-page {
+ padding-bottom: 30px;
+ padding-top: 20px;
+} 
+
 @media print {
   .site-nav { display: none; }
   .rss-subscribe { display: none; }
   .site-footer { display: none; }
   .pagination { display: none; }
   #disqus_thread { display: none; }
+  #share-page { display: none; }
 }

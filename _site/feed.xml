@@ -5,8 +5,8 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Nov 2015 00:22:24 +0200</pubDate>
-    <lastBuildDate>Mon, 09 Nov 2015 00:22:24 +0200</lastBuildDate>
+    <pubDate>Mon, 09 Nov 2015 00:36:00 +0200</pubDate>
+    <lastBuildDate>Mon, 09 Nov 2015 00:36:00 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -20,7 +20,13 @@ Jekyll supports data storing in various formats, I like &lt;code&gt;.yml&lt;/cod
 &lt;h2&gt;Some thoughts for future&lt;/h2&gt;
 &lt;p&gt;It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is &lt;a href=&quot;http://kramdown.gettalong.org&quot;&gt;kramdown&lt;/a&gt; which is not working as expected if using &lt;code&gt;_includes&lt;/code&gt; directory contents. Anyway, for now Github Gists is working good.&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Jekyll v3 overview&amp;amp;url=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -61,7 +67,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;Like I’ve mentioned, there are a lot of dependencies to trash in the system. For key-value store, could work &lt;a href=&quot;http://www.gnu.org.ua/software/gdbm&quot; target=&quot;_blank&quot;&gt;GNU gdm&lt;/a&gt;, for background jobs just simple bash script and so on. Anyway, hopefully this helps anyone fixing legacy systems. Cheers.&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Release of games-monitor.net&amp;amp;url=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -105,7 +117,13 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;This is just a sample solution that works for my case. There are other solutions, for instance, one of them comes together with default Ruby implementation (MRI). WEBrick also supports proxy servers but I haven’t managed to make it work instantly, probably some headers or environment variables are not correct. You could use also SSH tunnel to proxy connections to your application but it has some issues with timeout configuration. Good luck choosing the right one for yourself!&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Legacy apps fix&amp;amp;url=http://kurbaitis.io/2015/09/27/legacy-apps-fix.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/27/legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/27/legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -149,7 +167,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;Actually, I’ve created an extension for Sequel for automated prepared statements creation, so it’s possible just to make it work by default in Sequel. Hopefully, one day I’ll release it, but for now I’m more focused to my experiment. Happy investigation!&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=RDBMS optimization&amp;amp;url=http://kurbaitis.io/2015/09/25/rdbms-optimization.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/25/rdbms-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/25/rdbms-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -186,7 +210,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
   The script asks you to provide tty with root pasword and executes all the commands. Anyway, this is very relative to what you do and what technologies use. Hopefully, this will help someone to build easier to start applications. Cheers.
 &lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=The power of setup&amp;amp;url=http://kurbaitis.io/2015/09/23/the-power-of-setup.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/23/the-power-of-setup.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/23/the-power-of-setup.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -218,7 +248,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;h2&gt;TODOs&lt;/h2&gt;
 &lt;p&gt;In short, currently it’s hard to say when I have enough time to polish all the project but at the moment some core architecture things are getting brighter each day. Although I’m happy with the process, there are some issues to solve: 3rd parties connection fixes, error reporting, metrics engine, easier installation and so on. If this gonna succeed, the project should turn into a new Ruby framework with various modules available to connect. Quite big objective, but luckily I’m still in a new job search.&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V3 of the experiment&amp;amp;url=http://kurbaitis.io/2015/09/22/of-the-experiment.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/22/of-the-experiment.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/22/of-the-experiment.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -263,7 +299,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
   So this post is about a bit different approach: logic in lib/, routing in app.rb and the templates in views/. No mixing anything and as much functional programming as possible. Let&#39;s see how this will end up in the following blog post.
 &lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Website on pure Ruby&amp;amp;url=http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -302,7 +344,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
   The only bug which I haven&#39;t fixed yet is the Secure renegotiation (client-side) which refers to a TLS extension &lt;a href=&quot;https://tools.ietf.org/html/rfc5746&quot;&gt;RFC 5746&lt;/a&gt; which is the solution for this bug in the default OpenSSL implementation. There is a workaround described in Ruby documentation but it haven&#39;t worked for me, maybe because my certificate is chained. Anyway, currently I&#39;m trying other kind of workarounds and hopefully soon will solve this issue without any hacks and the default WEBrick source code.
 &lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=OpenSSL and Ruby&amp;amp;url=http://kurbaitis.io/2015/09/17/openssl-and-ruby.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/17/openssl-and-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/17/openssl-and-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -345,7 +393,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;h2&gt;V2&lt;/h2&gt;
 &lt;p&gt;The release is on its way, hopefully I’ll finish it today or tomorrow. Cheers.&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V2 of the hosting engine&amp;amp;url=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
@@ -377,7 +431,13 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;Don’t forget to check out the source, suggest improvements and so on. It’s an exciting experiment which helps to understand Ruby better, hopefully, for you too.&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=The release of v2&amp;amp;url=http://kurbaitis.io/2015/09/15/the-release-of-v2.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/15/the-release-of-v2.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/15/the-release-of-v2.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname

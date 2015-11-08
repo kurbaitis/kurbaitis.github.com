@@ -145,6 +145,10 @@ pre {
 .rss-subscribe {
   margin-top: 20px; }
 
+#share-page {
+  padding-bottom: 30px;
+  padding-top: 20px; }
+
 @media print {
   .site-nav {
     display: none; }
@@ -159,6 +163,9 @@ pre {
     display: none; }
 
   #disqus_thread {
+    display: none; }
+
+  #share-page {
     display: none; } }
 /**
  * Site header

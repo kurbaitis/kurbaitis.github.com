@@ -5,9 +5,43 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Nov 2015 22:33:58 +0200</pubDate>
-    <lastBuildDate>Sun, 08 Nov 2015 22:33:58 +0200</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Mon, 09 Nov 2015 00:22:24 +0200</pubDate>
+    <lastBuildDate>Mon, 09 Nov 2015 00:22:24 +0200</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Jekyll v3 overview</title>
+        <description>
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a powerful tool for static HTTP webpages. The concept is that you generate content dynamically on your local machine and push the result to your hosting. It can work well on any hosting provider platform. The content itself must be static though. In this short blog post I’ll share some ideas how it started to work like I want.&lt;/p&gt;
+&lt;h2&gt;Posting&lt;/h2&gt;
+&lt;p&gt;Posting should be fun and easy. This is why I created an executable for my posting process. It creates post files and stores all data in one data file. I dislike when data is distributed among a lot of files. Maybe you think different and that’s ok, less complications with the default jekyll approach.
+Jekyll supports data storing in various formats, I like &lt;code&gt;.yml&lt;/code&gt; so I decided to put there my posts data and call it &lt;code&gt;_data/posts.yml&lt;/code&gt;. The format of that data is simple: &lt;br /&gt;&lt;br /&gt; 1. date in YYYY-mm-dd format &lt;br /&gt; 2. post text &lt;br /&gt; 3. hrefs with urls (key-value) used for links in post text &lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/kurbaitis/210bb198a573026f301f&quot;&gt;Here&lt;/a&gt; it is the &lt;code&gt;bin/post&lt;/code&gt; file which should be run like this: &lt;code&gt;bash bin/post &quot;The title of your new post&quot;&lt;/code&gt;. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your data post information will be stored in Vim interface and after completing the writing part you’re redirected to shell where your jekyll boots up.&lt;/p&gt;
+&lt;h2&gt;Some thoughts for future&lt;/h2&gt;
+&lt;p&gt;It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is &lt;a href=&quot;http://kramdown.gettalong.org&quot;&gt;kramdown&lt;/a&gt; which is not working as expected if using &lt;code&gt;_includes&lt;/code&gt; directory contents. Anyway, for now Github Gists is working good.&lt;/p&gt;
+
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
+</description>
+        <pubDate>Sun, 08 Nov 2015 23:29:20 +0200</pubDate>
+        <link>http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release of games-monitor.net</title>
@@ -44,8 +78,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Wed, 30 Sep 2015 18:44:42 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html</guid>
+        <link>http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html</guid>
         
         
       </item>
@@ -88,8 +122,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sun, 27 Sep 2015 18:32:14 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html</guid>
+        <link>http://kurbaitis.io/2015/09/27/legacy-apps-fix.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/27/legacy-apps-fix.html</guid>
         
         
       </item>
@@ -132,8 +166,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Fri, 25 Sep 2015 18:26:25 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/25/RDBMS-optimization.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/25/RDBMS-optimization.html</guid>
+        <link>http://kurbaitis.io/2015/09/25/rdbms-optimization.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/25/rdbms-optimization.html</guid>
         
         
       </item>
@@ -169,8 +203,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Wed, 23 Sep 2015 13:26:06 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/23/The-power-of-setup.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/23/The-power-of-setup.html</guid>
+        <link>http://kurbaitis.io/2015/09/23/the-power-of-setup.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/23/the-power-of-setup.html</guid>
         
         
       </item>
@@ -246,8 +280,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sun, 20 Sep 2015 12:23:00 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/20/Website-on-pure-Ruby.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/20/Website-on-pure-Ruby.html</guid>
+        <link>http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html</guid>
         
         
       </item>
@@ -285,8 +319,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Thu, 17 Sep 2015 12:18:10 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/17/OpenSSL-and-Ruby.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/17/OpenSSL-and-Ruby.html</guid>
+        <link>http://kurbaitis.io/2015/09/17/openssl-and-ruby.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/17/openssl-and-ruby.html</guid>
         
         
       </item>
@@ -328,8 +362,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Wed, 16 Sep 2015 12:02:39 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/16/V2-of-the-hosting-engine.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/16/V2-of-the-hosting-engine.html</guid>
+        <link>http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html</guid>
         
         
       </item>
@@ -360,43 +394,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Tue, 15 Sep 2015 11:58:15 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/15/The-release-of-v2.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/15/The-release-of-v2.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>The simplicity of start</title>
-        <description>
-&lt;p&gt;The initial purpose of IT is to ease the process. Sometimes it’s hard to do that with wrong tools and there are a lot of wrong tools. Anyway, each developer should work towards making that tools easier to use or create his/her own tools and share. It’s not possible just to dump all the software dedicated to WEB and start from scratch but it’s possible to make that tools work nicely together.&lt;/p&gt;
-&lt;h2&gt;Decoupling&lt;/h2&gt;
-
-&lt;p&gt;One of the things that I’ve learned during my long career in IT is that you need to decouple things, that makes things easier for the future. Decoupling comes to various levels of the system: users system, publishing tools, development tools and finally code. For instance: why you need always to ask permissions from root user in Unix? That’s not efficient, better use one user: setup with root user and work with your new created user.&lt;/p&gt;
-&lt;h2&gt;In practice&lt;/h2&gt;
-&lt;p&gt;There is a good example which I like - &lt;a href=&quot;https://rvm.io&quot; target=&quot;_blank&quot;&gt;RVM&lt;/a&gt;. It’s a powerful tool for Ruby versions management but you decide if it’s really needed. Anyway, I like RVM because of the ease of install. One command and you’re ready to go.&lt;/p&gt;
-&lt;h2&gt;The backend&lt;/h2&gt;
-&lt;p&gt;Unfortunatelly, the problem with that tools is the backend which might be complicated because it tries to support a lot of kind of systems. Think better to build your tool and define strict requirements for it. Just to make your system efficient.&lt;/p&gt;
-
-&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-/* * * CONFIGURATION VARIABLES * * */
-// Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-
-</description>
-        <pubDate>Sun, 13 Sep 2015 11:55:33 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/13/The-simplicity-of-start.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/13/The-simplicity-of-start.html</guid>
+        <link>http://kurbaitis.io/2015/09/15/the-release-of-v2.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/15/the-release-of-v2.html</guid>
         
         
       </item>

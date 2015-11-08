@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>HTTP(S) servers myth</title>
-  <meta name="description" content="Usually in web development everyone is using HTTP servers like Apache of Nginx, of course with HTTPS support if needed. In short: it’s wasteful. In this blog...">
+  <title>Simple system architecture plan: win-win</title>
+  <meta name="description" content="This blog post will be a bit different than the ones before because I won’t mention any big data centers or optimization recipes etc. This blog post is about...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2015/08/31/HTTP(S)-servers-myth.html">
+  <link rel="canonical" href="http://kurbaitis.io/2015/08/26/simple-system-architecture-plan-win-win.html">
   <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
 </head>
 
@@ -67,26 +67,41 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">HTTP(S) servers myth</h1>
-    <p class="post-meta">Aug 31, 2015</p>
+    <h1 class="post-title">Simple system architecture plan: win-win</h1>
+    <p class="post-meta">Aug 26, 2015</p>
   </header>
 
   <article class="post-content">
     
-<p>Usually in web development everyone is using HTTP servers like <a href="http://apache.org" target="_blank">Apache</a> of <a href="http://nginx.org" target="_blank">Nginx</a>, of course with HTTPS support if needed. In short: it’s wasteful. In this blog post I’ll introduce you with some useful open source Ruby products that can be used as a standalone HTTP(S) servers.</p>
-<h2>Web frameworks</h2>
-<p>In my opinion there are three decent Ruby web frameworks that are useful for separate purposes: <a href="http://rubyonrails.org" target="_blank">Rails</a> (beautiful frontend products), <a href="http://www.sinatrarb.com" target="_blank">Sinatra</a> (simple and easy to use products), <a href="http://intridea.github.io/grape" target="_blank">Grape</a> (mostly for APIs, decide yourself if you need that). All of these have <a href="http://rack.github.io" target="_blank">Rack</a> gem inside which is placed on top of HTTP(S) server (<a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/webrick/rdoc/WEBrick.html" target="_blank">WEBrick</a>, <a href="http://code.macournoyer.com/thin" target="_blank">Thin</a>, <a href="https://github.com/mongrel/mongrel" target="_blank">Mongrel</a> etc.) and all that stack successfully runs together. It’s a bit pitty that there is no common standard for all needs together, but that’s a different story.</p>
-<h3>WEBrick</h3>
-<p>WEBrick is the default server for Rails and Sinatra for sure, please check if Grape is using the same if you’re interested in SOA.</p>
+<p>This blog post will be a bit different than the ones before because I won’t mention any big data centers or optimization recipes etc. This blog post is about serious stuff. No micky mouse stuff about beautiful frontend, javascript or whatever. After 11-12 years of working as a programmer, I slowly started to understand one thing: no matter what, your client must go through your created process as fast as possible and without any distractions. To achieve this, you don’t need powerful hardware, application architecture or whatever. I’d like to share some thoughts about simplicity of system architecture that comes to probably each developer’s brains at some point.</p>
+<h2>Hardware</h2>
+
+<p>Did you notice where all world is going to with such technology development speed? Yes, it’s evolution, we all know that there is no way back, but there is a better way which leads to true love of development work for developers and to time saving for the clients.</p>
 <p>
-  Well, it took a bit of time to setup WEBrick on Sinatra with HTTPS support for me but finally I made it work. The problem is that when there are multiple layers for one purpose, you have to connect all parts and it takes your precious time, however, it's a kind of fun.
+  Well, let's start from storage, one word: SSD. No more burning HDD or playing with RAID. It's just not efficient from all perspectives.
 </p>
-<h3>Thin</h3>
-<p>To be honest, I tried Thin too but for HTTPS it didn’t work out. Maybe for HTTP it’s good but we’re currently not in perfect world so if you try to make a secure product, please choose WEBrick or any other web server that works for you. However, Thin also supports Vhosts that allows to run multiple sites on the same IP, please be careful with that because it’s not secure and not efficient.</p>
-<h2>Some thoughs</h2>
-<p>Like it’s mentioned in the last blog post, I’m working on a small product which will be released as an open source framework for any kind of products selling online but initially it is being created for game servers hosting services.</p>
 <p>
-  Comming back to the "ideal world" idea is that currently Ruby community has some problems with making things simple and oriented to one direction. Yes, Rails became like a brand of Ruby and the language itself is known as a web development tool but there is no strict leadership and limits to publify gems or products which leads to a lot of standards, not useful gems and tools. Anyway, those who know how to work with Ruby, will find their way to easy development, wish you that and don't forget to check out the release that I'm working on at the moment.
+  No matter what internet connection or hardware you have, the end point is your ethernet adapter throughput which determines how many clients you can serve. Try to find the best option with the biggest throughput. There are just some limits in this world when it comes to effective technologies. This is where the load balancing and scaling comes into play. In short: just give some cash for capitalists if you don't know what you're doing.
+</p>
+<p>
+  Processor doesn't matter too much as long as you choose appropriate programming language and know how to use it properly. 
+</p>
+<h2>OS</h2>
+<p>Ideally, developers could use an operating system which would be designed exactly for HTTP. But I haven’t heard about any of these so far. Double check please, if you can’t find it, then MIT is just making jokes of earth resources.</p>
+<p>
+  Ok, plan B: use one of BSD family operating systems.
+</p>
+<h2>Programming language</h2>
+<p>I have to confess, I’m biased when it comes to programming language because I love Ruby for simplicity. Some of you can say that it’s too slow or not efficient. I disagree. If you build systems based on the simplicity principles, there should not be any problems to achieve efficiency of development and needed performance. Just don’t overcomplicate things at the beginning and maybe later rewrite everything on native operating system language (Assembler could work too if you know what I mean).</p>
+<h2>Frontend</h2>
+<p>For my last project I used one of those responsive CSS/JS frameworks that could have been not needed if technology would took more standards based way of development. Seriuosly: if a country produce its technology (cell phones, laptops, tablets) why to export to other countries and make more mess in all the world when it comes to efficiency? More standards - more shitty workarounds for all developers and more cash for clients. Not purposeful.</p>
+<p>
+  Anyway, we have what we have. The best what you can do is to try to build a website based on simple HTML and tables which provides you with home made responsive templates.
+</p>
+<h2>Final thoughts</h2>
+<p>When you work on something, you put your heart into the work. Your heart belongs to what you believe. I believe in specialization and effective resources usage.</p>
+<p>
+  Hopefully, one day there will be one hardware, one OS and one programming language for web development. If that would be kept in the biggest data center in the world, that would be a revolution in IT which would help to save energy for all sides (developer - client). Anyway, don't think about this too much, it's our time to have fun with all that different standards and all that security traps. Cheers!
 </p>
 
 <div id="disqus_thread" class="np"></div>

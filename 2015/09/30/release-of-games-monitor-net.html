@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>AWS custom deployment PaaS</title>
-  <meta name="description" content="If you’re familiar with Heroku, you know how it’s easy to manage deployments. Simple push to a Git repo and your deployment is in process. With AWS it’s a bi...">
+  <title>Release of games-monitor.net</title>
+  <meta name="description" content="Today is a happy day for me because I’ve just released a new version of games-monitor.net which includes a lot of fixes and improvements. It’s still buggy du...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2015/08/07/aws-custom-deployment-paas.html">
+  <link rel="canonical" href="http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html">
   <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
 </head>
 
@@ -67,42 +67,26 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">AWS custom deployment PaaS</h1>
-    <p class="post-meta">Aug 7, 2015</p>
+    <h1 class="post-title">Release of games-monitor.net</h1>
+    <p class="post-meta">Sep 30, 2015</p>
   </header>
 
   <article class="post-content">
     
-<p>If you’re familiar with <a href="" target="_blank">Heroku</a>, you know how it’s easy to manage deployments. Simple push to a <a href="" target="_blank">Git</a> repo and your deployment is in process. With <a href="" target="_blank">AWS</a> it’s a bit different. This blog post will introduce you with simple way of creating similar homemade tool for easy deployments. Important to mention that AWS is much cheaper than Heroku.</p>
-<h2>Concepts</h2>
-<p><strong>AWS</strong> is a tool designed to give as much space for dynamic resources manipulation as possible. This allows developers to create products designed for exact business needs and avoid waste.</p>
+<p>Today is a happy day for me because I’ve just released a new version of games-monitor.net which includes a lot of fixes and improvements. It’s still buggy due to existing dependencies but I’m fixing that. The project was started in 2008 but due to improved knowledge in Bash I managed to fix major performance issues by trading off server resources. In this blog post I’ll share some solutions that helped me to fix this legacy project.</p>
+<h2>Background jobs</h2>
+<p>The problem with memory leaking systems is that you have to use native OS processes (<a href="http://ruby-doc.org/core-2.2.3/Kernel.html#method-i-fork" target="_blank">Kernel#fork</a>) to do the memory leaking work and then quit the process. The main process manages the flow of child processes (where the work is done) in the system but that’s not a problem because it’s possible to reboot the main process too. For my project I use <a href="https://github.com/resque/resque" target="_blank">Resque</a> gem which implements this kind of solution.</p>
+<h2>One direction</h2>
+<p>If you use background jobs, then better use it for all blocking tasks in your system. For instance, the adding of servers into the list was dedicated to the HTTP application which is not efficient. I managed to fix it by pushing that jobs to Resque. The implementation of this solution is a bit tricky as the client still needs to know about the success of the request. This was done in <a href="https://gist.github.com/kurbaitis/04ad6027b19fea8a54d6">this way</a>.</p>
 <p>
-  <strong>EC2</strong> is a service that allows developers to operate on cloud computing resources (create EC2 instances and put there your application to be accessible from outside). 
+  First of all, you need a reference which couples your background job with the website's application. So to inform the application if job is successful, you need to use some kind of cache which is being checked each second to know if the server has been updated. If it is, the result is the ID of the server, if not, the result is 0.
 </p>
-<p>
-  <strong>RDS</strong> is a service that allows to create data store instances.
-</p>
-<p>
-  <strong>CloudFormation</strong> is a tool that connects all AWS services and allows to create / edit / delete instances of specified services. In simple words, it allows to create necessary EC2 / RDS / ElastiCache instances for application by one take and later modify that if needed.
-</p>
-<h2>Blueprint</h2>
-<p>The scheme below shows how the deployment PaaS works. It’s pretty straightforward but needs some Ruby based implementation tools to create all the stack easily. <br /><br /> <img src="/assets/img/deployment-paas1.png" /> <br /><br />
-  <strong>(1)</strong> - you hit the EC2 instance which is responsible for deploys (connected to a small RDS for deployment related data) via HTTPS with parameters which application to deploy. The PaaS contains CloudFormation scripts for each application. In this case, the deployment request is made for <strong>application 2</strong> which has a RDS instance attached, so when the request comes from your local machine to PaaS, it chooses CloudFormation script specific for the chosen application and starts deployment <strong>(2)</strong>.</p>
-<p>
- As you can see, <strong>application 1</strong> has no RDS instance attached, therefore it has a different CloudFormation script and is ready to be deployed if PaaS gets a request to do that.
-</p>
-<h2>Implementation</h2>
-<p>
-  There are some handy tools writen in Ruby to make this scheme working, but default <a href="https://aws.amazon.com/cli" target="_blank">AWS CLI</a> tools are also needed.
-</p>
-<p>
- Please check out <a href="https://github.com/ThoughtWorksStudios/eb_deployer" target="_blank">EB deployer</a> which helps to create application stacks using <a href="http://aws.amazon.com/elasticbeanstalk" target="_blank">Elastic Beanstalk</a> and supports CloudFormation scripts to operate on multiple types of AWS services.
-</p>
-<p>
-  The main implementation happens in the PaaS as it will store all the configuration details for each application and just give commands to ElasticBeanstalk and CloudFormation services to create stacks for each application.
-</p>
-<h2>Some ideas</h2>
-<p>When you will have the initial version of this PaaS working, you can add to it whatever you want: HTTPS based logs, DB backups, periodical events (deploys, db backups), more advanced HTTPS API for making the service more easy to use. Unfortunatelly, the current version of this PaaS that I have access to is not ready for production, so please do it by yourself, share and maybe one day we’ll merge our ideas to make this open source for everyone. Cheers!</p>
+<h2>Queries caching</h2>
+<p>Probably <a href="http://www.postgresql.org" target="_blank">PostgreSQL</a> supports some kind of queries caching, but for now I made it work simple by using <a href="http://redis.io" target="_blank">Redis</a>. This allows to implement simple search in the website without a lot of I/O blocking. It’s still not ideal but for now it works keeping in mind the DB size and search scope. If DB grows, then it will be time to implement more advanced full text search engine.</p>
+<h2>Error reporting</h2>
+<p>I’m quite confident about this release when it comes to errors, so instead of using email notifications, I added error reporting to my mobile phone. Thanks to <a href="https://www.twilio.com" target="_blank">Twilio</a> which allows to send any kind of data to mobile phone.</p>
+<h2>Sum up</h2>
+<p>Like I’ve mentioned, there are a lot of dependencies to trash in the system. For key-value store, could work <a href="http://www.gnu.org.ua/software/gdbm" target="_blank">GNU gdm</a>, for background jobs just simple bash script and so on. Anyway, hopefully this helps anyone fixing legacy systems. Cheers.</p>
 
 <div id="disqus_thread" class="np"></div>
 <script type="text/javascript">

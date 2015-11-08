@@ -1,0 +1,8 @@
+#!/bin/bash
+while :
+do
+  read l
+  g="$g$l\n"
+  trap "break" INT
+done
+curl -H "Authorization: token $1" -d "{\"public\": true,\"files\":{\"g\":{\"content\":\"${g//"/\\"}\"}}" https://api.github.com/gists 

@@ -1,0 +1,21 @@
+#!/bin/bash
+d=`date +"%Y-%m-%d"`
+d2=`date +"%Y-%m-%d %T %z"`
+f="$d-${1// /-}.markdown"
+cat >> _data/posts.yml <<EOF
+'$d':
+  text: >
+
+  hrefs:
+    
+EOF
+cat >> _posts/$f <<EOF
+---
+layout: post
+title:  "$1"
+date:   $d2
+---
+{% include post.html site=site page=page %}
+EOF
+vi _data/posts.yml
+jekyll serve -w

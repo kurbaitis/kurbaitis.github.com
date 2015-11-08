@@ -156,6 +156,9 @@ pre {
     display: none; }
 
   .pagination {
+    display: none; }
+
+  #disqus_thread {
     display: none; } }
 /**
  * Site header

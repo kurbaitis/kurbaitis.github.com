@@ -1,0 +1,12 @@
+#!/bin/bash
+m=`find _site -name \*.html -print | head -1 | cut -d '/' -f 5 | cut -d '.' -f 1 | tr '-' ' '`
+cd _site
+git init
+>.gitignore
+echo "/bin" >> .gitignore
+git checkout -b gh-pages
+git remote add origin https://github.com/kurbaitis/v2.git
+git add .
+git commit -a -m "$m"
+git push origin gh-pages:gh-pages --force
+cd ../

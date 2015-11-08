@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kristijonas Urbaitis</title>
+    <description>Senior Ruby Developer</description>
+    <link>http://kurbaitis.io/</link>
+    <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 08 Nov 2015 18:06:25 +0200</pubDate>
+    <lastBuildDate>Sun, 08 Nov 2015 18:06:25 +0200</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Release of games-monitor.net</title>
+        <description>
+&lt;p&gt;Today is a happy day for me because I’ve just released a new version of games-monitor.net which includes a lot of fixes and improvements. It’s still buggy due to existing dependencies but I’m fixing that. The project was started in 2008 but due to improved knowledge in Bash I managed to fix major performance issues by trading off server resources. In this blog post I’ll share some solutions that helped me to fix this legacy project.&lt;/p&gt;
+&lt;h2&gt;Background jobs&lt;/h2&gt;
+&lt;p&gt;The problem with memory leaking systems is that you have to use native OS processes (&lt;a href=&quot;http://ruby-doc.org/core-2.2.3/Kernel.html#method-i-fork&quot; target=&quot;_blank&quot;&gt;Kernel#fork&lt;/a&gt;) to do the memory leaking work and then quit the process. The main process manages the flow of child processes (where the work is done) in the system but that’s not a problem because it’s possible to reboot the main process too. For my project I use &lt;a href=&quot;https://github.com/resque/resque&quot; target=&quot;_blank&quot;&gt;Resque&lt;/a&gt; gem which implements this kind of solution.&lt;/p&gt;
+&lt;h2&gt;One direction&lt;/h2&gt;
+&lt;p&gt;If you use background jobs, then better use it for all blocking tasks in your system. For instance, the adding of servers into the list was dedicated to the HTTP application which is not efficient. I managed to fix it by pushing that jobs to Resque. The implementation of this solution is a bit tricky as the client still needs to know about the success of the request. This was done in &lt;a href=&quot;https://gist.github.com/kurbaitis/04ad6027b19fea8a54d6&quot;&gt;this way&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+  First of all, you need a reference which couples your background job with the website&#39;s application. So to inform the application if job is successful, you need to use some kind of cache which is being checked each second to know if the server has been updated. If it is, the result is the ID of the server, if not, the result is 0.
+&lt;/p&gt;
+&lt;h2&gt;Queries caching&lt;/h2&gt;
+&lt;p&gt;Probably &lt;a href=&quot;http://www.postgresql.org&quot; target=&quot;_blank&quot;&gt;PostgreSQL&lt;/a&gt; supports some kind of queries caching, but for now I made it work simple by using &lt;a href=&quot;http://redis.io&quot; target=&quot;_blank&quot;&gt;Redis&lt;/a&gt;. This allows to implement simple search in the website without a lot of I/O blocking. It’s still not ideal but for now it works keeping in mind the DB size and search scope. If DB grows, then it will be time to implement more advanced full text search engine.&lt;/p&gt;
+&lt;h2&gt;Error reporting&lt;/h2&gt;
+&lt;p&gt;I’m quite confident about this release when it comes to errors, so instead of using email notifications, I added error reporting to my mobile phone. Thanks to &lt;a href=&quot;https://www.twilio.com&quot; target=&quot;_blank&quot;&gt;Twilio&lt;/a&gt; which allows to send any kind of data to mobile phone.&lt;/p&gt;
+&lt;h2&gt;Sum up&lt;/h2&gt;
+&lt;p&gt;Like I’ve mentioned, there are a lot of dependencies to trash in the system. For key-value store, could work &lt;a href=&quot;http://www.gnu.org.ua/software/gdbm&quot; target=&quot;_blank&quot;&gt;GNU gdm&lt;/a&gt;, for background jobs just simple bash script and so on. Anyway, hopefully this helps anyone fixing legacy systems. Cheers.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 Sep 2015 18:44:42 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Legacy apps fix</title>
+        <description>
+&lt;p&gt;This blog post is about legacy apps fixing when it comes to memory leaking. For instance, you have an old application, maybe a new one, which is leaking memory, then starts filling swap memory and in the end your server goes down. I found a solution which works in my case. So my app is based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Merb&quot; target=&quot;_blank&quot;&gt;Merb v1.1.3&lt;/a&gt; (Ruby) and although this framework was merged to Rails long time ago, it still has power to run these days with some minor gems changes. Well, some of gems that Merb consists of were needed to be moved to lib/ and make some modifications too. Anyway, the solution works for any kind of application which is leaking memory.&lt;/p&gt;
+&lt;h2&gt;How it works&lt;/h2&gt;
+&lt;p&gt;In my case, luckily, the application is not too big and it manages to boot in 1-2 seconds. Then the memory usage starts to grow until it fills in all available gaps and the server goes down. So to solve this, I’ve created a script which reboots the application each 10 seconds. Funny, but this is a trade-off between memory and CPU + I/O. By doing this, application works but with timeouts as it needs some time to boot the app each time. Well, then you need a proxy, which checks if app is running and only then forwards visitors to the application where the visitors’ requests are really processed.&lt;/p&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;The start script is simple in my case, you can use watch command which exists in Unix, but I’ve done it like &lt;a href=&quot;https://gist.github.com/kurbaitis/629a0d5c99384d111f70&quot;&gt;this&lt;/a&gt;. &lt;br /&gt;&lt;br /&gt; The next part is &lt;a href=&quot;http://www.haproxy.org&quot; target=&quot;_blank&quot;&gt;HAproxy&lt;/a&gt;, which is a proxy server for any kind of connections. Look at this &lt;a href=&quot;https://gist.github.com/kurbaitis/aa3a6163c1217e7a6c13&quot;&gt;configuration file&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+  This file defines that the proxy is running on any network interface, forwards the requests to your application (127.0.0.0 means localhost) and if the application doesn&#39;t respond, the proxy waits for 10 seconds before returning timeout error template to visitor&#39;s browser if the application is not responding during that time. Note: HAproxy installed directly from your OS package manager is accessible only using root access.
+&lt;/p&gt;
+&lt;h2&gt;Combining it together&lt;/h2&gt;
+&lt;p&gt;This solution is still not ideal when it comes to other dependencies that your legacy app might use. For instance, caching servers and so on. This needs nighly reboot of your server to cope with that by one take. If doing so, please don’t forget to use boot scripts to initialize all required dependencies after restart. &lt;br /&gt;&lt;br /&gt;
+For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbaitis/c5fa920087b3fe58b9a5&quot;&gt;boot script&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+  To apply the script to your server, you need to run this as root in your shell:
+&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;update-rc.d script-name defaults&lt;/code&gt; &lt;br /&gt; &lt;code&gt;update-rc.d script-name enable&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Sum up&lt;/h2&gt;
+&lt;p&gt;This is just a sample solution that works for my case. There are other solutions, for instance, one of them comes together with default Ruby implementation (MRI). WEBrick also supports proxy servers but I haven’t managed to make it work instantly, probably some headers or environment variables are not correct. You could use also SSH tunnel to proxy connections to your application but it has some issues with timeout configuration. Good luck choosing the right one for yourself!&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 27 Sep 2015 18:32:14 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>RDBMS optimization</title>
+        <description>
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Relational_database_management_system&quot; target=&quot;_blank&quot;&gt;RDBMS&lt;/a&gt; is a concept which is about sophisticated data store. Everything here is about relations, you can even define the level of security by defining constraints for particular data tables. However, everything has its own price (CPU in this case) and this is where &lt;a href=&quot;https://en.wikipedia.org/wiki/NoSQL&quot; target=&quot;_blank&quot;&gt;NoSQL&lt;/a&gt; wins. Looking from the security perspective, RDBMS is the right tool for finance, banking business as it supports transactions with locking I/O while a transaction is in process. Anyway, this blog post is about optimization of RDBMS when it comes to input.&lt;/p&gt;
+&lt;h2&gt;Current tools&lt;/h2&gt;
+
+&lt;p&gt;There are a lot of RDBMS based software, you can check it out &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_relational_database_management_systems&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. The most popular ones are &lt;a href=&quot;https://www.mysql.com&quot; target=&quot;_blank&quot;&gt;MySQL&lt;/a&gt; and &lt;a href=&quot;http://www.postgresql.org&quot; target=&quot;_blank&quot;&gt;PostgreSQL&lt;/a&gt; in open source community. The issue with all of these is the variaty of supported methods of input. Well ok, using bash you can easily export/import, but when it comes to application level usage, this is getting fuzzier. Let me give you an example.&lt;/p&gt;
+&lt;p&gt;
+  I like PostgreSQL which has &lt;a href=&quot;http://www.postgresql.org/docs/current/static/sql-prepare.html&quot; target=&quot;_blank&quot;&gt;Prepared Statements&lt;/a&gt; function. Although everyone usually use default SQL queries to reach the data, it&#39;s not efficient. For prototypes it works, but not for production applications. So if you&#39;re using any RDBMS software, please be aware of I/O optimization when it&#39;s needed.
+&lt;/p&gt;
+&lt;h2&gt;Prepared Statements&lt;/h2&gt;
+
+&lt;p&gt;PostgeSQL supports a lot of ways to input your data to a database. COPY, INSERT, Bash interface etc. Well, about 5 years ago, I’ve been searching for a proper way to input updated data to my database and the requirement was to make it as efficient as possible for high load. This is where Prepared Statements comes into the play.&lt;/p&gt;
+&lt;p&gt;
+  The principle is simple: by using Prepared Statements you create a framework of all the dependencies for the query and when you call the query, it just use the cached framework with your sent data. This is like a trade-off between your resources: you pay more memory and save CPU.
+&lt;/p&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;In Ruby it’s simple if you use &lt;a href=&quot;http://sequel.jeremyevans.net&quot; target=&quot;_blank&quot;&gt;Sequel&lt;/a&gt;. At that time, I used the newest version of it, now it’s a bit outdated, but I’m sure they have similar interface for this function in the newest version. &lt;a href=&quot;https://gist.github.com/kurbaitis/f5387059177c13768a1a&quot;&gt;The example&lt;/a&gt;:&lt;/p&gt;
+&lt;h2&gt;Sum up&lt;/h2&gt;
+&lt;p&gt;Actually, I’ve created an extension for Sequel for automated prepared statements creation, so it’s possible just to make it work by default in Sequel. Hopefully, one day I’ll release it, but for now I’m more focused to my experiment. Happy investigation!&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 25 Sep 2015 18:26:25 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/25/RDBMS-optimization.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/25/RDBMS-optimization.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>The power of setup</title>
+        <description>
+&lt;p&gt;Any setup of a system should be easy. Not too much text about it and just inputs that you really need. Ideally, just the inputs about 3rd parties (payments system, reporting etc.) The inputs can be various: HTTP Basic authentication credentials, OAuth client id and secret or some other values like URL, a string.&lt;/p&gt;
+&lt;h2&gt;The flow&lt;/h2&gt;
+&lt;p&gt;The flow of your setup script should be in order. I use this: OS libs, source archives directly from creator’s mirror, other dependencies install. For source archives I use &lt;a href=&quot;http://curl.haxx.se&quot; target=&quot;_blank&quot;&gt;curl&lt;/a&gt; command which fetches the list of archives that are available, then takes the latest version with the most efficient compression format. Knowing the URL, you can fetch the archive, extract and build. In Ruby case, you need to install required gems for your application, maybe do some configuration and login yourself to the user where the bin/start script exists. In some cases, this is not needed, for instance, if you want to setup your application to run at boot time.&lt;/p&gt;
+&lt;h2&gt;Setup script&lt;/h2&gt;
+&lt;p&gt;If you’re working on Unix, prefer default Shell (usually /bin/bash) for the script, probably not so much issues in the future. Don’t forget to define requirements in your app’s README for the system where the setup will run, this will save some time too for other developers.&lt;/p&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;This is the &lt;a href=&quot;https://gist.github.com/kurbaitis/f8b33b4d82235960689f&quot;&gt;setup script&lt;/a&gt; from one of my created applications.&lt;/p&gt;
+&lt;p&gt;
+  The script asks you to provide tty with root pasword and executes all the commands. Anyway, this is very relative to what you do and what technologies use. Hopefully, this will help someone to build easier to start applications. Cheers.
+&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 23 Sep 2015 13:26:06 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/23/The-power-of-setup.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/23/The-power-of-setup.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>V3 of the experiment</title>
+        <description>
+&lt;p&gt;Tonight I’ve released the dev version of my experiment. Well it’s probably not working so good when it comes to installation, but the point is not here this time. I’d like to share some thoughts where this project is going to. You can check out the V3 &lt;a href=&quot;https://github.com/kurbaitis/hosting&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Some changes&lt;/h2&gt;
+&lt;p&gt;Like I’ve mentioned in the last blog post, I’m trying to apply as much functional programming as possible everywhere, at least in syntax level. There are some issues with 3rd parties and edge cases handling, but these are temporary issues as currently I’m focusing more on architectural decisions. Hopefully, this experiment will grow up to something better in the future as I’ve started to implement such things as Router pattern, Vhosts and so on. Basically, it should be everything what a simple website developer wants to have at the first stage of his/her project.&lt;/p&gt;
+&lt;h2&gt;TODOs&lt;/h2&gt;
+&lt;p&gt;In short, currently it’s hard to say when I have enough time to polish all the project but at the moment some core architecture things are getting brighter each day. Although I’m happy with the process, there are some issues to solve: 3rd parties connection fixes, error reporting, metrics engine, easier installation and so on. If this gonna succeed, the project should turn into a new Ruby framework with various modules available to connect. Quite big objective, but luckily I’m still in a new job search.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 22 Sep 2015 13:21:18 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/22/of-the-experiment.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/22/of-the-experiment.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Website on pure Ruby</title>
+        <description>
+&lt;p&gt;This blog post is about the simplicity of creating pure Ruby based websites. Actually, everything what you need for creating a website without connected 3rd parties is in default Ruby build source. WEBrick with ERB and CGI (legacy) support gives you a lot of power to build simple, easy to use and reliable websites (if you know how Ruby works and write code respectfully).&lt;/p&gt;
+&lt;h2&gt;The issue&lt;/h2&gt;
+&lt;p&gt;Like I’ve mentioned in earlier blog posts, the problem with website usability is simple: there are just too many stuff and options for a customer. If you do things right, you focus and provide services that are exactly for the segment which you’re targeting to. Less hassle, less pain for everyone.&lt;/p&gt;
+&lt;p&gt;
+  If you follow this philosophy of single segment orientation, it&#39;s very easy to create a simple site for your products or other kind of value selling. It&#39;s harder to make all the necessary services (payments, monitoring, scaling) to work properly and neatly. This needs a bit more understanding in other concepts like encapsulation, decoupling, security and so on. While working on my experiment, I&#39;m doing some thinking how to make things easier by removing some dependencies. This is where native Ruby libraries comes into play.
+&lt;/p&gt;
+&lt;h2&gt;Sinatra&lt;/h2&gt;
+&lt;p&gt;Sinatra is a beautiful framework (a separate gem), but I’m not sure about its long term capabilities to manage traffic. Ruby is leaking memory if you create a lot of objects and do not use GC properly. If you want to write a beautiful Sinatra based application, you need to use a lot of objects and also it adds additional level to your application stack: Rack -&amp;gt; WEBrick -&amp;gt; Sinatra. Well, I don’t want to spare a lot of time for investigating that layers compatibility issues and GC. Better think something simplier and use local variables that are not so hard to manage for Ruby: this is what I’m doing in my experiment.&lt;/p&gt;
+&lt;h2&gt;My try&lt;/h2&gt;
+
+&lt;p&gt;The thing I’m trying currently is to use pure WEBrick server which is included by default in Ruby build source. Recently, I discovered that it supports mounting all needed routes directly to given templates. The variables (from 3rd party apps too) get forwarded from lib/ level and templates just print out the final views. The implementation &lt;a href=&quot;https://gist.github.com/kurbaitis/c81e65a1f8b1b3e86405&quot;&gt;files&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+  The issue here is that you need to pass current variables scope (binding) to the lib/ level. Well, it&#39;s a bit pain if you don&#39;t want to create additional instances and use just functional programming. But maybe there is another way. 
+&lt;/p&gt;
+&lt;h2&gt;Sum up&lt;/h2&gt;
+&lt;p&gt;
+  So this post is about a bit different approach: logic in lib/, routing in app.rb and the templates in views/. No mixing anything and as much functional programming as possible. Let&#39;s see how this will end up in the following blog post.
+&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 20 Sep 2015 12:23:00 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/20/Website-on-pure-Ruby.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/20/Website-on-pure-Ruby.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>OpenSSL and Ruby</title>
+        <description>
+&lt;p&gt;&lt;a href=&quot;https://www.openssl.org&quot; target=&quot;_blank&quot;&gt;OpenSSL&lt;/a&gt; is a tool for managing SSL/TLS connections. Well it still has some issues when it comes to support of newest standards but it’s bearable. The implementation of OpenSSL in Ruby is complicated too due to the same reason. However, there are some ways to workaround the issues that personally I’ve encountered with &lt;a href=&quot;https://www.comodo.com&quot; target=&quot;_blank&quot;&gt;Comodo&lt;/a&gt; TLS 1.2 certificate.&lt;/p&gt;
+&lt;h2&gt;Testing&lt;/h2&gt;
+&lt;p&gt;Like I’ve mentioned in some older posts, for the experiment I’m using &lt;a href=&quot;https://github.com/nahi/webrick&quot; target=&quot;_blank&quot;&gt;WEBrick&lt;/a&gt; HTTP(S) server which comes with SSL/TLS support. All the configuration is decoupled to the .env file, so it’s easy to test. WEBrick supports a lot of OpenSSL configuration details but not all needed. If you’re setting up WEBrick SSL/TLS server, please also use your certificate provider’s tool for testing the connection.&lt;/p&gt;
+&lt;p&gt; The results of my case had some problems. In short: Microsoft software trust, multiple SSL/TLS versions support, Ciphers, secure renegotiation (client-side). As you probably understand, this kind of issues are potential threats for the system. &lt;/p&gt;
+&lt;h2&gt;Some workarounds&lt;/h2&gt;
+&lt;p&gt;1) Compile openssl library manually for Ruby to use the newest version of it &lt;br /&gt; 2) Instead of ca-certificates lib, use &lt;a href=&quot;http://curl.haxx.se/ca/cacert.pem&quot; target=&quot;_blank&quot;&gt;this cert&lt;/a&gt; &lt;br /&gt; 3) &lt;a href=&quot;https://gist.github.com/kurbaitis/a864be74520329202fb3&quot;&gt;Configure WEBrick&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+  As you can see, mostly all the configuration is fetched from ENV constant. Although WEBrick is a powerful tool it lacks two configuration options: ssl_version and ciphers. It&#39;s a bit of hack to fix it like this. But not needed if you compile your OpenSSL with defined ciphers by default.
+&lt;/p&gt;
+&lt;p&gt;
+  The only bug which I haven&#39;t fixed yet is the Secure renegotiation (client-side) which refers to a TLS extension &lt;a href=&quot;https://tools.ietf.org/html/rfc5746&quot;&gt;RFC 5746&lt;/a&gt; which is the solution for this bug in the default OpenSSL implementation. There is a workaround described in Ruby documentation but it haven&#39;t worked for me, maybe because my certificate is chained. Anyway, currently I&#39;m trying other kind of workarounds and hopefully soon will solve this issue without any hacks and the default WEBrick source code.
+&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 17 Sep 2015 12:18:10 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/17/OpenSSL-and-Ruby.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/17/OpenSSL-and-Ruby.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>V2 of the hosting engine</title>
+        <description>
+&lt;p&gt;This release has a lot of improvements which includes some decoupling. Like I mentioned in the last blog post, decoupling is the key to easy further development. The purpose of the project is to decouple as much levels as possible and get to the point where you need only &lt;a href=&quot;https://www.gnu.org/software/bash&quot; target=&quot;_blank&quot;&gt;Bash&lt;/a&gt; and &lt;a href=&quot;https://ruby-lang.org&quot; target=&quot;_blank&quot;&gt;Ruby&lt;/a&gt;. But that’s for the future.&lt;/p&gt;
+&lt;h2&gt;Crontab&lt;/h2&gt;
+&lt;p&gt;The first release contains &lt;a href=&quot;http://crontab.org&quot; target=&quot;_blank&quot;&gt;Crontab&lt;/a&gt; which is a bit not stable when it comes to &lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX&quot; target=&quot;_blank&quot;&gt;POSIX&lt;/a&gt; users switching. Why not to do it &lt;a href=&quot;https://gist.github.com/388cc26b76a7ac9e40cd&quot;&gt;with Ruby&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;
+  In this way, the geographical location database is updated each hour and the script is non-blocking.
+&lt;/p&gt;
+&lt;h2&gt;Github&lt;/h2&gt;
+&lt;p&gt;It’s a good idea to decouple from &lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt; when it comes to installation. The only thing you need from it is &lt;a href=&quot;https://help.github.com/articles/creating-an-access-token-for-command-line-use&quot; target=&quot;_blank&quot;&gt;Access Token&lt;/a&gt; which provides you with ability to work with Github probably the same like using the website. By using this one line you can install essential packages for installing your application and execute application’s install script. &lt;br /&gt; &lt;br /&gt;     &lt;code&gt;t=&#39;86be456829f0e8645ab7c6bc36f495f518ed8f65&#39; &amp;amp;&amp;amp; apt-get install -y curl ca-certificates &amp;amp;&amp;amp; curl -H &quot;Authorization: token $t&quot; -H &#39;Accept: application/vnd.github.v3.raw&#39; -O -L https://api.github.com/repos/username/your-repo/contents/public/s &amp;amp;&amp;amp; bash s $t&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+  So the thing here is that you just get from Github the bash installation script and it does everything what you need before configuration. Hopefully the next release will have ability to put all the credentials in one line and the script will do it&#39;s work.
+&lt;/p&gt;
+&lt;h2&gt;TLS&lt;/h2&gt;
+&lt;p&gt;For the testing purposes I bought the cheapest &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;TLS v1.2&lt;/a&gt; certificate which has some security issues when working together with Ruby. But please try to use different one and let me know if it works fine.&lt;/p&gt;
+&lt;h2&gt;V2&lt;/h2&gt;
+&lt;p&gt;The release is on its way, hopefully I’ll finish it today or tomorrow. Cheers.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 16 Sep 2015 12:02:39 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/16/V2-of-the-hosting-engine.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/16/V2-of-the-hosting-engine.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>The release of v2</title>
+        <description>
+&lt;p&gt;Unexpectedly, it seems my experimental project is ready to be released again. In the previous post I’ve mentioned some fixes and todo’s that should be added later on. Please take a look at the &lt;a href=&quot;/2015/09/05/The-release.html&quot; target=&quot;_blank&quot;&gt;first release notes&lt;/a&gt; to understand how the project works. However, this version requires a bit different configuration, you’ll find the sample .env file in the source after setup.&lt;/p&gt;
+&lt;h2&gt;Demo&lt;/h2&gt;
+&lt;p&gt;The demo could be found &lt;a href=&quot;https://hosting.games-monitor.net&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. The credentials of the credit card is in the first release blog post.&lt;/p&gt;
+&lt;h2&gt;Sum up&lt;/h2&gt;
+&lt;p&gt;Don’t forget to check out the source, suggest improvements and so on. It’s an exciting experiment which helps to understand Ruby better, hopefully, for you too.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 15 Sep 2015 11:58:15 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/15/The-release-of-v2.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/15/The-release-of-v2.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>The simplicity of start</title>
+        <description>
+&lt;p&gt;The initial purpose of IT is to ease the process. Sometimes it’s hard to do that with wrong tools and there are a lot of wrong tools. Anyway, each developer should work towards making that tools easier to use or create his/her own tools and share. It’s not possible just to dump all the software dedicated to WEB and start from scratch but it’s possible to make that tools work nicely together.&lt;/p&gt;
+&lt;h2&gt;Decoupling&lt;/h2&gt;
+
+&lt;p&gt;One of the things that I’ve learned during my long career in IT is that you need to decouple things, that makes things easier for the future. Decoupling comes to various levels of the system: users system, publishing tools, development tools and finally code. For instance: why you need always to ask permissions from root user in Unix? That’s not efficient, better use one user: setup with root user and work with your new created user.&lt;/p&gt;
+&lt;h2&gt;In practice&lt;/h2&gt;
+&lt;p&gt;There is a good example which I like - &lt;a href=&quot;https://rvm.io&quot; target=&quot;_blank&quot;&gt;RVM&lt;/a&gt;. It’s a powerful tool for Ruby versions management but you decide if it’s really needed. Anyway, I like RVM because of the ease of install. One command and you’re ready to go.&lt;/p&gt;
+&lt;h2&gt;The backend&lt;/h2&gt;
+&lt;p&gt;Unfortunatelly, the problem with that tools is the backend which might be complicated because it tries to support a lot of kind of systems. Think better to build your tool and define strict requirements for it. Just to make your system efficient.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 13 Sep 2015 11:55:33 +0300</pubDate>
+        <link>http://kurbaitis.io/2015/09/13/The-simplicity-of-start.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/09/13/The-simplicity-of-start.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

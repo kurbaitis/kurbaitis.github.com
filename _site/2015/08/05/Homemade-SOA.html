@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homemade SOA</title>
+  <meta name="description" content="When starting to build a SOA (Service Oriented Architecture) project, sometimes it’s hard to choose the right tools for it.  My first SOA project where I had...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://kurbaitis.io/2015/08/05/Homemade-SOA.html">
+  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Kristijonas Urbaitis</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Homemade SOA</h1>
+    <p class="post-meta">Aug 5, 2015</p>
+  </header>
+
+  <article class="post-content">
+    
+<p>When starting to build a SOA (Service Oriented Architecture) project, sometimes it’s hard to choose the right tools for it.  My first SOA project where I had a chance to participate was started a few years ago.  At that time there was no ready for production out-of-box solution for this kind of Ruby based systems.  Well, that was not a big problem for our team because we just builded the solution from scratch by ourselves.</p>
+<h2>Blueprint</h2>
+<p>The goal for our team was to create distributed, isolated and fast working architecture with capabilities for quick expansion.  It was needed to outsource some parts of the project for external teams, so the security was one of the main priorities. To achieve that, we needed to create something like <a href="http://oauth.net/core/1.0">OAuth 1.0</a>.  It’s a simple protocol which works very nicely when implementing together with concurrent requests for multiple resources fetching.</p>
+
+<p>
+ The schema below shows simplified version of the principle how it works.
+</p>
+<p><img src="/assets/img/soa-schema1.png" /></p>
+<p>
+  <strong>(1)</strong> - Before fetching resources (Service 1) must connect to Auth service and ask if it has permissions to operate on the Service 2.
+  If it has, Auth provides authentication token to use for limited amount of time (30 mins etc) and, using that token <strong>(2)</strong>,
+  Service 1 is able to connect to Service 2 and operate on the resources.
+</p>
+<h2>Database structure</h2>
+<p>The main architecture’s structure is kept in Auth service as it decides about services communication security.</p>
+
+<p>
+ The fields in Auth <strong>clients</strong> table were these: <em>client_id, service_id, scope</em>.
+ One more table was needed for the temporary access tokens, let's call it <strong>tokens</strong>: 
+ <em>
+   client_id (table's <strong>clients</strong> id), token, created_at
+ </em>.
+</p>
+<h2>Client gem</h2>
+
+<p>To make things faster and ease the communication among services including Auth gateway, we created a gem (not available as opensource anymore).  It includes caching of temporary tokens, concurrent HTTPS requests (<a href="https://github.com/typhoeus/typhoeus">Typhoeus</a>)  and nice API for configuration of the services.</p>
+<h2>Try yourself</h2>
+<p>These days the situation is a bit different. I’m sure there are a lot of nice gems that could be combined together to achieve the same purpose. But before getting on this work, please read carefully about <a href="" target="_blank"><a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">SOA</a></a> and decide if it’s a good choice for your project. Don’t hesitate to use my proposed solution because it’s pretty simple and you make sure that you know 100% how your system works by doing the system from scratch.</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <table border="0" align="right">
+        <tr>
+          
+          <td>
+            <a href="https://github.com/kurbaitis">
+              <span class="icon icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+            </a>
+          </td>
+          
+          
+          <td>
+            <a href="https://twitter.com/KristijonasU">
+              <span class="icon icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+            </a>
+          </td>
+          
+        </tr>
+      </table>
+    </div>  
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

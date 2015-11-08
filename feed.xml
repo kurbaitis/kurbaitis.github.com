@@ -5,8 +5,8 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Nov 2015 18:21:05 +0200</pubDate>
-    <lastBuildDate>Sun, 08 Nov 2015 18:21:05 +0200</lastBuildDate>
+    <pubDate>Sun, 08 Nov 2015 22:27:51 +0200</pubDate>
+    <lastBuildDate>Sun, 08 Nov 2015 22:27:51 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -26,6 +26,21 @@
 &lt;p&gt;I’m quite confident about this release when it comes to errors, so instead of using email notifications, I added error reporting to my mobile phone. Thanks to &lt;a href=&quot;https://www.twilio.com&quot; target=&quot;_blank&quot;&gt;Twilio&lt;/a&gt; which allows to send any kind of data to mobile phone.&lt;/p&gt;
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;Like I’ve mentioned, there are a lot of dependencies to trash in the system. For key-value store, could work &lt;a href=&quot;http://www.gnu.org.ua/software/gdbm&quot; target=&quot;_blank&quot;&gt;GNU gdm&lt;/a&gt;, for background jobs just simple bash script and so on. Anyway, hopefully this helps anyone fixing legacy systems. Cheers.&lt;/p&gt;
+
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
 
 </description>
         <pubDate>Wed, 30 Sep 2015 18:44:42 +0300</pubDate>
@@ -56,6 +71,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;This is just a sample solution that works for my case. There are other solutions, for instance, one of them comes together with default Ruby implementation (MRI). WEBrick also supports proxy servers but I haven’t managed to make it work instantly, probably some headers or environment variables are not correct. You could use also SSH tunnel to proxy connections to your application but it has some issues with timeout configuration. Good luck choosing the right one for yourself!&lt;/p&gt;
 
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
 </description>
         <pubDate>Sun, 27 Sep 2015 18:32:14 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html</link>
@@ -85,6 +115,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;Actually, I’ve created an extension for Sequel for automated prepared statements creation, so it’s possible just to make it work by default in Sequel. Hopefully, one day I’ll release it, but for now I’m more focused to my experiment. Happy investigation!&lt;/p&gt;
 
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
 </description>
         <pubDate>Fri, 25 Sep 2015 18:26:25 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/25/RDBMS-optimization.html</link>
@@ -107,6 +152,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
   The script asks you to provide tty with root pasword and executes all the commands. Anyway, this is very relative to what you do and what technologies use. Hopefully, this will help someone to build easier to start applications. Cheers.
 &lt;/p&gt;
 
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
 </description>
         <pubDate>Wed, 23 Sep 2015 13:26:06 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/23/The-power-of-setup.html</link>
@@ -123,6 +183,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;p&gt;Like I’ve mentioned in the last blog post, I’m trying to apply as much functional programming as possible everywhere, at least in syntax level. There are some issues with 3rd parties and edge cases handling, but these are temporary issues as currently I’m focusing more on architectural decisions. Hopefully, this experiment will grow up to something better in the future as I’ve started to implement such things as Router pattern, Vhosts and so on. Basically, it should be everything what a simple website developer wants to have at the first stage of his/her project.&lt;/p&gt;
 &lt;h2&gt;TODOs&lt;/h2&gt;
 &lt;p&gt;In short, currently it’s hard to say when I have enough time to polish all the project but at the moment some core architecture things are getting brighter each day. Although I’m happy with the process, there are some issues to solve: 3rd parties connection fixes, error reporting, metrics engine, easier installation and so on. If this gonna succeed, the project should turn into a new Ruby framework with various modules available to connect. Quite big objective, but luckily I’m still in a new job search.&lt;/p&gt;
+
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
 
 </description>
         <pubDate>Tue, 22 Sep 2015 13:21:18 +0300</pubDate>
@@ -154,6 +229,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
   So this post is about a bit different approach: logic in lib/, routing in app.rb and the templates in views/. No mixing anything and as much functional programming as possible. Let&#39;s see how this will end up in the following blog post.
 &lt;/p&gt;
 
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
 </description>
         <pubDate>Sun, 20 Sep 2015 12:23:00 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/20/Website-on-pure-Ruby.html</link>
@@ -177,6 +267,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;p&gt;
   The only bug which I haven&#39;t fixed yet is the Secure renegotiation (client-side) which refers to a TLS extension &lt;a href=&quot;https://tools.ietf.org/html/rfc5746&quot;&gt;RFC 5746&lt;/a&gt; which is the solution for this bug in the default OpenSSL implementation. There is a workaround described in Ruby documentation but it haven&#39;t worked for me, maybe because my certificate is chained. Anyway, currently I&#39;m trying other kind of workarounds and hopefully soon will solve this issue without any hacks and the default WEBrick source code.
 &lt;/p&gt;
+
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
 
 </description>
         <pubDate>Thu, 17 Sep 2015 12:18:10 +0300</pubDate>
@@ -206,6 +311,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;h2&gt;V2&lt;/h2&gt;
 &lt;p&gt;The release is on its way, hopefully I’ll finish it today or tomorrow. Cheers.&lt;/p&gt;
 
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
 </description>
         <pubDate>Wed, 16 Sep 2015 12:02:39 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/16/V2-of-the-hosting-engine.html</link>
@@ -222,6 +342,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;p&gt;The demo could be found &lt;a href=&quot;https://hosting.games-monitor.net&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. The credentials of the credit card is in the first release blog post.&lt;/p&gt;
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;Don’t forget to check out the source, suggest improvements and so on. It’s an exciting experiment which helps to understand Ruby better, hopefully, for you too.&lt;/p&gt;
+
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
 
 </description>
         <pubDate>Tue, 15 Sep 2015 11:58:15 +0300</pubDate>
@@ -242,6 +377,21 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;p&gt;There is a good example which I like - &lt;a href=&quot;https://rvm.io&quot; target=&quot;_blank&quot;&gt;RVM&lt;/a&gt;. It’s a powerful tool for Ruby versions management but you decide if it’s really needed. Anyway, I like RVM because of the ease of install. One command and you’re ready to go.&lt;/p&gt;
 &lt;h2&gt;The backend&lt;/h2&gt;
 &lt;p&gt;Unfortunatelly, the problem with that tools is the backend which might be complicated because it tries to support a lot of kind of systems. Think better to build your tool and define strict requirements for it. Just to make your system efficient.&lt;/p&gt;
+
+&lt;div id=&quot;disqus_thread&quot; class=&quot;np&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
 
 </description>
         <pubDate>Sun, 13 Sep 2015 11:55:33 +0300</pubDate>

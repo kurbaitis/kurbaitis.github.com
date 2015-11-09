@@ -5,8 +5,8 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Nov 2015 00:36:00 +0200</pubDate>
-    <lastBuildDate>Mon, 09 Nov 2015 00:36:00 +0200</lastBuildDate>
+    <pubDate>Mon, 09 Nov 2015 05:25:17 +0200</pubDate>
+    <lastBuildDate>Mon, 09 Nov 2015 05:25:17 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -15,10 +15,12 @@
 &lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a powerful tool for static HTTP webpages. The concept is that you generate content dynamically on your local machine and push the result to your hosting. It can work well on any hosting provider platform. The content itself must be static though. In this short blog post I’ll share some ideas how it started to work like I want.&lt;/p&gt;
 &lt;h2&gt;Posting&lt;/h2&gt;
 &lt;p&gt;Posting should be fun and easy. This is why I created an executable for my posting process. It creates post files and stores all data in one data file. I dislike when data is distributed among a lot of files. Maybe you think different and that’s ok, less complications with the default jekyll approach.
-Jekyll supports data storing in various formats, I like &lt;code&gt;.yml&lt;/code&gt; so I decided to put there my posts data and call it &lt;code&gt;_data/posts.yml&lt;/code&gt;. The format of that data is simple: &lt;br /&gt;&lt;br /&gt; 1. date in YYYY-mm-dd format &lt;br /&gt; 2. post text &lt;br /&gt; 3. hrefs with urls (key-value) used for links in post text &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;https://gist.github.com/kurbaitis/210bb198a573026f301f&quot;&gt;Here&lt;/a&gt; it is the &lt;code&gt;bin/post&lt;/code&gt; file which should be run like this: &lt;code&gt;bash bin/post &quot;The title of your new post&quot;&lt;/code&gt;. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your data post information will be stored in Vim interface and after completing the writing part you’re redirected to shell where your jekyll boots up.&lt;/p&gt;
+Jekyll supports data storing in various formats, I like &lt;code&gt;.yml&lt;/code&gt; so I decided to put there my posts data and call it &lt;code&gt;_data/posts.yml&lt;/code&gt;. The format of that data is simple: &lt;br /&gt;&lt;br /&gt; 1. date in YYYY-mm-dd format as a key &lt;br /&gt; 2. post text as a part of value &lt;br /&gt; 3. hrefs with urls (key-value) used for links in post text as a part of value &lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/kurbaitis/210bb198a573026f301f&quot;&gt;Here&lt;/a&gt; it is the &lt;code&gt;bin/post&lt;/code&gt; file which should be run like this: &lt;code&gt;bash bin/post &quot;The title of your new post&quot;&lt;/code&gt;. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your post information will be stored. The interface for that is  Vim. After completing the writing part you’re redirected to shell where your jekyll boots up.&lt;/p&gt;
+&lt;h2&gt;Publishing&lt;/h2&gt;
+&lt;p&gt;Publishing your &lt;code&gt;_site&lt;/code&gt; directory where the static content is generated is a bit tricky when it comes to Github Pages. In other words, if you aren’t using Github, you can direct traffic to &lt;code&gt;_site&lt;/code&gt; directory where any visitor will see the same result. &lt;br /&gt;&lt;br /&gt; If you’re using Github Pages, please be aware that you need to push your &lt;code&gt;_site&lt;/code&gt; directory to &lt;code&gt;gh-pages&lt;/code&gt; branch. So this is totally not in sync with your master branch where the actual your content for generation is being kept. &lt;br /&gt;&lt;br /&gt; There is a work around for this situation when it comes to Git. You can use this executable &lt;a href=&quot;https://gist.github.com/kurbaitis/728d6fb551be21450659&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Some thoughts for future&lt;/h2&gt;
-&lt;p&gt;It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is &lt;a href=&quot;http://kramdown.gettalong.org&quot;&gt;kramdown&lt;/a&gt; which is not working as expected if using &lt;code&gt;_includes&lt;/code&gt; directory contents. Anyway, for now Github Gists is working good.&lt;/p&gt;
+&lt;p&gt;It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is &lt;a href=&quot;http://kramdown.gettalong.org&quot;&gt;kramdown&lt;/a&gt; which is not working as expected if using &lt;code&gt;_includes&lt;/code&gt; directory contents. Anyway, for now Github Gists is working good. Hopefully, Jekyll won’t stop improving as I like it so much.&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 

@@ -843,20 +843,29 @@
     
     Jekyll supports data storing in various formats, I like ```.yml``` so I decided to put there my posts data and call it ```_data/posts.yml```. The format of that data is simple:
     <br /><br />
-    1. date in YYYY-mm-dd format
+    1. date in YYYY-mm-dd format as a key
     <br />
-    2. post text
+    2. post text as a part of value
     <br />
-    3. hrefs with urls (key-value) used for links in post text
+    3. hrefs with urls (key-value) used for links in post text as a part of value
     <br /><br />
 
-    [Here][h] it is the ```bin/post``` file which should be run like this: ```bash bin/post "The title of your new post"```. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your data post information will be stored in Vim interface and after completing the writing part you're redirected to shell where your jekyll boots up. 
+    [Here][h] it is the ```bin/post``` file which should be run like this: ```bash bin/post "The title of your new post"```. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your post information will be stored. The interface for that is  Vim. After completing the writing part you're redirected to shell where your jekyll boots up. 
    
+    <h2>Publishing</h2>
+    
+    Publishing your ```_site``` directory where the static content is generated is a bit tricky when it comes to Github Pages. In other words, if you aren't using Github, you can direct traffic to ```_site``` directory where any visitor will see the same result.
+    <br /><br />
+    If you're using Github Pages, please be aware that you need to push your ```_site``` directory to ```gh-pages``` branch. So this is totally not in sync with your master branch where the actual your content for generation is being kept.
+    <br /><br />
+    There is a work around for this situation when it comes to Git. You can use this executable [here][h2].
+
     <h2>Some thoughts for future</h2>
    
-    It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is [kramdown][k] which is not working as expected if using ```_includes``` directory contents. Anyway, for now Github Gists is working good.
+    It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is [kramdown][k] which is not working as expected if using ```_includes``` directory contents. Anyway, for now Github Gists is working good. Hopefully, Jekyll won't stop improving as I like it so much.
 
   hrefs:
     j: https://jekyllrb.com
     k: http://kramdown.gettalong.org
-    h: https://gist.github.com/kurbaitis/210bb198a573026f301f 
+    h: https://gist.github.com/kurbaitis/210bb198a573026f301f
+    h2: https://gist.github.com/kurbaitis/728d6fb551be21450659 

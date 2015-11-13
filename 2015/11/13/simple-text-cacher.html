@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Simple system architecture plan: win-win</title>
-  <meta name="description" content="This blog post will be a bit different than the ones before because I won’t mention any big data centers or optimization recipes etc. This blog post is about...">
+  <title>Simple text cacher</title>
+  <meta name="description" content="Today while working on one of my personal projects (legacy) I came across outdated caching which was the main reason  why the site was not correctly working....">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2015/08/26/simple-system-architecture-plan-win-win.html">
+  <link rel="canonical" href="http://kurbaitis.io/2015/11/13/simple-text-cacher.html">
   <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
 </head>
 
@@ -69,48 +69,23 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Simple system architecture plan: win-win</h1>
-    <p class="post-meta">Aug 26, 2015</p>
+    <h1 class="post-title">Simple text cacher</h1>
+    <p class="post-meta">Nov 13, 2015</p>
   </header>
 
   <article class="post-content">
     
-<p>This blog post will be a bit different than the ones before because I won’t mention any big data centers or optimization recipes etc. This blog post is about serious stuff. No micky mouse stuff about beautiful frontend, javascript or whatever. After 11-12 years of working as a programmer, I slowly started to understand one thing: no matter what, your client must go through your created process as fast as possible and without any distractions. To achieve this, you don’t need powerful hardware, application architecture or whatever. I’d like to share some thoughts about simplicity of system architecture that comes to probably each developer’s brains at some point.</p>
-<h2>Hardware</h2>
-
-<p>Did you notice where all world is going to with such technology development speed? Yes, it’s evolution, we all know that there is no way back, but there is a better way which leads to true love of development work for developers and to time saving for the clients.</p>
-<p>
-  Well, let's start from storage, one word: SSD. No more burning HDD or playing with RAID. It's just not efficient from all perspectives.
-</p>
-<p>
-  No matter what internet connection or hardware you have, the end point is your ethernet adapter throughput which determines how many clients you can serve. Try to find the best option with the biggest throughput. There are just some limits in this world when it comes to effective technologies. This is where the load balancing and scaling comes into play. In short: just give some cash for capitalists if you don't know what you're doing.
-</p>
-<p>
-  Processor doesn't matter too much as long as you choose appropriate programming language and know how to use it properly. 
-</p>
-<h2>OS</h2>
-<p>Ideally, developers could use an operating system which would be designed exactly for HTTP. But I haven’t heard about any of these so far. Double check please, if you can’t find it, then MIT is just making jokes of earth resources.</p>
-<p>
-  Ok, plan B: use one of BSD family operating systems.
-</p>
-<h2>Programming language</h2>
-<p>I have to confess, I’m biased when it comes to programming language because I love Ruby for simplicity. Some of you can say that it’s too slow or not efficient. I disagree. If you build systems based on the simplicity principles, there should not be any problems to achieve efficiency of development and needed performance. Just don’t overcomplicate things at the beginning and maybe later rewrite everything on native operating system language (Assembler could work too if you know what I mean).</p>
-<h2>Frontend</h2>
-<p>For my last project I used one of those responsive CSS/JS frameworks that could have been not needed if technology would took more standards based way of development. Seriuosly: if a country produce its technology (cell phones, laptops, tablets) why to export to other countries and make more mess in all the world when it comes to efficiency? More standards - more shitty workarounds for all developers and more cash for clients. Not purposeful.</p>
-<p>
-  Anyway, we have what we have. The best what you can do is to try to build a website based on simple HTML and tables which provides you with home made responsive templates.
-</p>
-<h2>Final thoughts</h2>
-<p>When you work on something, you put your heart into the work. Your heart belongs to what you believe. I believe in specialization and effective resources usage.</p>
-<p>
-  Hopefully, one day there will be one hardware, one OS and one programming language for web development. If that would be kept in the biggest data center in the world, that would be a revolution in IT which would help to save energy for all sides (developer - client). Anyway, don't think about this too much, it's our time to have fun with all that different standards and all that security traps. Cheers!
-</p>
+<p>Today while working on one of my personal projects (legacy) I came across outdated caching which was the main reason  why the site was not correctly working. Some fixes are needed, but due to the lack of time I’m  gonna close the project. Anyway, while trying to fix it I wrote a simple caching tool for partials that are String  object type of course.</p>
+<h2>The idea</h2>
+<p>The idea is simple, you need two keys for key-value based caching systems: one for expiration and one for actual data.  The data in my case were partials that exist in Rails/Merb views. Using expiration time you set deadline for  regeneration of the content. This task goes to some random visitor if using this implementation without background jobs. Anyway, if it relatively fast, it’s not a problem because to make a site work fluently all the time, it costs  a lot of development work.</p>
+<h2>The implementation</h2>
+<p>You can checkout this <a href="https://gist.github.com/kurbaitis/eba1370522c01aac292a">gist</a> and comment please. As always, I’m rushing to publish my code examples, don’t hesitate to modify it. Cheers.</p>
 
 <div id="share-page">
   Share this on &rarr; 
-  <a href="https://twitter.com/intent/tweet?text=Simple system architecture plan: win-win&amp;url=http://kurbaitis.io/2015/08/26/simple-system-architecture-plan-win-win.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/08/26/simple-system-architecture-plan-win-win.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
-  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/08/26/simple-system-architecture-plan-win-win.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=Simple text cacher&amp;url=http://kurbaitis.io/2015/11/13/simple-text-cacher.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/13/simple-text-cacher.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/11/13/simple-text-cacher.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

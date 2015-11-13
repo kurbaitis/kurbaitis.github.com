@@ -77,7 +77,7 @@
     
 <p>Today while working on one of my personal projects (legacy) I came across outdated caching which was the main reason  why the site was not correctly working. Some fixes are needed, but due to the lack of time I’m  gonna close the project. Anyway, while trying to fix it I wrote a simple caching tool for partials that are String  object type of course.</p>
 <h2>The idea</h2>
-<p>The idea is simple, you need two keys for key-value based caching systems: one for expiration and one for actual data.  The data in my case were partials that exist in Rails/Merb views. Using expiration time you set deadline for  regeneration of the content. This task goes to some random visitor if using this implementation without background jobs. Anyway, if it relatively fast, it’s not a problem because to make a site work fluently all the time, it costs  a lot of development work.</p>
+<p>The idea is simple, you need two keys for key-value based caching systems: one for expiration and one for actual data.  The data in my case were partials that exist in Rails/Merb views. Using expiration time you set deadline for  regeneration of the content. This task goes to some random visitor if using this implementation without background jobs. If it’s relatively fast, it won’t be a problem because to make a site work fluently all the time, it costs  a lot of development work.</p>
 <h2>The implementation</h2>
 <p>You can checkout this <a href="https://gist.github.com/kurbaitis/eba1370522c01aac292a">gist</a> and comment please. As always, I’m rushing to publish my code examples, don’t hesitate to modify it. Cheers.</p>
 

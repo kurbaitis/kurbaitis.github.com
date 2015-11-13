@@ -5,9 +5,47 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Nov 2015 05:25:17 +0200</pubDate>
-    <lastBuildDate>Mon, 09 Nov 2015 05:25:17 +0200</lastBuildDate>
+    <pubDate>Fri, 13 Nov 2015 12:17:10 +0200</pubDate>
+    <lastBuildDate>Fri, 13 Nov 2015 12:17:10 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Simple text cacher</title>
+        <description>
+&lt;p&gt;Today while working on one of my personal projects (legacy) I came across outdated caching which was the main reason  why the site was not correctly working. Some fixes are needed, but due to the lack of time I’m  gonna close the project. Anyway, while trying to fix it I wrote a simple caching tool for partials that are String  object type of course.&lt;/p&gt;
+&lt;h2&gt;The idea&lt;/h2&gt;
+&lt;p&gt;The idea is simple, you need two keys for key-value based caching systems: one for expiration and one for actual data.  The data in my case were partials that exist in Rails/Merb views. Using expiration time you set deadline for  regeneration of the content. This task goes to some random visitor if using this implementation without background jobs. Anyway, if it relatively fast, it’s not a problem because to make a site work fluently all the time, it costs  a lot of development work.&lt;/p&gt;
+&lt;h2&gt;The implementation&lt;/h2&gt;
+&lt;p&gt;You can checkout this &lt;a href=&quot;https://gist.github.com/kurbaitis/eba1370522c01aac292a&quot;&gt;gist&lt;/a&gt; and comment please. As always, I’m rushing to publish my code examples, don’t hesitate to modify it. Cheers.&lt;/p&gt;
+
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Simple text cacher&amp;amp;url=http://kurbaitis.io/2015/11/13/simple-text-cacher.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/13/simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/13/simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
+</description>
+        <pubDate>Fri, 13 Nov 2015 12:00:59 +0200</pubDate>
+        <link>http://kurbaitis.io/2015/11/13/simple-text-cacher.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/11/13/simple-text-cacher.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Jekyll v3 overview</title>
@@ -420,44 +458,6 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <pubDate>Wed, 16 Sep 2015 12:02:39 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html</link>
         <guid isPermaLink="true">http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>The release of v2</title>
-        <description>
-&lt;p&gt;Unexpectedly, it seems my experimental project is ready to be released again. In the previous post I’ve mentioned some fixes and todo’s that should be added later on. Please take a look at the &lt;a href=&quot;/2015/09/05/The-release.html&quot; target=&quot;_blank&quot;&gt;first release notes&lt;/a&gt; to understand how the project works. However, this version requires a bit different configuration, you’ll find the sample .env file in the source after setup.&lt;/p&gt;
-&lt;h2&gt;Demo&lt;/h2&gt;
-&lt;p&gt;The demo could be found &lt;a href=&quot;https://hosting.games-monitor.net&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. The credentials of the credit card is in the first release blog post.&lt;/p&gt;
-&lt;h2&gt;Sum up&lt;/h2&gt;
-&lt;p&gt;Don’t forget to check out the source, suggest improvements and so on. It’s an exciting experiment which helps to understand Ruby better, hopefully, for you too.&lt;/p&gt;
-
-&lt;div id=&quot;share-page&quot;&gt;
-  Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=The release of v2&amp;amp;url=http://kurbaitis.io/2015/09/15/the-release-of-v2.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/15/the-release-of-v2.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/15/the-release-of-v2.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-/* * * CONFIGURATION VARIABLES * * */
-// Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-
-</description>
-        <pubDate>Tue, 15 Sep 2015 11:58:15 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/15/the-release-of-v2.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/15/the-release-of-v2.html</guid>
         
         
       </item>

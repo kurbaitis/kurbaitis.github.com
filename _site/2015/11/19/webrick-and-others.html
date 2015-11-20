@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Kristijonas Urbaitis</title>
-  <meta name="description" content="Senior Ruby Developer">
+  <title>WEBrick and others</title>
+  <meta name="description" content="WEBrick is the default Ruby MRI implementation HTTP(S) server. Clearly, it’s supposed to work for development environment on developers’ local machines. Whil...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/page6/">
+  <link rel="canonical" href="http://kurbaitis.io/2015/11/19/webrick-and-others.html">
   <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
 </head>
 
@@ -66,95 +66,51 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">WEBrick and others</h1>
+    <p class="post-meta">Nov 19, 2015</p>
+  </header>
 
-  <ul class="post-list">
+  <article class="post-content">
     
-      <li>
-        <span class="post-meta">Aug 6, 2015</span>
+<p>WEBrick is the default Ruby MRI implementation HTTP(S) server. Clearly, it’s supposed to work for development environment on developers’ local machines. While doing my experimental hosting services framework, I got into question, why.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Throughput should be one of the most important parameters while choosing the right HTTP(S) server. Unfortunatelly, WEBrich lost this fight when fighting alone. It just starts closing connections while doing its work unexpectedly with HTTP error code.
+<br /><br />
+Although I like how WEBrick has been builded due to bipolar function: it’s web server and web framework. Two functions inside it. The second one I like very much, but probably will have to give up it as I need to solve the throughput issue.  The solution would be load balancer like I mentioned in <a href="/2015/09/27/Legacy-apps-fix.html">earlier post</a>. Currently <a href="https://github.com/kurbaitis/hosting">the experiment</a> is working like explained with HAproxy.
+<br /><br />
+One more issue is memory leaking which is obvious. I’m gonna play with that to find solution from application level. Maybe no need to use bash script to kill application’s process and spawn a new one regularly.
+<br /><br />
+The last issue which made me sad was TLS configuration which is awful in WEBrick. You have to do hacks to set ciphers and so on. With HAproxy it’s much easier.</p>
+<h2>Sum up</h2>
+<p>Currently I’m just playing with various solutions for WEBrick to work well. If you don’t want to do this, better just use other kind of HTTP(S) server.  I’d prefer <a href="https://www.phusionpassenger.com/">Passenger</a> which can work in standalone mode too. It allows to respawn a process handling connections by given limit of connections served or, if you have enterprise edition, just by memory amount. Anyway, v4 of the experiment is on its way.</p>
 
-        <h2>
-          <a class="post-link" href="/2015/08/06/choosing-hosting-provider.html">Choosing hosting provider</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 5, 2015</span>
+<div id="share-page">
+  Share this on &rarr; 
+  <a href="https://twitter.com/intent/tweet?text=WEBrick and others&amp;url=http://kurbaitis.io/2015/11/19/webrick-and-others.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/19/webrick-and-others.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/11/19/webrick-and-others.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
-        <h2>
-          <a class="post-link" href="/2015/08/05/homemade-soa.html">Homemade SOA</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 2, 2015</span>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-        <h2>
-          <a class="post-link" href="/2015/08/02/rare-used-ruby-operators.html">Rare used Ruby operators</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jul 30, 2015</span>
 
-        <h2>
-          <a class="post-link" href="/2015/07/30/tmux-usage.html">Tmux Usage</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jul 24, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/07/24/setup-for-fun.html">Setup for fun</a>
-        </h2>
-      </li>
-    
-  </ul>
-  
-  <div class="pagination">
-    
-      <a href="/page5">&laquo; Prev</a>
-    
-    
-      
-        <a href="/index.html">1</a>
-      
-    
-      
-        <a href="/page2">2</a>
-      
-    
-      
-        <a href="/page3">3</a>
-      
-    
-      
-        <a href="/page4">4</a>
-      
-    
-      
-        <a href="/page5">5</a>
-      
-    
-      
-        <em>6</em>
-      
-    
-      
-        <a href="/page7">7</a>
-      
-    
-
-    
-      <a href="/page7">Next &raquo;</a>
-    
-  </div>
-  
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
+ 
 </div>
 
       </div>

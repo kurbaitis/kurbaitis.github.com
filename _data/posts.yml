@@ -889,3 +889,38 @@
     You can checkout this [gist][g] and comment please. As always, I'm rushing to publish my code examples, don't hesitate to modify it. Cheers. 
   hrefs:
     g: https://gist.github.com/kurbaitis/eba1370522c01aac292a
+'2015-11-19':
+  text: >
+    WEBrick is the default Ruby MRI implementation HTTP(S) server. Clearly, it's supposed to work for development environment on developers' local machines.
+    While doing my experimental hosting services framework, I got into question, why.
+
+    <h2>Advantages and disadvantages</h2>
+   
+    Throughput should be one of the most important parameters while choosing the right HTTP(S) server. Unfortunatelly, WEBrich lost this fight when fighting alone.
+    It just starts closing connections while doing its work unexpectedly with HTTP error code.
+    
+    <br /><br />
+    
+    Although I like how WEBrick has been builded due to bipolar function: it's web server and web framework. Two functions inside it.
+    The second one I like very much, but probably will have to give up it as I need to solve the throughput issue. 
+    The solution would be load balancer like I mentioned in [earlier post][e]. Currently [the experiment][ex] is working like explained with HAproxy.
+    
+    <br /><br />
+    
+    One more issue is memory leaking which is obvious. I'm gonna play with that to find solution from application level.
+    Maybe no need to use bash script to kill application's process and spawn a new one regularly.
+    
+    <br /><br />
+
+    The last issue which made me sad was TLS configuration which is awful in WEBrick. You have to do hacks to set ciphers and so on. With HAproxy it's much easier.
+
+    <h2>Sum up</h2>
+
+    Currently I'm just playing with various solutions for WEBrick to work well. If you don't want to do this, better just use other kind of HTTP(S) server. 
+    I'd prefer [Passenger][p] which can work in standalone mode too. It allows to respawn a process handling connections by given limit of
+    connections served or, if you have enterprise edition, just by memory amount. Anyway, v4 of the experiment is on its way.
+  
+  hrefs:
+    e: /2015/09/27/Legacy-apps-fix.html
+    ex: https://github.com/kurbaitis/hosting
+    p: https://www.phusionpassenger.com/

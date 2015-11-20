@@ -5,9 +5,53 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Nov 2015 12:34:51 +0200</pubDate>
-    <lastBuildDate>Fri, 13 Nov 2015 12:34:51 +0200</lastBuildDate>
+    <pubDate>Fri, 20 Nov 2015 10:58:28 +0200</pubDate>
+    <lastBuildDate>Fri, 20 Nov 2015 10:58:28 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>WEBrick and others</title>
+        <description>
+&lt;p&gt;WEBrick is the default Ruby MRI implementation HTTP(S) server. Clearly, it’s supposed to work for development environment on developers’ local machines. While doing my experimental hosting services framework, I got into question, why.&lt;/p&gt;
+&lt;h2&gt;Advantages and disadvantages&lt;/h2&gt;
+&lt;p&gt;Throughput should be one of the most important parameters while choosing the right HTTP(S) server. Unfortunatelly, WEBrich lost this fight when fighting alone. It just starts closing connections while doing its work unexpectedly with HTTP error code.
+&lt;br /&gt;&lt;br /&gt;
+Although I like how WEBrick has been builded due to bipolar function: it’s web server and web framework. Two functions inside it. The second one I like very much, but probably will have to give up it as I need to solve the throughput issue.  The solution would be load balancer like I mentioned in &lt;a href=&quot;/2015/09/27/Legacy-apps-fix.html&quot;&gt;earlier post&lt;/a&gt;. Currently &lt;a href=&quot;https://github.com/kurbaitis/hosting&quot;&gt;the experiment&lt;/a&gt; is working like explained with HAproxy.
+&lt;br /&gt;&lt;br /&gt;
+One more issue is memory leaking which is obvious. I’m gonna play with that to find solution from application level. Maybe no need to use bash script to kill application’s process and spawn a new one regularly.
+&lt;br /&gt;&lt;br /&gt;
+The last issue which made me sad was TLS configuration which is awful in WEBrick. You have to do hacks to set ciphers and so on. With HAproxy it’s much easier.&lt;/p&gt;
+&lt;h2&gt;Sum up&lt;/h2&gt;
+&lt;p&gt;Currently I’m just playing with various solutions for WEBrick to work well. If you don’t want to do this, better just use other kind of HTTP(S) server.  I’d prefer &lt;a href=&quot;https://www.phusionpassenger.com/&quot;&gt;Passenger&lt;/a&gt; which can work in standalone mode too. It allows to respawn a process handling connections by given limit of connections served or, if you have enterprise edition, just by memory amount. Anyway, v4 of the experiment is on its way.&lt;/p&gt;
+
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=WEBrick and others&amp;amp;url=http://kurbaitis.io/2015/11/19/webrick-and-others.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/19/webrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/19/webrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
+</description>
+        <pubDate>Thu, 19 Nov 2015 21:07:49 +0200</pubDate>
+        <link>http://kurbaitis.io/2015/11/19/webrick-and-others.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/11/19/webrick-and-others.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Simple text cacher</title>
@@ -409,55 +453,6 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <pubDate>Thu, 17 Sep 2015 12:18:10 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/17/openssl-and-ruby.html</link>
         <guid isPermaLink="true">http://kurbaitis.io/2015/09/17/openssl-and-ruby.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>V2 of the hosting engine</title>
-        <description>
-&lt;p&gt;This release has a lot of improvements which includes some decoupling. Like I mentioned in the last blog post, decoupling is the key to easy further development. The purpose of the project is to decouple as much levels as possible and get to the point where you need only &lt;a href=&quot;https://www.gnu.org/software/bash&quot; target=&quot;_blank&quot;&gt;Bash&lt;/a&gt; and &lt;a href=&quot;https://ruby-lang.org&quot; target=&quot;_blank&quot;&gt;Ruby&lt;/a&gt;. But that’s for the future.&lt;/p&gt;
-&lt;h2&gt;Crontab&lt;/h2&gt;
-&lt;p&gt;The first release contains &lt;a href=&quot;http://crontab.org&quot; target=&quot;_blank&quot;&gt;Crontab&lt;/a&gt; which is a bit not stable when it comes to &lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX&quot; target=&quot;_blank&quot;&gt;POSIX&lt;/a&gt; users switching. Why not to do it &lt;a href=&quot;https://gist.github.com/388cc26b76a7ac9e40cd&quot;&gt;with Ruby&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;
-  In this way, the geographical location database is updated each hour and the script is non-blocking.
-&lt;/p&gt;
-&lt;h2&gt;Github&lt;/h2&gt;
-&lt;p&gt;It’s a good idea to decouple from &lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt; when it comes to installation. The only thing you need from it is &lt;a href=&quot;https://help.github.com/articles/creating-an-access-token-for-command-line-use&quot; target=&quot;_blank&quot;&gt;Access Token&lt;/a&gt; which provides you with ability to work with Github probably the same like using the website. By using this one line you can install essential packages for installing your application and execute application’s install script. &lt;br /&gt; &lt;br /&gt;     &lt;code&gt;t=&#39;86be456829f0e8645ab7c6bc36f495f518ed8f65&#39; &amp;amp;&amp;amp; apt-get install -y curl ca-certificates &amp;amp;&amp;amp; curl -H &quot;Authorization: token $t&quot; -H &#39;Accept: application/vnd.github.v3.raw&#39; -O -L https://api.github.com/repos/username/your-repo/contents/public/s &amp;amp;&amp;amp; bash s $t&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;
-  So the thing here is that you just get from Github the bash installation script and it does everything what you need before configuration. Hopefully the next release will have ability to put all the credentials in one line and the script will do it&#39;s work.
-&lt;/p&gt;
-&lt;h2&gt;TLS&lt;/h2&gt;
-&lt;p&gt;For the testing purposes I bought the cheapest &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;TLS v1.2&lt;/a&gt; certificate which has some security issues when working together with Ruby. But please try to use different one and let me know if it works fine.&lt;/p&gt;
-&lt;h2&gt;V2&lt;/h2&gt;
-&lt;p&gt;The release is on its way, hopefully I’ll finish it today or tomorrow. Cheers.&lt;/p&gt;
-
-&lt;div id=&quot;share-page&quot;&gt;
-  Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V2 of the hosting engine&amp;amp;url=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-/* * * CONFIGURATION VARIABLES * * */
-// Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-
-</description>
-        <pubDate>Wed, 16 Sep 2015 12:02:39 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html</guid>
         
         
       </item>

@@ -5,8 +5,8 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Nov 2015 16:45:42 +0200</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2015 16:45:42 +0200</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2015 17:16:36 +0200</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2015 17:16:36 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -14,9 +14,9 @@
         <description>
 &lt;p&gt;Finally, the v4 of my game hosting engine is done. The changes applied is not too big comparing to v3 but still some problems solved using external than Ruby libraries.  More precisely, TLS issue has been solved using HAproxy. Although it works on WEBrick, HAproxy ensures nice load balancing and waits if WEBrick is not  capable to ensure higher load.&lt;/p&gt;
 &lt;h2&gt;The business idea&lt;/h2&gt;
-&lt;p&gt;I was thinking to make not just demo, but working version of this kind of service but I have to confess, today’s market is fulfilled with similar services and  better prices than I could offer. Anyway, the demo version will be working for some time online and loayal visitors of http://games-monitor.net  can see the offer to create their own game servers hosting if they can be a good player in today’s game hosting services market.  I even can help then to make it work if there is such a need.&lt;/p&gt;
+&lt;p&gt;I was thinking to make not just demo, but working version of this kind of service but have to confess, today’s market is fulfilled with similar services and  better prices than I could offer. Anyway, the demo version will be working for some time online and loayal visitors of &lt;code&gt;http://games-monitor.net&lt;/code&gt;  can see the offer to create their own game servers hosting if they can be a good player in today’s game hosting services market.  I even can help then to make it work if there is such a need.&lt;/p&gt;
 &lt;h2&gt;What I got from this experiment?&lt;/h2&gt;
-&lt;p&gt;Each personal project, no matter what, gives me some particular knowledge in the technology from which the project has been made.  This time it was TLS protocol and HTTP(S) servers analysis. Hopefully, soon I’ll decide to push some of my time to some kind of new product creation  as I feel that v4 is enough for current working project. Visit it i&lt;a href=&quot;https://hosting.games-monitor.net&quot;&gt;here&lt;/a&gt; please if interested. Cheers.&lt;/p&gt;
+&lt;p&gt;Each personal project, no matter what, gives me some particular knowledge in the technology from which the project has been made.  This time it was TLS protocol and HTTP(S) servers analysis. Hopefully, soon I’ll decide to push some of my time to some kind of new product creation  as I feel that v4 is enough for current working project. Visit it &lt;a href=&quot;https://hosting.games-monitor.net&quot;&gt;here&lt;/a&gt; please if interested. Cheers.&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 

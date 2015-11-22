@@ -5,9 +5,47 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 20 Nov 2015 10:58:28 +0200</pubDate>
-    <lastBuildDate>Fri, 20 Nov 2015 10:58:28 +0200</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2015 16:45:42 +0200</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2015 16:45:42 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>V4 of hosting.games-monitor.net</title>
+        <description>
+&lt;p&gt;Finally, the v4 of my game hosting engine is done. The changes applied is not too big comparing to v3 but still some problems solved using external than Ruby libraries.  More precisely, TLS issue has been solved using HAproxy. Although it works on WEBrick, HAproxy ensures nice load balancing and waits if WEBrick is not  capable to ensure higher load.&lt;/p&gt;
+&lt;h2&gt;The business idea&lt;/h2&gt;
+&lt;p&gt;I was thinking to make not just demo, but working version of this kind of service but I have to confess, today’s market is fulfilled with similar services and  better prices than I could offer. Anyway, the demo version will be working for some time online and loayal visitors of http://games-monitor.net  can see the offer to create their own game servers hosting if they can be a good player in today’s game hosting services market.  I even can help then to make it work if there is such a need.&lt;/p&gt;
+&lt;h2&gt;What I got from this experiment?&lt;/h2&gt;
+&lt;p&gt;Each personal project, no matter what, gives me some particular knowledge in the technology from which the project has been made.  This time it was TLS protocol and HTTP(S) servers analysis. Hopefully, soon I’ll decide to push some of my time to some kind of new product creation  as I feel that v4 is enough for current working project. Visit it i&lt;a href=&quot;https://hosting.games-monitor.net&quot;&gt;here&lt;/a&gt; please if interested. Cheers.&lt;/p&gt;
+
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V4 of hosting.games-monitor.net&amp;amp;url=http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
+</description>
+        <pubDate>Sun, 22 Nov 2015 16:27:11 +0200</pubDate>
+        <link>http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>WEBrick and others</title>
@@ -408,51 +446,6 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <pubDate>Sun, 20 Sep 2015 12:23:00 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html</link>
         <guid isPermaLink="true">http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>OpenSSL and Ruby</title>
-        <description>
-&lt;p&gt;&lt;a href=&quot;https://www.openssl.org&quot; target=&quot;_blank&quot;&gt;OpenSSL&lt;/a&gt; is a tool for managing SSL/TLS connections. Well it still has some issues when it comes to support of newest standards but it’s bearable. The implementation of OpenSSL in Ruby is complicated too due to the same reason. However, there are some ways to workaround the issues that personally I’ve encountered with &lt;a href=&quot;https://www.comodo.com&quot; target=&quot;_blank&quot;&gt;Comodo&lt;/a&gt; TLS 1.2 certificate.&lt;/p&gt;
-&lt;h2&gt;Testing&lt;/h2&gt;
-&lt;p&gt;Like I’ve mentioned in some older posts, for the experiment I’m using &lt;a href=&quot;https://github.com/nahi/webrick&quot; target=&quot;_blank&quot;&gt;WEBrick&lt;/a&gt; HTTP(S) server which comes with SSL/TLS support. All the configuration is decoupled to the .env file, so it’s easy to test. WEBrick supports a lot of OpenSSL configuration details but not all needed. If you’re setting up WEBrick SSL/TLS server, please also use your certificate provider’s tool for testing the connection.&lt;/p&gt;
-&lt;p&gt; The results of my case had some problems. In short: Microsoft software trust, multiple SSL/TLS versions support, Ciphers, secure renegotiation (client-side). As you probably understand, this kind of issues are potential threats for the system. &lt;/p&gt;
-&lt;h2&gt;Some workarounds&lt;/h2&gt;
-&lt;p&gt;1) Compile openssl library manually for Ruby to use the newest version of it &lt;br /&gt; 2) Instead of ca-certificates lib, use &lt;a href=&quot;http://curl.haxx.se/ca/cacert.pem&quot; target=&quot;_blank&quot;&gt;this cert&lt;/a&gt; &lt;br /&gt; 3) &lt;a href=&quot;https://gist.github.com/kurbaitis/a864be74520329202fb3&quot;&gt;Configure WEBrick&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;
-  As you can see, mostly all the configuration is fetched from ENV constant. Although WEBrick is a powerful tool it lacks two configuration options: ssl_version and ciphers. It&#39;s a bit of hack to fix it like this. But not needed if you compile your OpenSSL with defined ciphers by default.
-&lt;/p&gt;
-&lt;p&gt;
-  The only bug which I haven&#39;t fixed yet is the Secure renegotiation (client-side) which refers to a TLS extension &lt;a href=&quot;https://tools.ietf.org/html/rfc5746&quot;&gt;RFC 5746&lt;/a&gt; which is the solution for this bug in the default OpenSSL implementation. There is a workaround described in Ruby documentation but it haven&#39;t worked for me, maybe because my certificate is chained. Anyway, currently I&#39;m trying other kind of workarounds and hopefully soon will solve this issue without any hacks and the default WEBrick source code.
-&lt;/p&gt;
-
-&lt;div id=&quot;share-page&quot;&gt;
-  Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=OpenSSL and Ruby&amp;amp;url=http://kurbaitis.io/2015/09/17/openssl-and-ruby.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/17/openssl-and-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/17/openssl-and-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-/* * * CONFIGURATION VARIABLES * * */
-// Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-
-</description>
-        <pubDate>Thu, 17 Sep 2015 12:18:10 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/17/openssl-and-ruby.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/17/openssl-and-ruby.html</guid>
         
         
       </item>

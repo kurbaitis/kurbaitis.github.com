@@ -944,3 +944,42 @@
     as I feel that v4 is enough for current working project. Visit it [here][h] please if interested. Cheers.
   hrefs:
     h: https://hosting.games-monitor.net
+'2015-11-29':
+  text: >
+    Lately, I've been digging into my old code and realised that, luckily, there are some stuff to review and publish into this blog. Bayesian rating helped me to keep balance in one of my project's rating system. In this blog post I'll review it from practical side with some Ruby based testing.
+
+    <h2>The problem</h2>
+
+    The problem with rating came to my mind when I saw that rating system based on averages is not working when it comes to quantity of votes. If you have one high vote for a product and another product with 100 votes that are a bit mixed with values, but also high, which one should go first in the rating list?
+    <br /><br />
+    
+    If you take this example to larger scale, the problem becomes a serious threat to your credibility against your clients. Everyone wants to see rating interpreted correctly, including popularity too and developers goal is to make that happen. [IMDb][imdb] uses Bayesian too to determine its Top 250.
+    
+    <h2>The Bayesian rating formula</h2>
+    
+    `(WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C`
+    <br /><br />
+    
+    It consists from:
+    
+    <ul>
+      <li>R = average for the object (mean) = (Rating)</li>
+      <li>v = number of votes for the object = (votes)</li>
+      <li>m = minimum votes required to be listed in the list (in the test script it is equal to 1)</li>
+      <li>C = the mean vote across the whole objects</li>
+    </ul>
+
+    <h2>Test</h2>
+
+    There are various formulas and theories how to make rating work like you need, but I choose Bayesian rating system as it gives all what I need: the factor of quantity gets into the logic of rank calculation. It's a precious operation, so better it works in background, non-blocking your customer user experience each time he/she wants to see the results. It's possible to make the calculation inside SQL too if you know how to do it and it works better for your system architecture.
+    <br /><br />
+
+    [Here][h] is the test written in Ruby, the output is [here][h2]. I'll leave the judgment of results to you.
+
+    <h2>Sum up</h2>
+
+    For my project this was working good, you can even make some experiments by changing median value to other aggregated number. As you understand, this leaves some space for customisation for your needs. I'd recommend to play with it and see what results are produced by doing the experiments. You have the starting point of your script, good luck!
+  hrefs:
+    h: https://gist.github.com/kurbaitis/c212f824e2fcda86af80
+    h2: https://gist.github.com/kurbaitis/5b6388d2e6f47320cbc8
+    imdb: http://www.imdb.com

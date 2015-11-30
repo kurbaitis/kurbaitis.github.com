@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Kristijonas Urbaitis</title>
-  <meta name="description" content="Senior Ruby Developer">
+  <title>I choose Bayesian Rating</title>
+  <meta name="description" content="Lately, I’ve been digging into my old code and realised that, luckily, there are some stuff to review and publish into this blog. Bayesian rating helped me t...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/page5/">
+  <link rel="canonical" href="http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html">
   <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
 </head>
 
@@ -66,95 +66,58 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">I choose Bayesian Rating</h1>
+    <p class="post-meta">Nov 29, 2015</p>
+  </header>
 
-  <ul class="post-list">
+  <article class="post-content">
     
-      <li>
-        <span class="post-meta">Sep 1, 2015</span>
+<p>Lately, I’ve been digging into my old code and realised that, luckily, there are some stuff to review and publish into this blog. Bayesian rating helped me to keep balance in one of my project’s rating system. In this blog post I’ll review it from practical side with some Ruby based testing.</p>
+<h2>The problem</h2>
+<p>The problem with rating came to my mind when I saw that rating system based on averages is not working when it comes to quantity of votes. If you have one high vote for a product and another product with 100 votes that are a bit mixed with values, but also high, which one should go first in the rating list? <br /><br />
+If you take this example to larger scale, the problem becomes a serious threat to your credibility against your clients. Everyone wants to see rating interpreted correctly, including popularity too and developers goal is to make that happen. <a href="http://www.imdb.com">IMDb</a> uses Bayesian too to determine its Top 250.</p>
+<h2>The Bayesian rating formula</h2>
+<p><code>(WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C</code> <br /><br />
+It consists from:</p>
+<ul>
+  <li>R = average for the object (mean) = (Rating)</li>
+  <li>v = number of votes for the object = (votes)</li>
+  <li>m = minimum votes required to be listed in the list (in the test script it is equal to 1)</li>
+  <li>C = the mean vote across the whole objects</li>
+</ul>
+<h2>Test</h2>
+<p>There are various formulas and theories how to make rating work like you need, but I choose Bayesian rating system as it gives all what I need: the factor of quantity gets into the logic of rank calculation. It’s a precious operation, so better it works in background, non-blocking your customer user experience each time he/she wants to see the results. It’s possible to make the calculation inside SQL too if you know how to do it and it works better for your system architecture. <br /><br />
+<a href="https://gist.github.com/kurbaitis/c212f824e2fcda86af80">Here</a> is the test written in Ruby, the output is <a href="https://gist.github.com/kurbaitis/5b6388d2e6f47320cbc8">here</a>. I’ll leave the judgment of results to you.</p>
+<h2>Sum up</h2>
+<p>For my project this was working good, you can even make some experiments by changing median value to other aggregated number. As you understand, this leaves some space for customisation for your needs. I’d recommend to play with it and see what results are produced by doing the experiments. You have the starting point of your script, good luck!</p>
 
-        <h2>
-          <a class="post-link" href="/2015/09/01/ssl-security-traps-in-unix-environment.html">SSL security traps in Unix environment</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 31, 2015</span>
+<div id="share-page">
+  Share this on &rarr; 
+  <a href="https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
-        <h2>
-          <a class="post-link" href="/2015/08/31/http-s-servers-myth.html">HTTP(S) servers myth</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 26, 2015</span>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-        <h2>
-          <a class="post-link" href="/2015/08/26/simple-system-architecture-plan-win-win.html">Simple system architecture plan: win-win</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 23, 2015</span>
 
-        <h2>
-          <a class="post-link" href="/2015/08/23/digitalocean-review-and-the-gem.html">DigitalOcean review and the gem</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 11, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/08/11/db-backups-with-aws-rds.html">DB backups with AWS RDS</a>
-        </h2>
-      </li>
-    
-  </ul>
-  
-  <div class="pagination">
-    
-      <a href="/page4">&laquo; Prev</a>
-    
-    
-      
-        <a href="/index.html">1</a>
-      
-    
-      
-        <a href="/page2">2</a>
-      
-    
-      
-        <a href="/page3">3</a>
-      
-    
-      
-        <a href="/page4">4</a>
-      
-    
-      
-        <em>5</em>
-      
-    
-      
-        <a href="/page6">6</a>
-      
-    
-      
-        <a href="/page7">7</a>
-      
-    
-
-    
-      <a href="/page6">Next &raquo;</a>
-    
-  </div>
-  
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
+ 
 </div>
 
       </div>

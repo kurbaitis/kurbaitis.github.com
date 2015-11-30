@@ -5,9 +5,60 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Nov 2015 18:02:59 +0200</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2015 18:02:59 +0200</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2015 17:13:39 +0200</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2015 17:13:39 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>I choose Bayesian Rating</title>
+        <description>
+&lt;p&gt;Lately, I’ve been digging into my old code and realised that, luckily, there are some stuff to review and publish into this blog. Bayesian rating helped me to keep balance in one of my project’s rating system. In this blog post I’ll review it from practical side with some Ruby based testing.&lt;/p&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;The problem with rating came to my mind when I saw that rating system based on averages is not working when it comes to quantity of votes. If you have one high vote for a product and another product with 100 votes that are a bit mixed with values, but also high, which one should go first in the rating list? &lt;br /&gt;&lt;br /&gt;
+If you take this example to larger scale, the problem becomes a serious threat to your credibility against your clients. Everyone wants to see rating interpreted correctly, including popularity too and developers goal is to make that happen. &lt;a href=&quot;http://www.imdb.com&quot;&gt;IMDb&lt;/a&gt; uses Bayesian too to determine its Top 250.&lt;/p&gt;
+&lt;h2&gt;The Bayesian rating formula&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;(WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C&lt;/code&gt; &lt;br /&gt;&lt;br /&gt;
+It consists from:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;R = average for the object (mean) = (Rating)&lt;/li&gt;
+  &lt;li&gt;v = number of votes for the object = (votes)&lt;/li&gt;
+  &lt;li&gt;m = minimum votes required to be listed in the list (in the test script it is equal to 1)&lt;/li&gt;
+  &lt;li&gt;C = the mean vote across the whole objects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Test&lt;/h2&gt;
+&lt;p&gt;There are various formulas and theories how to make rating work like you need, but I choose Bayesian rating system as it gives all what I need: the factor of quantity gets into the logic of rank calculation. It’s a precious operation, so better it works in background, non-blocking your customer user experience each time he/she wants to see the results. It’s possible to make the calculation inside SQL too if you know how to do it and it works better for your system architecture. &lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/kurbaitis/c212f824e2fcda86af80&quot;&gt;Here&lt;/a&gt; is the test written in Ruby, the output is &lt;a href=&quot;https://gist.github.com/kurbaitis/5b6388d2e6f47320cbc8&quot;&gt;here&lt;/a&gt;. I’ll leave the judgment of results to you.&lt;/p&gt;
+&lt;h2&gt;Sum up&lt;/h2&gt;
+&lt;p&gt;For my project this was working good, you can even make some experiments by changing median value to other aggregated number. As you understand, this leaves some space for customisation for your needs. I’d recommend to play with it and see what results are produced by doing the experiments. You have the starting point of your script, good luck!&lt;/p&gt;
+
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;amp;url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
+</description>
+        <pubDate>Sun, 29 Nov 2015 17:09:21 +0200</pubDate>
+        <link>http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>V4 of hosting.games-monitor.net</title>
@@ -395,57 +446,6 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <pubDate>Tue, 22 Sep 2015 13:21:18 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/22/of-the-experiment.html</link>
         <guid isPermaLink="true">http://kurbaitis.io/2015/09/22/of-the-experiment.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Website on pure Ruby</title>
-        <description>
-&lt;p&gt;This blog post is about the simplicity of creating pure Ruby based websites. Actually, everything what you need for creating a website without connected 3rd parties is in default Ruby build source. WEBrick with ERB and CGI (legacy) support gives you a lot of power to build simple, easy to use and reliable websites (if you know how Ruby works and write code respectfully).&lt;/p&gt;
-&lt;h2&gt;The issue&lt;/h2&gt;
-&lt;p&gt;Like I’ve mentioned in earlier blog posts, the problem with website usability is simple: there are just too many stuff and options for a customer. If you do things right, you focus and provide services that are exactly for the segment which you’re targeting to. Less hassle, less pain for everyone.&lt;/p&gt;
-&lt;p&gt;
-  If you follow this philosophy of single segment orientation, it&#39;s very easy to create a simple site for your products or other kind of value selling. It&#39;s harder to make all the necessary services (payments, monitoring, scaling) to work properly and neatly. This needs a bit more understanding in other concepts like encapsulation, decoupling, security and so on. While working on my experiment, I&#39;m doing some thinking how to make things easier by removing some dependencies. This is where native Ruby libraries comes into play.
-&lt;/p&gt;
-&lt;h2&gt;Sinatra&lt;/h2&gt;
-&lt;p&gt;Sinatra is a beautiful framework (a separate gem), but I’m not sure about its long term capabilities to manage traffic. Ruby is leaking memory if you create a lot of objects and do not use GC properly. If you want to write a beautiful Sinatra based application, you need to use a lot of objects and also it adds additional level to your application stack: Rack -&amp;gt; WEBrick -&amp;gt; Sinatra. Well, I don’t want to spare a lot of time for investigating that layers compatibility issues and GC. Better think something simplier and use local variables that are not so hard to manage for Ruby: this is what I’m doing in my experiment.&lt;/p&gt;
-&lt;h2&gt;My try&lt;/h2&gt;
-
-&lt;p&gt;The thing I’m trying currently is to use pure WEBrick server which is included by default in Ruby build source. Recently, I discovered that it supports mounting all needed routes directly to given templates. The variables (from 3rd party apps too) get forwarded from lib/ level and templates just print out the final views. The implementation &lt;a href=&quot;https://gist.github.com/kurbaitis/c81e65a1f8b1b3e86405&quot;&gt;files&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;
-  The issue here is that you need to pass current variables scope (binding) to the lib/ level. Well, it&#39;s a bit pain if you don&#39;t want to create additional instances and use just functional programming. But maybe there is another way. 
-&lt;/p&gt;
-&lt;h2&gt;Sum up&lt;/h2&gt;
-&lt;p&gt;
-  So this post is about a bit different approach: logic in lib/, routing in app.rb and the templates in views/. No mixing anything and as much functional programming as possible. Let&#39;s see how this will end up in the following blog post.
-&lt;/p&gt;
-
-&lt;div id=&quot;share-page&quot;&gt;
-  Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Website on pure Ruby&amp;amp;url=http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-/* * * CONFIGURATION VARIABLES * * */
-// Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-
-</description>
-        <pubDate>Sun, 20 Sep 2015 12:23:00 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/20/website-on-pure-ruby.html</guid>
         
         
       </item>

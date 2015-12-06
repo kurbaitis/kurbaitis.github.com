@@ -1,7 +1,8 @@
 '2015-07-21':
   text: >
     This post is for those who work using SOA or other kind of distributed architecture.
-    The biggest challenge for developers when working with this kind of architecture is to make development process as easy as possible. To achieve this goal there are a lot of tools but in this post I will show how to do that with [Tmux][t] and [Tmuxinator][tr]. 
+    The biggest challenge for developers when working with this kind of architecture is to make development process as easy as possible. 
+    To achieve this goal there are a lot of tools but in this post I will show how to do that with [Tmux][t] and [Tmuxinator][tr]. 
     <br />
     <br />
     Requirements: `Mac OSX (~> 10.10.3), Brew (~> 0.9.5), Ruby (~> 2.2.2)`
@@ -25,7 +26,6 @@
     tr: https://github.com/tmuxinator/tmuxinator
     g1: https://gist.github.com/e5f5c06b69a09bf6b3fc
     tb: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.bash
-
 '2015-07-22':
   text: >
     <p>
@@ -100,20 +100,23 @@
     g: https://git-scm.com
     h: http://www.andre-simon.de
   
-'2015-10-04':
+'2015-07-30':
   text: >
     After installing [Tmux][t] I felt a bit confused. There is just plain "man" style documentation. I like things simple and explained clearly for a tool that is used by someone for the first time. Well that's not a big deal, I just needed to get deeper into the text and here is what I've found.
     
     <h2>Commands</h2>
     
-    The first thing which was not clear to me was the switching among windows. To make that happen you need to use commands. Actually, that was not working at the beginning as I was missing `~./bin/tmuxinator.bash` file. Anyway, after some time I managed to figure out how to enter commands, switch among windows, split windows etc. To enter a command you need to use `Ctrl + b` and enter the command's character. [Here][h] is the list of commands.
+    The first thing which was not clear to me was the switching among windows. To make that happen you need to use commands. 
+    Actually, that was not working at the beginning as I was missing `~./bin/tmuxinator.bash` file. Anyway, after some time 
+    I managed to figure out how to enter commands, switch among windows, split windows etc. To enter a command you need to use `Ctrl + b` and 
+    enter the command's character. [Here][h] is the list of commands.
     
     <h2>Sum up</h2>
     
     A bit pitty that there is no straight shortcuts like in Vim, but Tmux is still a handy tool for making things easier.
   hrefs:
     t: https://tmux.github.io
-    h: 
+    h: http://www.dayid.org/comp/tm.html 
 '2015-08-02':
   text: >
     When working with Ruby together with team on a project, everyone should follow the same code standards to avoid mess and achieve better development speed. Usually, Ruby developers follow common rules and try to avoid rare operators, expressions and so on. But sometimes it's fun to play, explore and use variuos exotic Ruby capabilities to make development more interesting. 

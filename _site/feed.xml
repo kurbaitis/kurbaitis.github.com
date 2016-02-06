@@ -5,9 +5,46 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Dec 2015 12:18:20 +0200</pubDate>
-    <lastBuildDate>Mon, 28 Dec 2015 12:18:20 +0200</lastBuildDate>
+    <pubDate>Sat, 06 Feb 2016 13:23:06 +0200</pubDate>
+    <lastBuildDate>Sat, 06 Feb 2016 13:23:06 +0200</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>SSH tunneling from remote to local machine</title>
+        <description>
+&lt;p&gt;Sometimes you need to access your application running at local machine from outside. For instance, maybe you’re testing callbacks of a service that needs remote host provided. To get those requests forwarded to locally running application is very handy for development. SSH tunneling is the solution that works pretty well for this kind of issues. This blog post describes the solution for Unix systems.&lt;/p&gt;
+&lt;h2&gt;How it works&lt;/h2&gt;
+&lt;p&gt;Let’s say you have your application running at &lt;code&gt;http://localhost:3000&lt;/code&gt; and want it to be accessible from remote host &lt;code&gt;http://example.com:3000&lt;/code&gt;.
+&lt;br /&gt;&lt;br /&gt;  To do that you’ll need SSH access on &lt;code&gt;example.com&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt;   For the command to work, you’ll need also some &lt;code&gt;example.com&lt;/code&gt; host SSH daemon configuration changes. Please make sure that your &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; contains &lt;code&gt;GatewayPorts yes&lt;/code&gt; option. If it’s not, after making changes please restart your SSH daemon with command &lt;code&gt;/etc/init.d/sshd restart&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt;   The SSH client tunneling command must be run from your local machine like this: &lt;br /&gt; &lt;code&gt;ssh -N -R 3000:localhost:3000 my-user@example.com&lt;/code&gt; &lt;br /&gt;&lt;br /&gt;  If there is no firewall on your &lt;code&gt;example.com&lt;/code&gt; server, any request comming to &lt;code&gt;http://example.com:3000&lt;/code&gt; will hit your local application.&lt;/p&gt;
+
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=SSH tunneling from remote to local machine&amp;amp;url=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
+</description>
+        <pubDate>Sat, 06 Feb 2016 12:56:23 +0200</pubDate>
+        <link>http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>I choose Bayesian Rating</title>
@@ -408,44 +445,6 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <pubDate>Wed, 23 Sep 2015 13:26:06 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/23/the-power-of-setup.html</link>
         <guid isPermaLink="true">http://kurbaitis.io/2015/09/23/the-power-of-setup.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>V3 of the experiment</title>
-        <description>
-&lt;p&gt;Tonight I’ve released the dev version of my experiment. Well it’s probably not working so good when it comes to installation, but the point is not here this time. I’d like to share some thoughts where this project is going to. You can check out the V3 &lt;a href=&quot;https://github.com/kurbaitis/hosting&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Some changes&lt;/h2&gt;
-&lt;p&gt;Like I’ve mentioned in the last blog post, I’m trying to apply as much functional programming as possible everywhere, at least in syntax level. There are some issues with 3rd parties and edge cases handling, but these are temporary issues as currently I’m focusing more on architectural decisions. Hopefully, this experiment will grow up to something better in the future as I’ve started to implement such things as Router pattern, Vhosts and so on. Basically, it should be everything what a simple website developer wants to have at the first stage of his/her project.&lt;/p&gt;
-&lt;h2&gt;TODOs&lt;/h2&gt;
-&lt;p&gt;In short, currently it’s hard to say when I have enough time to polish all the project but at the moment some core architecture things are getting brighter each day. Although I’m happy with the process, there are some issues to solve: 3rd parties connection fixes, error reporting, metrics engine, easier installation and so on. If this gonna succeed, the project should turn into a new Ruby framework with various modules available to connect. Quite big objective, but luckily I’m still in a new job search.&lt;/p&gt;
-
-&lt;div id=&quot;share-page&quot;&gt;
-  Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V3 of the experiment&amp;amp;url=http://kurbaitis.io/2015/09/22/of-the-experiment.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/22/of-the-experiment.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/22/of-the-experiment.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-/* * * CONFIGURATION VARIABLES * * */
-// Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-
-</description>
-        <pubDate>Tue, 22 Sep 2015 13:21:18 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/22/of-the-experiment.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/22/of-the-experiment.html</guid>
         
         
       </item>

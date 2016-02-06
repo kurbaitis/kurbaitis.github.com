@@ -986,3 +986,24 @@
     h: https://gist.github.com/kurbaitis/c212f824e2fcda86af80
     h2: https://gist.github.com/kurbaitis/5b6388d2e6f47320cbc8
     imdb: http://www.imdb.com
+'2016-02-06':
+  text: >
+    Sometimes you need to access your application running at local machine from outside. For instance, maybe you're testing callbacks of a service that needs remote host provided. To get those requests forwarded to locally running application is very handy for development. SSH tunneling is the solution that works pretty well for this kind of issues. This blog post describes the solution for Unix systems.
+
+    <h2>How it works</h2>
+    
+    Let's say you have your application running at `http://localhost:3000` and want it to be accessible from remote host `http://example.com:3000`.
+    
+    <br /><br /> 
+    To do that you'll need SSH access on `example.com`.
+    <br /><br />  
+    For the command to work, you'll need also some `example.com` host SSH daemon configuration changes. Please make sure that your `/etc/ssh/sshd_config` contains `GatewayPorts yes` option. If it's not, after making changes please restart your SSH daemon with command `/etc/init.d/sshd restart`.
+    <br /><br />  
+    The SSH client tunneling command must be run from your local machine like this:
+    <br />
+    `ssh -N -R 3000:localhost:3000 my-user@example.com`
+    <br /><br /> 
+    If there is no firewall on your `example.com` server, any request comming to `http://example.com:3000` will hit your local application.
+
+  hrefs:
+    

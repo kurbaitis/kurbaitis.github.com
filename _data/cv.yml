@@ -2,7 +2,7 @@ position: Senior Ruby Developer
 profile: >
    I'm an experienced Ruby Developer with knowledge in a lot of other programming languages. My portfolio consists of contractor, permanent, consultations and part-time work. The businesses that I had a chance to work in were in various fields: innovations, finance, SMEs. My attitude to work is to give 100% of my skills and available time to achieve maximum efficiency for product development and client usage.
 skills:
-  - Unix 
+  - Unix
   - Bash
   - Ruby
   - PHP
@@ -22,15 +22,10 @@ skills:
   - TDD
   - BDD
 experience:
-  - employer: Freelancing
-    position: Senior WEB Developer
-    period: 2015-present
-    description: Working on Open Source products.
-    site: http://www.kurbaitis.io
-  - employer: Smart Pension Ltd 
+  - employer: Smart Pension Ltd
     position: Senior Ruby Developer
-    period: 2014-2015
-    description: Worked as a Senior Ruby / Javascript (AngularJS) developer in a project related with UK pensions in London, UK. We used hexagonal architecture with some HTTP micro-services and I was responsible for DevOps tasks. 
+    period: 2014-2016
+    description: Working as a Senior Ruby developer in a project related with UK pensions in London, UK. We used hexagonal architecture together with SOA. 
     site: https://www.autoenrolment.co.uk
   - employer: Freelancing
     position: Senior WEB Developer
@@ -40,11 +35,11 @@ experience:
   - employer: Bit Zesty Ltd
     position: Senior Ruby Developer
     period: 2012-2013
-    description: Worked as a Senior Ruby developer in a startup located in UK, London remotely. I got some experience there with NoSQL. 
+    description: Worked as a Senior Ruby developer in a startup located in UK, London remotely. I got some experience there with NoSQL.
     site: http://bitzesty.com
   - employer: Exvo.com
     position: Lead Ruby Developer
-    period: 2008-2012 
+    period: 2008-2012
     description: Leaded a team of 4 developers based in Netherlands. The product was based on SOA and I had a chance to make major architecture decisions.
     site: http://www.exvo.com
   - employer: UAB “Internet Studio”

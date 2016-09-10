@@ -1007,3 +1007,22 @@
 
   hrefs:
     
+'2016-09-10':
+  text: >
+    Ember.js file uploads was a difficult task in my mind until I actually found out how to do it properly. All you need is an additional addon and some controller level scripting.
+
+    <h2>How to make it work</h2>
+
+    Please install `emberx-file-input` addon with command: `ember install emberx-file-input`.
+    <br /><br />
+    Insert file input into your corresponding template: `{{x-file-input name="files" multiple=true action=(action "didSelectFiles") alt="Choose a File"}}`
+    <br /><br />
+    Use [this code][t] in your controller to send the file to your API.
+
+    <h2>Drawbacks</h2>
+
+    Unfortunatelly this code does not support Ember Data for the upload request to your API because `FormData` is still not supported in Ember.js.
+    <br /><br />
+    Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into `FormData` instance.
+  hrefs:
+    t: https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f

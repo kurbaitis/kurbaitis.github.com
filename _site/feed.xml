@@ -5,9 +5,47 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Mar 2016 16:52:50 +0200</pubDate>
-    <lastBuildDate>Fri, 25 Mar 2016 16:52:50 +0200</lastBuildDate>
+    <pubDate>Sat, 10 Sep 2016 12:33:54 +0300</pubDate>
+    <lastBuildDate>Sat, 10 Sep 2016 12:33:54 +0300</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Ember.js file uploads easily</title>
+        <description>
+&lt;p&gt;Ember.js file uploads was a difficult task in my mind until I actually found out how to do it properly. All you need is an additional addon and some controller level scripting.&lt;/p&gt;
+&lt;h2&gt;How to make it work&lt;/h2&gt;
+&lt;p&gt;Please install &lt;code&gt;emberx-file-input&lt;/code&gt; addon with command: &lt;code&gt;ember install emberx-file-input&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt; Insert file input into your corresponding template: &lt;code&gt;{{x-file-input name=&quot;files&quot; multiple=true action=(action &quot;didSelectFiles&quot;) alt=&quot;Choose a File&quot;}}&lt;/code&gt; &lt;br /&gt;&lt;br /&gt; Use &lt;a href=&quot;https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f&quot;&gt;this code&lt;/a&gt; in your controller to send the file to your API.&lt;/p&gt;
+&lt;h2&gt;Drawbacks&lt;/h2&gt;
+&lt;p&gt;Unfortunatelly this code does not support Ember Data for the upload request to your API because &lt;code&gt;FormData&lt;/code&gt; is still not supported in Ember.js. &lt;br /&gt;&lt;br /&gt; Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into &lt;code&gt;FormData&lt;/code&gt; instance.&lt;/p&gt;
+
+&lt;div id=&quot;share-page&quot;&gt;
+  Share this on &amp;rarr; 
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Ember.js file uploads easily&amp;amp;url=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+/* * * CONFIGURATION VARIABLES * * */
+// Required: on line below, replace text in quotes with your forum shortname
+var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
+/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+})();
+&lt;/script&gt;
+
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+
+</description>
+        <pubDate>Sat, 10 Sep 2016 12:04:31 +0300</pubDate>
+        <link>http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html</link>
+        <guid isPermaLink="true">http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>SSH tunneling from remote to local machine</title>
@@ -402,49 +440,6 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <pubDate>Fri, 25 Sep 2015 18:26:25 +0300</pubDate>
         <link>http://kurbaitis.io/2015/09/25/rdbms-optimization.html</link>
         <guid isPermaLink="true">http://kurbaitis.io/2015/09/25/rdbms-optimization.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>The power of setup</title>
-        <description>
-&lt;p&gt;Any setup of a system should be easy. Not too much text about it and just inputs that you really need. Ideally, just the inputs about 3rd parties (payments system, reporting etc.) The inputs can be various: HTTP Basic authentication credentials, OAuth client id and secret or some other values like URL, a string.&lt;/p&gt;
-&lt;h2&gt;The flow&lt;/h2&gt;
-&lt;p&gt;The flow of your setup script should be in order. I use this: OS libs, source archives directly from creator’s mirror, other dependencies install. For source archives I use &lt;a href=&quot;http://curl.haxx.se&quot; target=&quot;_blank&quot;&gt;curl&lt;/a&gt; command which fetches the list of archives that are available, then takes the latest version with the most efficient compression format. Knowing the URL, you can fetch the archive, extract and build. In Ruby case, you need to install required gems for your application, maybe do some configuration and login yourself to the user where the bin/start script exists. In some cases, this is not needed, for instance, if you want to setup your application to run at boot time.&lt;/p&gt;
-&lt;h2&gt;Setup script&lt;/h2&gt;
-&lt;p&gt;If you’re working on Unix, prefer default Shell (usually /bin/bash) for the script, probably not so much issues in the future. Don’t forget to define requirements in your app’s README for the system where the setup will run, this will save some time too for other developers.&lt;/p&gt;
-&lt;h2&gt;Example&lt;/h2&gt;
-&lt;p&gt;This is the &lt;a href=&quot;https://gist.github.com/kurbaitis/f8b33b4d82235960689f&quot;&gt;setup script&lt;/a&gt; from one of my created applications.&lt;/p&gt;
-&lt;p&gt;
-  The script asks you to provide tty with root pasword and executes all the commands. Anyway, this is very relative to what you do and what technologies use. Hopefully, this will help someone to build easier to start applications. Cheers.
-&lt;/p&gt;
-
-&lt;div id=&quot;share-page&quot;&gt;
-  Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=The power of setup&amp;amp;url=http://kurbaitis.io/2015/09/23/the-power-of-setup.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/23/the-power-of-setup.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/23/the-power-of-setup.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-/* * * CONFIGURATION VARIABLES * * */
-// Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
-(function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot; rel=&quot;nofollow&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-
-</description>
-        <pubDate>Wed, 23 Sep 2015 13:26:06 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/23/the-power-of-setup.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/23/the-power-of-setup.html</guid>
         
         
       </item>

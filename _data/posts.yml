@@ -1021,7 +1021,7 @@
 
     <h2>Drawbacks</h2>
 
-    Unfortunatelly this code does not support Ember Data for the upload request to your API because `FormData` is still not supported in Ember.js.
+    Unfortunatelly, this code does not support Ember Data for the upload request to your API because `FormData` is still not supported in Ember.js.
     <br /><br />
     Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into `FormData` instance.
   hrefs:

@@ -81,7 +81,7 @@
 <h2>How to make it work</h2>
 <p>Please install <code>emberx-file-input</code> addon with command: <code>ember install emberx-file-input</code>. <br /><br /> Insert file input into your corresponding template: <code>{{x-file-input name="files" multiple=true action=(action "didSelectFiles") alt="Choose a File"}}</code> <br /><br /> Use <a href="https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f">this code</a> in your controller to send the file to your API. Now you can insert a button “Upload” into your template and bind it to controller action <code>upload</code>.</p>
 <h2>Drawbacks</h2>
-<p>Unfortunatelly this code does not support Ember Data for the upload request to your API because <code>FormData</code> is still not supported in Ember.js. <br /><br /> Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into <code>FormData</code> instance.</p>
+<p>Unfortunatelly, this code does not support Ember Data for the upload request to your API because <code>FormData</code> is still not supported in Ember.js. <br /><br /> Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into <code>FormData</code> instance.</p>
 
 <div id="share-page">
   Share this on &rarr; 

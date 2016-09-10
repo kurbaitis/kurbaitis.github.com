@@ -1017,7 +1017,7 @@
     <br /><br />
     Insert file input into your corresponding template: `{{x-file-input name="files" multiple=true action=(action "didSelectFiles") alt="Choose a File"}}`
     <br /><br />
-    Use [this code][t] in your controller to send the file to your API.
+    Use [this code][t] in your controller to send the file to your API. Now you can insert a button "Upload" into your template and bind it to controller action `upload`.
 
     <h2>Drawbacks</h2>
 

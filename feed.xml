@@ -5,8 +5,8 @@
     <description>Senior Ruby Developer</description>
     <link>http://kurbaitis.io/</link>
     <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Sep 2016 12:39:42 +0300</pubDate>
-    <lastBuildDate>Sat, 10 Sep 2016 12:39:42 +0300</lastBuildDate>
+    <pubDate>Sat, 10 Sep 2016 12:41:32 +0300</pubDate>
+    <lastBuildDate>Sat, 10 Sep 2016 12:41:32 +0300</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -16,7 +16,7 @@
 &lt;h2&gt;How to make it work&lt;/h2&gt;
 &lt;p&gt;Please install &lt;code&gt;emberx-file-input&lt;/code&gt; addon with command: &lt;code&gt;ember install emberx-file-input&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt; Insert file input into your corresponding template: &lt;code&gt;{{x-file-input name=&quot;files&quot; multiple=true action=(action &quot;didSelectFiles&quot;) alt=&quot;Choose a File&quot;}}&lt;/code&gt; &lt;br /&gt;&lt;br /&gt; Use &lt;a href=&quot;https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f&quot;&gt;this code&lt;/a&gt; in your controller to send the file to your API. Now you can insert a button “Upload” into your template and bind it to controller action &lt;code&gt;upload&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Drawbacks&lt;/h2&gt;
-&lt;p&gt;Unfortunatelly this code does not support Ember Data for the upload request to your API because &lt;code&gt;FormData&lt;/code&gt; is still not supported in Ember.js. &lt;br /&gt;&lt;br /&gt; Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into &lt;code&gt;FormData&lt;/code&gt; instance.&lt;/p&gt;
+&lt;p&gt;Unfortunatelly, this code does not support Ember Data for the upload request to your API because &lt;code&gt;FormData&lt;/code&gt; is still not supported in Ember.js. &lt;br /&gt;&lt;br /&gt; Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into &lt;code&gt;FormData&lt;/code&gt; instance.&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 

@@ -10,8 +10,8 @@
   <meta name="description" content="Ember.js file uploads was a difficult task in my mind until I actually found out how to do it properly. All you need is an additional addon and some controll...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html">
-  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html">
+  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://localhost:4000/feed.xml" />
 </head>
 
 
@@ -79,15 +79,15 @@
     
 <p>Ember.js file uploads was a difficult task in my mind until I actually found out how to do it properly. All you need is an additional addon and some controller level scripting.</p>
 <h2>How to make it work</h2>
-<p>Please install <code>emberx-file-input</code> addon with command: <code>ember install emberx-file-input</code>. <br /><br /> Insert file input into your corresponding template: <code>{{x-file-input name="files" multiple=true action=(action "didSelectFiles") alt="Choose a File"}}</code> <br /><br /> Use <a href="https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f">this code</a> in your controller to send the file to your API. Now you can insert a button “Upload” into your template and bind it to controller action <code>upload</code>.</p>
+<p>Please install <code class="highlighter-rouge">emberx-file-input</code> addon with command: <code class="highlighter-rouge">ember install emberx-file-input</code>. <br /><br /> Insert file input into your corresponding template: <code class="highlighter-rouge"><span class="p">{</span><span class="err">{x-file-input</span><span class="w"> </span><span class="err">name=</span><span class="nt">"files"</span><span class="w"> </span><span class="err">multiple=true</span><span class="w"> </span><span class="err">action=(action</span><span class="w"> </span><span class="nt">"didSelectFiles"</span><span class="err">)</span><span class="w"> </span><span class="err">alt=</span><span class="nt">"Choose a File"</span><span class="err">}}</span></code> <br /><br /> Use <a href="https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f">this code</a> in your controller to send the file to your API. Now you can insert a button “Upload” into your template and bind it to controller action <code class="highlighter-rouge">upload</code>.</p>
 <h2>Drawbacks</h2>
-<p>Unfortunatelly, this code does not support Ember Data for the upload request to your API because <code>FormData</code> is still not supported in Ember.js. <br /><br /> Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into <code>FormData</code> instance.</p>
+<p>Unfortunatelly, this code does not support Ember Data for the upload request to your API because <code class="highlighter-rouge">FormData</code> is still not supported in Ember.js. <br /><br /> Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into <code class="highlighter-rouge">FormData</code> instance.</p>
 
 <div id="share-page">
   Share this on &rarr; 
-  <a href="https://twitter.com/intent/tweet?text=Ember.js file uploads easily&amp;url=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
-  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=Ember.js file uploads easily&amp;url=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

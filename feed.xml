@@ -3,37 +3,37 @@
   <channel>
     <title>Kristijonas Urbaitis</title>
     <description>Senior Ruby Developer</description>
-    <link>http://kurbaitis.io/</link>
-    <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Sep 2016 12:41:32 +0300</pubDate>
-    <lastBuildDate>Sat, 10 Sep 2016 12:41:32 +0300</lastBuildDate>
-    <generator>Jekyll v3.0.0</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 05 Apr 2017 14:59:42 +0300</pubDate>
+    <lastBuildDate>Wed, 05 Apr 2017 14:59:42 +0300</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
     
       <item>
         <title>Ember.js file uploads easily</title>
         <description>
 &lt;p&gt;Ember.js file uploads was a difficult task in my mind until I actually found out how to do it properly. All you need is an additional addon and some controller level scripting.&lt;/p&gt;
 &lt;h2&gt;How to make it work&lt;/h2&gt;
-&lt;p&gt;Please install &lt;code&gt;emberx-file-input&lt;/code&gt; addon with command: &lt;code&gt;ember install emberx-file-input&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt; Insert file input into your corresponding template: &lt;code&gt;{{x-file-input name=&quot;files&quot; multiple=true action=(action &quot;didSelectFiles&quot;) alt=&quot;Choose a File&quot;}}&lt;/code&gt; &lt;br /&gt;&lt;br /&gt; Use &lt;a href=&quot;https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f&quot;&gt;this code&lt;/a&gt; in your controller to send the file to your API. Now you can insert a button “Upload” into your template and bind it to controller action &lt;code&gt;upload&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Please install &lt;code class=&quot;highlighter-rouge&quot;&gt;emberx-file-input&lt;/code&gt; addon with command: &lt;code class=&quot;highlighter-rouge&quot;&gt;ember install emberx-file-input&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt; Insert file input into your corresponding template: &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{x-file-input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;files&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;multiple=true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;action=(action&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;didSelectFiles&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;Choose a File&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}}&lt;/span&gt;&lt;/code&gt; &lt;br /&gt;&lt;br /&gt; Use &lt;a href=&quot;https://gist.github.com/kurbaitis/df9bb1f0de1e838290475bf6f14f075f&quot;&gt;this code&lt;/a&gt; in your controller to send the file to your API. Now you can insert a button “Upload” into your template and bind it to controller action &lt;code class=&quot;highlighter-rouge&quot;&gt;upload&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Drawbacks&lt;/h2&gt;
-&lt;p&gt;Unfortunatelly, this code does not support Ember Data for the upload request to your API because &lt;code&gt;FormData&lt;/code&gt; is still not supported in Ember.js. &lt;br /&gt;&lt;br /&gt; Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into &lt;code&gt;FormData&lt;/code&gt; instance.&lt;/p&gt;
+&lt;p&gt;Unfortunatelly, this code does not support Ember Data for the upload request to your API because &lt;code class=&quot;highlighter-rouge&quot;&gt;FormData&lt;/code&gt; is still not supported in Ember.js. &lt;br /&gt;&lt;br /&gt; Also, please note, that currently this code supports only one file upload, to make it work for more files you would need to slightly adjust the controller code to pass multiple files into &lt;code class=&quot;highlighter-rouge&quot;&gt;FormData&lt;/code&gt; instance.&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Ember.js file uploads easily&amp;amp;url=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Ember.js file uploads easily&amp;amp;url=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -41,8 +41,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sat, 10 Sep 2016 12:04:31 +0300</pubDate>
-        <link>http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2016/09/10/ember-js-file-uploads-easily.html</guid>
+        <link>http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html</guid>
         
         
       </item>
@@ -52,25 +52,25 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <description>
 &lt;p&gt;Sometimes you need to access your application running at local machine from outside. For instance, maybe you’re testing callbacks of a service that needs remote host provided. To get those requests forwarded to locally running application is very handy for development. SSH tunneling is the solution that works pretty well for this kind of issues. This blog post describes the solution for Unix systems.&lt;/p&gt;
 &lt;h2&gt;How it works&lt;/h2&gt;
-&lt;p&gt;Let’s say you have your application running at &lt;code&gt;http://localhost:3000&lt;/code&gt; and want it to be accessible from remote host &lt;code&gt;http://example.com:3000&lt;/code&gt;.
-&lt;br /&gt;&lt;br /&gt;  To do that you’ll need SSH access on &lt;code&gt;example.com&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt;   For the command to work, you’ll need also some &lt;code&gt;example.com&lt;/code&gt; host SSH daemon configuration changes. Please make sure that your &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; contains &lt;code&gt;GatewayPorts yes&lt;/code&gt; option. If it’s not, after making changes please restart your SSH daemon with command &lt;code&gt;/etc/init.d/sshd restart&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt;   The SSH client tunneling command must be run from your local machine like this: &lt;br /&gt; &lt;code&gt;ssh -N -R 3000:localhost:3000 my-user@example.com&lt;/code&gt; &lt;br /&gt;&lt;br /&gt;  If there is no firewall on your &lt;code&gt;example.com&lt;/code&gt; server, any request comming to &lt;code&gt;http://example.com:3000&lt;/code&gt; will hit your local application.&lt;/p&gt;
+&lt;p&gt;Let’s say you have your application running at &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:3000&lt;/code&gt; and want it to be accessible from remote host &lt;code class=&quot;highlighter-rouge&quot;&gt;http://example.com:3000&lt;/code&gt;.
+&lt;br /&gt;&lt;br /&gt;  To do that you’ll need SSH access on &lt;code class=&quot;highlighter-rouge&quot;&gt;example.com&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt;   For the command to work, you’ll need also some &lt;code class=&quot;highlighter-rouge&quot;&gt;example.com&lt;/code&gt; host SSH daemon configuration changes. Please make sure that your &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/ssh/sshd_config&lt;/code&gt; contains &lt;code class=&quot;highlighter-rouge&quot;&gt;GatewayPorts yes&lt;/code&gt; option. If it’s not, after making changes please restart your SSH daemon with command &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/init.d/sshd restart&lt;/code&gt;. &lt;br /&gt;&lt;br /&gt;   The SSH client tunneling command must be run from your local machine like this: &lt;br /&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -N -R 3000:localhost:3000 my-user@example.com&lt;/code&gt; &lt;br /&gt;&lt;br /&gt;  If there is no firewall on your &lt;code class=&quot;highlighter-rouge&quot;&gt;example.com&lt;/code&gt; server, any request comming to &lt;code class=&quot;highlighter-rouge&quot;&gt;http://example.com:3000&lt;/code&gt; will hit your local application.&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=SSH tunneling from remote to local machine&amp;amp;url=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=SSH tunneling from remote to local machine&amp;amp;url=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -78,8 +78,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sat, 06 Feb 2016 12:56:23 +0200</pubDate>
-        <link>http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html</guid>
+        <link>http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html</guid>
         
         
       </item>
@@ -92,7 +92,7 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;p&gt;The problem with rating came to my mind when I saw that rating system based on averages is not working when it comes to quantity of votes. If you have one high vote for a product and another product with 100 votes that are a bit mixed with values, but also high, which one should go first in the rating list? &lt;br /&gt;&lt;br /&gt;
 If you take this example to larger scale, the problem becomes a serious threat to your credibility against your clients. Everyone wants to see rating interpreted correctly, including popularity too and developers goal is to make that happen. &lt;a href=&quot;http://www.imdb.com&quot;&gt;IMDb&lt;/a&gt; uses Bayesian too to determine its Top 250.&lt;/p&gt;
 &lt;h2&gt;The Bayesian rating formula&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;(WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C&lt;/code&gt; &lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C&lt;/code&gt; &lt;br /&gt;&lt;br /&gt;
 It consists from:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;R = average for the object (mean) = (Rating)&lt;/li&gt;
@@ -108,20 +108,20 @@ It consists from:&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;amp;url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;amp;url=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -129,8 +129,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sun, 29 Nov 2015 17:09:21 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html</guid>
+        <link>http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html</guid>
         
         
       </item>
@@ -140,26 +140,26 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
         <description>
 &lt;p&gt;Finally, the v4 of my game hosting engine is done. The changes applied is not too big comparing to v3 but still some problems solved using external than Ruby libraries.  More precisely, TLS issue has been solved using HAproxy. Although it works on WEBrick, HAproxy ensures nice load balancing and waits if WEBrick is not  capable to ensure higher load.&lt;/p&gt;
 &lt;h2&gt;The business idea&lt;/h2&gt;
-&lt;p&gt;I was thinking to make not just demo, but working version of this kind of service but have to confess, today’s market is fulfilled with similar services and  better prices than I could offer. Anyway, the demo version will be working for some time online and loayal visitors of &lt;code&gt;http://games-monitor.net&lt;/code&gt;  can see the offer to create their own game servers hosting if they can be a good player in today’s game hosting services market.  I even can help then to make it work if there is such a need.&lt;/p&gt;
+&lt;p&gt;I was thinking to make not just demo, but working version of this kind of service but have to confess, today’s market is fulfilled with similar services and  better prices than I could offer. Anyway, the demo version will be working for some time online and loayal visitors of &lt;code class=&quot;highlighter-rouge&quot;&gt;http://games-monitor.net&lt;/code&gt;  can see the offer to create their own game servers hosting if they can be a good player in today’s game hosting services market.  I even can help then to make it work if there is such a need.&lt;/p&gt;
 &lt;h2&gt;What I got from this experiment?&lt;/h2&gt;
 &lt;p&gt;Each personal project, no matter what, gives me some particular knowledge in the technology from which the project has been made.  This time it was TLS protocol and HTTP(S) servers analysis. Hopefully, soon I’ll decide to push some of my time to some kind of new product creation  as I feel that v4 is enough for current working project. Visit it &lt;a href=&quot;https://hosting.games-monitor.net&quot;&gt;here&lt;/a&gt; please if interested. Cheers.&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V4 of hosting.games-monitor.net&amp;amp;url=http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V4 of hosting.games-monitor.net&amp;amp;url=http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -167,8 +167,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sun, 22 Nov 2015 16:27:11 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/22/v4-of-hosting-games-monitor-net.html</guid>
+        <link>http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html</guid>
         
         
       </item>
@@ -190,20 +190,20 @@ The last issue which made me sad was TLS configuration which is awful in WEBrick
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=WEBrick and others&amp;amp;url=http://kurbaitis.io/2015/11/19/webrick-and-others.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/19/webrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/19/webrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=WEBrick and others&amp;amp;url=http://localhost:4000/2015/11/19/WEBrick-and-others.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/19/WEBrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/19/WEBrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -211,8 +211,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Thu, 19 Nov 2015 21:07:49 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/19/webrick-and-others.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/19/webrick-and-others.html</guid>
+        <link>http://localhost:4000/2015/11/19/WEBrick-and-others.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/19/WEBrick-and-others.html</guid>
         
         
       </item>
@@ -228,20 +228,20 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Simple text cacher&amp;amp;url=http://kurbaitis.io/2015/11/13/simple-text-cacher.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/13/simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/13/simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Simple text cacher&amp;amp;url=http://localhost:4000/2015/11/13/Simple-text-cacher.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/13/Simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/13/Simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -249,8 +249,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Fri, 13 Nov 2015 12:00:59 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/13/simple-text-cacher.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/13/simple-text-cacher.html</guid>
+        <link>http://localhost:4000/2015/11/13/Simple-text-cacher.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/13/Simple-text-cacher.html</guid>
         
         
       </item>
@@ -261,29 +261,29 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a powerful tool for static HTTP webpages. The concept is that you generate content dynamically on your local machine and push the result to your hosting. It can work well on any hosting provider platform. The content itself must be static though. In this short blog post I’ll share some ideas how it started to work like I want.&lt;/p&gt;
 &lt;h2&gt;Posting&lt;/h2&gt;
 &lt;p&gt;Posting should be fun and easy. This is why I created an executable for my posting process. It creates post files and stores all data in one data file. I dislike when data is distributed among a lot of files. Maybe you think different and that’s ok, less complications with the default jekyll approach.
-Jekyll supports data storing in various formats, I like &lt;code&gt;.yml&lt;/code&gt; so I decided to put there my posts data and call it &lt;code&gt;_data/posts.yml&lt;/code&gt;. The format of that data is simple: &lt;br /&gt;&lt;br /&gt; 1. date in YYYY-mm-dd format as a key &lt;br /&gt; 2. post text as a part of value &lt;br /&gt; 3. hrefs with urls (key-value) used for links in post text as a part of value &lt;br /&gt;&lt;br /&gt;
-&lt;a href=&quot;https://gist.github.com/kurbaitis/210bb198a573026f301f&quot;&gt;Here&lt;/a&gt; it is the &lt;code&gt;bin/post&lt;/code&gt; file which should be run like this: &lt;code&gt;bash bin/post &quot;The title of your new post&quot;&lt;/code&gt;. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your post information will be stored. The interface for that is  Vim. After completing the writing part you’re redirected to shell where your jekyll boots up.&lt;/p&gt;
+Jekyll supports data storing in various formats, I like &lt;code class=&quot;highlighter-rouge&quot;&gt;.yml&lt;/code&gt; so I decided to put there my posts data and call it &lt;code class=&quot;highlighter-rouge&quot;&gt;_data/posts.yml&lt;/code&gt;. The format of that data is simple: &lt;br /&gt;&lt;br /&gt; 1. date in YYYY-mm-dd format as a key &lt;br /&gt; 2. post text as a part of value &lt;br /&gt; 3. hrefs with urls (key-value) used for links in post text as a part of value &lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/kurbaitis/210bb198a573026f301f&quot;&gt;Here&lt;/a&gt; it is the &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/post&lt;/code&gt; file which should be run like this: &lt;code class=&quot;highlighter-rouge&quot;&gt;bash bin/post &quot;The title of your new post&quot;&lt;/code&gt;. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your post information will be stored. The interface for that is  Vim. After completing the writing part you’re redirected to shell where your jekyll boots up.&lt;/p&gt;
 &lt;h2&gt;Publishing&lt;/h2&gt;
-&lt;p&gt;Publishing your &lt;code&gt;_site&lt;/code&gt; directory where the static content is generated is a bit tricky when it comes to Github Pages. In other words, if you aren’t using Github, you can direct traffic to &lt;code&gt;_site&lt;/code&gt; directory where any visitor will see the same result. &lt;br /&gt;&lt;br /&gt; If you’re using Github Pages, please be aware that you need to push your &lt;code&gt;_site&lt;/code&gt; directory to &lt;code&gt;gh-pages&lt;/code&gt; branch. So this is totally not in sync with your master branch where the actual your content for generation is being kept. &lt;br /&gt;&lt;br /&gt; There is a work around for this situation when it comes to Git. You can use this executable &lt;a href=&quot;https://gist.github.com/kurbaitis/728d6fb551be21450659&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Publishing your &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory where the static content is generated is a bit tricky when it comes to Github Pages. In other words, if you aren’t using Github, you can direct traffic to &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory where any visitor will see the same result. &lt;br /&gt;&lt;br /&gt; If you’re using Github Pages, please be aware that you need to push your &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory to &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch. So this is totally not in sync with your master branch where the actual your content for generation is being kept. &lt;br /&gt;&lt;br /&gt; There is a work around for this situation when it comes to Git. You can use this executable &lt;a href=&quot;https://gist.github.com/kurbaitis/728d6fb551be21450659&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Some thoughts for future&lt;/h2&gt;
-&lt;p&gt;It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is &lt;a href=&quot;http://kramdown.gettalong.org&quot;&gt;kramdown&lt;/a&gt; which is not working as expected if using &lt;code&gt;_includes&lt;/code&gt; directory contents. Anyway, for now Github Gists is working good. Hopefully, Jekyll won’t stop improving as I like it so much.&lt;/p&gt;
+&lt;p&gt;It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is &lt;a href=&quot;http://kramdown.gettalong.org&quot;&gt;kramdown&lt;/a&gt; which is not working as expected if using &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; directory contents. Anyway, for now Github Gists is working good. Hopefully, Jekyll won’t stop improving as I like it so much.&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Jekyll v3 overview&amp;amp;url=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Jekyll v3 overview&amp;amp;url=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -291,8 +291,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sun, 08 Nov 2015 23:29:20 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html</guid>
+        <link>http://localhost:4000/2015/11/08/Jekyll-v3-overview.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/08/Jekyll-v3-overview.html</guid>
         
         
       </item>
@@ -306,7 +306,7 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;h2&gt;One direction&lt;/h2&gt;
 &lt;p&gt;If you use background jobs, then better use it for all blocking tasks in your system. For instance, the adding of servers into the list was dedicated to the HTTP application which is not efficient. I managed to fix it by pushing that jobs to Resque. The implementation of this solution is a bit tricky as the client still needs to know about the success of the request. This was done in &lt;a href=&quot;https://gist.github.com/kurbaitis/04ad6027b19fea8a54d6&quot;&gt;this way&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;
-  First of all, you need a reference which couples your background job with the website&#39;s application. So to inform the application if job is successful, you need to use some kind of cache which is being checked each second to know if the server has been updated. If it is, the result is the ID of the server, if not, the result is 0.
+  First of all, you need a reference which couples your background job with the website's application. So to inform the application if job is successful, you need to use some kind of cache which is being checked each second to know if the server has been updated. If it is, the result is the ID of the server, if not, the result is 0.
 &lt;/p&gt;
 &lt;h2&gt;Queries caching&lt;/h2&gt;
 &lt;p&gt;Probably &lt;a href=&quot;http://www.postgresql.org&quot; target=&quot;_blank&quot;&gt;PostgreSQL&lt;/a&gt; supports some kind of queries caching, but for now I made it work simple by using &lt;a href=&quot;http://redis.io&quot; target=&quot;_blank&quot;&gt;Redis&lt;/a&gt;. This allows to implement simple search in the website without a lot of I/O blocking. It’s still not ideal but for now it works keeping in mind the DB size and search scope. If DB grows, then it will be time to implement more advanced full text search engine.&lt;/p&gt;
@@ -317,20 +317,20 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Release of games-monitor.net&amp;amp;url=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Release of games-monitor.net&amp;amp;url=http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -338,8 +338,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Wed, 30 Sep 2015 18:44:42 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html</guid>
+        <link>http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html</guid>
         
         
       </item>
@@ -353,7 +353,7 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 &lt;h2&gt;Implementation&lt;/h2&gt;
 &lt;p&gt;The start script is simple in my case, you can use watch command which exists in Unix, but I’ve done it like &lt;a href=&quot;https://gist.github.com/kurbaitis/629a0d5c99384d111f70&quot;&gt;this&lt;/a&gt;. &lt;br /&gt;&lt;br /&gt; The next part is &lt;a href=&quot;http://www.haproxy.org&quot; target=&quot;_blank&quot;&gt;HAproxy&lt;/a&gt;, which is a proxy server for any kind of connections. Look at this &lt;a href=&quot;https://gist.github.com/kurbaitis/aa3a6163c1217e7a6c13&quot;&gt;configuration file&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;
-  This file defines that the proxy is running on any network interface, forwards the requests to your application (127.0.0.0 means localhost) and if the application doesn&#39;t respond, the proxy waits for 10 seconds before returning timeout error template to visitor&#39;s browser if the application is not responding during that time. Note: HAproxy installed directly from your OS package manager is accessible only using root access.
+  This file defines that the proxy is running on any network interface, forwards the requests to your application (127.0.0.0 means localhost) and if the application doesn't respond, the proxy waits for 10 seconds before returning timeout error template to visitor's browser if the application is not responding during that time. Note: HAproxy installed directly from your OS package manager is accessible only using root access.
 &lt;/p&gt;
 &lt;h2&gt;Combining it together&lt;/h2&gt;
 &lt;p&gt;This solution is still not ideal when it comes to other dependencies that your legacy app might use. For instance, caching servers and so on. This needs nighly reboot of your server to cope with that by one take. If doing so, please don’t forget to use boot scripts to initialize all required dependencies after restart. &lt;br /&gt;&lt;br /&gt;
@@ -361,26 +361,26 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 &lt;p&gt;
   To apply the script to your server, you need to run this as root in your shell:
 &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;update-rc.d script-name defaults&lt;/code&gt; &lt;br /&gt; &lt;code&gt;update-rc.d script-name enable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;update-rc.d script-name defaults&lt;/code&gt; &lt;br /&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;update-rc.d script-name enable&lt;/code&gt;&lt;/p&gt;
 &lt;h2&gt;Sum up&lt;/h2&gt;
 &lt;p&gt;This is just a sample solution that works for my case. There are other solutions, for instance, one of them comes together with default Ruby implementation (MRI). WEBrick also supports proxy servers but I haven’t managed to make it work instantly, probably some headers or environment variables are not correct. You could use also SSH tunnel to proxy connections to your application but it has some issues with timeout configuration. Good luck choosing the right one for yourself!&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Legacy apps fix&amp;amp;url=http://kurbaitis.io/2015/09/27/legacy-apps-fix.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/27/legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/27/legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Legacy apps fix&amp;amp;url=http://localhost:4000/2015/09/27/Legacy-apps-fix.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/09/27/Legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/09/27/Legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -388,8 +388,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Sun, 27 Sep 2015 18:32:14 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/27/legacy-apps-fix.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/27/legacy-apps-fix.html</guid>
+        <link>http://localhost:4000/2015/09/27/Legacy-apps-fix.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/27/Legacy-apps-fix.html</guid>
         
         
       </item>
@@ -402,7 +402,7 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 &lt;p&gt;There are a lot of RDBMS based software, you can check it out &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_relational_database_management_systems&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. The most popular ones are &lt;a href=&quot;https://www.mysql.com&quot; target=&quot;_blank&quot;&gt;MySQL&lt;/a&gt; and &lt;a href=&quot;http://www.postgresql.org&quot; target=&quot;_blank&quot;&gt;PostgreSQL&lt;/a&gt; in open source community. The issue with all of these is the variaty of supported methods of input. Well ok, using bash you can easily export/import, but when it comes to application level usage, this is getting fuzzier. Let me give you an example.&lt;/p&gt;
 &lt;p&gt;
-  I like PostgreSQL which has &lt;a href=&quot;http://www.postgresql.org/docs/current/static/sql-prepare.html&quot; target=&quot;_blank&quot;&gt;Prepared Statements&lt;/a&gt; function. Although everyone usually use default SQL queries to reach the data, it&#39;s not efficient. For prototypes it works, but not for production applications. So if you&#39;re using any RDBMS software, please be aware of I/O optimization when it&#39;s needed.
+  I like PostgreSQL which has &lt;a href=&quot;http://www.postgresql.org/docs/current/static/sql-prepare.html&quot; target=&quot;_blank&quot;&gt;Prepared Statements&lt;/a&gt; function. Although everyone usually use default SQL queries to reach the data, it's not efficient. For prototypes it works, but not for production applications. So if you're using any RDBMS software, please be aware of I/O optimization when it's needed.
 &lt;/p&gt;
 &lt;h2&gt;Prepared Statements&lt;/h2&gt;
 
@@ -417,20 +417,20 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=RDBMS optimization&amp;amp;url=http://kurbaitis.io/2015/09/25/rdbms-optimization.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/25/rdbms-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/25/rdbms-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=RDBMS optimization&amp;amp;url=http://localhost:4000/2015/09/25/RDBMS-optimization.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/09/25/RDBMS-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/09/25/RDBMS-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 /* * * CONFIGURATION VARIABLES * * */
 // Required: on line below, replace text in quotes with your forum shortname
-var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
-/* * * DON&#39;T EDIT BELOW THIS LINE * * */
+var disqus_shortname = 'kristijonasurbaitisblog';
+/* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
-  var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
-  dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
-  (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 &lt;/script&gt;
 
@@ -438,8 +438,8 @@ var disqus_shortname = &#39;kristijonasurbaitisblog&#39;;
 
 </description>
         <pubDate>Fri, 25 Sep 2015 18:26:25 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/25/rdbms-optimization.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/25/rdbms-optimization.html</guid>
+        <link>http://localhost:4000/2015/09/25/RDBMS-optimization.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/25/RDBMS-optimization.html</guid>
         
         
       </item>

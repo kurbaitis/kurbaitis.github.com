@@ -10,8 +10,8 @@
   <meta name="description" content="Lately, I’ve been digging into my old code and realised that, luckily, there are some stuff to review and publish into this blog. Bayesian rating helped me t...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html">
-  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html">
+  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://localhost:4000/feed.xml" />
 </head>
 
 
@@ -82,7 +82,7 @@
 <p>The problem with rating came to my mind when I saw that rating system based on averages is not working when it comes to quantity of votes. If you have one high vote for a product and another product with 100 votes that are a bit mixed with values, but also high, which one should go first in the rating list? <br /><br />
 If you take this example to larger scale, the problem becomes a serious threat to your credibility against your clients. Everyone wants to see rating interpreted correctly, including popularity too and developers goal is to make that happen. <a href="http://www.imdb.com">IMDb</a> uses Bayesian too to determine its Top 250.</p>
 <h2>The Bayesian rating formula</h2>
-<p><code>(WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C</code> <br /><br />
+<p><code class="highlighter-rouge">(WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C</code> <br /><br />
 It consists from:</p>
 <ul>
   <li>R = average for the object (mean) = (Rating)</li>
@@ -98,9 +98,9 @@ It consists from:</p>
 
 <div id="share-page">
   Share this on &rarr; 
-  <a href="https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
-  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/11/29/i-choose-bayesian-rating.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;url=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

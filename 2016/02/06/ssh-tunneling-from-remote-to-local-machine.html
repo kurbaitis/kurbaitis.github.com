@@ -10,8 +10,8 @@
   <meta name="description" content="Sometimes you need to access your application running at local machine from outside. For instance, maybe you’re testing callbacks of a service that needs rem...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html">
-  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html">
+  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://localhost:4000/feed.xml" />
 </head>
 
 
@@ -79,14 +79,14 @@
     
 <p>Sometimes you need to access your application running at local machine from outside. For instance, maybe you’re testing callbacks of a service that needs remote host provided. To get those requests forwarded to locally running application is very handy for development. SSH tunneling is the solution that works pretty well for this kind of issues. This blog post describes the solution for Unix systems.</p>
 <h2>How it works</h2>
-<p>Let’s say you have your application running at <code>http://localhost:3000</code> and want it to be accessible from remote host <code>http://example.com:3000</code>.
-<br /><br />  To do that you’ll need SSH access on <code>example.com</code>. <br /><br />   For the command to work, you’ll need also some <code>example.com</code> host SSH daemon configuration changes. Please make sure that your <code>/etc/ssh/sshd_config</code> contains <code>GatewayPorts yes</code> option. If it’s not, after making changes please restart your SSH daemon with command <code>/etc/init.d/sshd restart</code>. <br /><br />   The SSH client tunneling command must be run from your local machine like this: <br /> <code>ssh -N -R 3000:localhost:3000 my-user@example.com</code> <br /><br />  If there is no firewall on your <code>example.com</code> server, any request comming to <code>http://example.com:3000</code> will hit your local application.</p>
+<p>Let’s say you have your application running at <code class="highlighter-rouge">http://localhost:3000</code> and want it to be accessible from remote host <code class="highlighter-rouge">http://example.com:3000</code>.
+<br /><br />  To do that you’ll need SSH access on <code class="highlighter-rouge">example.com</code>. <br /><br />   For the command to work, you’ll need also some <code class="highlighter-rouge">example.com</code> host SSH daemon configuration changes. Please make sure that your <code class="highlighter-rouge">/etc/ssh/sshd_config</code> contains <code class="highlighter-rouge">GatewayPorts yes</code> option. If it’s not, after making changes please restart your SSH daemon with command <code class="highlighter-rouge">/etc/init.d/sshd restart</code>. <br /><br />   The SSH client tunneling command must be run from your local machine like this: <br /> <code class="highlighter-rouge">ssh -N -R 3000:localhost:3000 my-user@example.com</code> <br /><br />  If there is no firewall on your <code class="highlighter-rouge">example.com</code> server, any request comming to <code class="highlighter-rouge">http://example.com:3000</code> will hit your local application.</p>
 
 <div id="share-page">
   Share this on &rarr; 
-  <a href="https://twitter.com/intent/tweet?text=SSH tunneling from remote to local machine&amp;url=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
-  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2016/02/06/ssh-tunneling-from-remote-to-local-machine.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=SSH tunneling from remote to local machine&amp;url=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

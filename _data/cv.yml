@@ -24,8 +24,8 @@ skills:
 experience:
   - employer: Smart Pension Ltd
     position: Senior Ruby Developer
-    period: 2014-2016
-    description: Working as a Senior Ruby developer in a project related with UK pensions in London, UK. We use hexagonal architecture together with SOA. 
+    period: 2014-present
+    description: Working as a Senior Ruby developer in a project related with UK pensions in London, UK. We use Ruby on Rails for backend and EmberJS for frontend. 
     site: https://www.autoenrolment.co.uk
   - employer: Freelancing
     position: Senior WEB Developer

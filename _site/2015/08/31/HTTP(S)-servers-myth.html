@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Release of games-monitor.net</title>
-  <meta name="description" content="Today is a happy day for me because I’ve just released a new version of games-monitor.net which includes a lot of fixes and improvements. It’s still buggy du...">
+  <title>HTTP(S) servers myth</title>
+  <meta name="description" content="Usually in web development everyone is using HTTP servers like Apache of Nginx, of course with HTTPS support if needed. In short: it’s wasteful. In this blog...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html">
-  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/2015/08/31/HTTP(S)-servers-myth.html">
+  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://localhost:4000/feed.xml" />
 </head>
 
 
@@ -71,32 +71,33 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Release of games-monitor.net</h1>
-    <p class="post-meta">Sep 30, 2015</p>
+    <h1 class="post-title">HTTP(S) servers myth</h1>
+    <p class="post-meta">Aug 31, 2015</p>
   </header>
 
   <article class="post-content">
     
-<p>Today is a happy day for me because I’ve just released a new version of games-monitor.net which includes a lot of fixes and improvements. It’s still buggy due to existing dependencies but I’m fixing that. The project was started in 2008 but due to improved knowledge in Bash I managed to fix major performance issues by trading off server resources. In this blog post I’ll share some solutions that helped me to fix this legacy project.</p>
-<h2>Background jobs</h2>
-<p>The problem with memory leaking systems is that you have to use native OS processes (<a href="http://ruby-doc.org/core-2.2.3/Kernel.html#method-i-fork" target="_blank">Kernel#fork</a>) to do the memory leaking work and then quit the process. The main process manages the flow of child processes (where the work is done) in the system but that’s not a problem because it’s possible to reboot the main process too. For my project I use <a href="https://github.com/resque/resque" target="_blank">Resque</a> gem which implements this kind of solution.</p>
-<h2>One direction</h2>
-<p>If you use background jobs, then better use it for all blocking tasks in your system. For instance, the adding of servers into the list was dedicated to the HTTP application which is not efficient. I managed to fix it by pushing that jobs to Resque. The implementation of this solution is a bit tricky as the client still needs to know about the success of the request. This was done in <a href="https://gist.github.com/kurbaitis/04ad6027b19fea8a54d6">this way</a>.</p>
+<p>Usually in web development everyone is using HTTP servers like <a href="http://apache.org" target="_blank">Apache</a> of <a href="http://nginx.org" target="_blank">Nginx</a>, of course with HTTPS support if needed. In short: it’s wasteful. In this blog post I’ll introduce you with some useful open source Ruby products that can be used as a standalone HTTP(S) servers.</p>
+<h2>Web frameworks</h2>
+<p>In my opinion there are three decent Ruby web frameworks that are useful for separate purposes: <a href="http://rubyonrails.org" target="_blank">Rails</a> (beautiful frontend products), <a href="http://www.sinatrarb.com" target="_blank">Sinatra</a> (simple and easy to use products), <a href="http://intridea.github.io/grape" target="_blank">Grape</a> (mostly for APIs, decide yourself if you need that). All of these have <a href="http://rack.github.io" target="_blank">Rack</a> gem inside which is placed on top of HTTP(S) server (<a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/webrick/rdoc/WEBrick.html" target="_blank">WEBrick</a>, <a href="http://code.macournoyer.com/thin" target="_blank">Thin</a>, <a href="https://github.com/mongrel/mongrel" target="_blank">Mongrel</a> etc.) and all that stack successfully runs together. It’s a bit pitty that there is no common standard for all needs together, but that’s a different story.</p>
+<h3>WEBrick</h3>
+<p>WEBrick is the default server for Rails and Sinatra for sure, please check if Grape is using the same if you’re interested in SOA.</p>
 <p>
-  First of all, you need a reference which couples your background job with the website's application. So to inform the application if job is successful, you need to use some kind of cache which is being checked each second to know if the server has been updated. If it is, the result is the ID of the server, if not, the result is 0.
+  Well, it took a bit of time to setup WEBrick on Sinatra with HTTPS support for me but finally I made it work. The problem is that when there are multiple layers for one purpose, you have to connect all parts and it takes your precious time, however, it's a kind of fun.
 </p>
-<h2>Queries caching</h2>
-<p>Probably <a href="http://www.postgresql.org" target="_blank">PostgreSQL</a> supports some kind of queries caching, but for now I made it work simple by using <a href="http://redis.io" target="_blank">Redis</a>. This allows to implement simple search in the website without a lot of I/O blocking. It’s still not ideal but for now it works keeping in mind the DB size and search scope. If DB grows, then it will be time to implement more advanced full text search engine.</p>
-<h2>Error reporting</h2>
-<p>I’m quite confident about this release when it comes to errors, so instead of using email notifications, I added error reporting to my mobile phone. Thanks to <a href="https://www.twilio.com" target="_blank">Twilio</a> which allows to send any kind of data to mobile phone.</p>
-<h2>Sum up</h2>
-<p>Like I’ve mentioned, there are a lot of dependencies to trash in the system. For key-value store, could work <a href="http://www.gnu.org.ua/software/gdbm" target="_blank">GNU gdm</a>, for background jobs just simple bash script and so on. Anyway, hopefully this helps anyone fixing legacy systems. Cheers.</p>
+<h3>Thin</h3>
+<p>To be honest, I tried Thin too but for HTTPS it didn’t work out. Maybe for HTTP it’s good but we’re currently not in perfect world so if you try to make a secure product, please choose WEBrick or any other web server that works for you. However, Thin also supports Vhosts that allows to run multiple sites on the same IP, please be careful with that because it’s not secure and not efficient.</p>
+<h2>Some thoughs</h2>
+<p>Like it’s mentioned in the last blog post, I’m working on a small product which will be released as an open source framework for any kind of products selling online but initially it is being created for game servers hosting services.</p>
+<p>
+  Comming back to the "ideal world" idea is that currently Ruby community has some problems with making things simple and oriented to one direction. Yes, Rails became like a brand of Ruby and the language itself is known as a web development tool but there is no strict leadership and limits to publify gems or products which leads to a lot of standards, not useful gems and tools. Anyway, those who know how to work with Ruby, will find their way to easy development, wish you that and don't forget to check out the release that I'm working on at the moment.
+</p>
 
 <div id="share-page">
   Share this on &rarr; 
-  <a href="https://twitter.com/intent/tweet?text=Release of games-monitor.net&amp;url=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
-  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/09/30/release-of-games-monitor-net.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=HTTP(S) servers myth&amp;url=http://localhost:4000/2015/08/31/HTTP(S)-servers-myth.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2015/08/31/HTTP(S)-servers-myth.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/2015/08/31/HTTP(S)-servers-myth.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

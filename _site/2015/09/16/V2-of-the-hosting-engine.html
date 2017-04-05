@@ -10,8 +10,8 @@
   <meta name="description" content="This release has a lot of improvements which includes some decoupling. Like I mentioned in the last blog post, decoupling is the key to easy further developm...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html">
-  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/2015/09/16/V2-of-the-hosting-engine.html">
+  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://localhost:4000/feed.xml" />
 </head>
 
 
@@ -85,7 +85,7 @@
   In this way, the geographical location database is updated each hour and the script is non-blocking.
 </p>
 <h2>Github</h2>
-<p>It’s a good idea to decouple from <a href="https://github.com" target="_blank">Github</a> when it comes to installation. The only thing you need from it is <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use" target="_blank">Access Token</a> which provides you with ability to work with Github probably the same like using the website. By using this one line you can install essential packages for installing your application and execute application’s install script. <br /> <br />     <code>t='86be456829f0e8645ab7c6bc36f495f518ed8f65' &amp;&amp; apt-get install -y curl ca-certificates &amp;&amp; curl -H "Authorization: token $t" -H 'Accept: application/vnd.github.v3.raw' -O -L https://api.github.com/repos/username/your-repo/contents/public/s &amp;&amp; bash s $t</code></p>
+<p>It’s a good idea to decouple from <a href="https://github.com" target="_blank">Github</a> when it comes to installation. The only thing you need from it is <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use" target="_blank">Access Token</a> which provides you with ability to work with Github probably the same like using the website. By using this one line you can install essential packages for installing your application and execute application’s install script. <br /> <br />     <code class="highlighter-rouge">t='86be456829f0e8645ab7c6bc36f495f518ed8f65' &amp;&amp; apt-get install -y curl ca-certificates &amp;&amp; curl -H "Authorization: token $t" -H 'Accept: application/vnd.github.v3.raw' -O -L https://api.github.com/repos/username/your-repo/contents/public/s &amp;&amp; bash s $t</code></p>
 <p>
   So the thing here is that you just get from Github the bash installation script and it does everything what you need before configuration. Hopefully the next release will have ability to put all the credentials in one line and the script will do it's work.
 </p>
@@ -96,9 +96,9 @@
 
 <div id="share-page">
   Share this on &rarr; 
-  <a href="https://twitter.com/intent/tweet?text=V2 of the hosting engine&amp;url=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
-  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/09/16/v2-of-the-hosting-engine.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=V2 of the hosting engine&amp;url=http://localhost:4000/2015/09/16/V2-of-the-hosting-engine.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2015/09/16/V2-of-the-hosting-engine.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/2015/09/16/V2-of-the-hosting-engine.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

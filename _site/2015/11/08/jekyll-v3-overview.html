@@ -10,8 +10,8 @@
   <meta name="description" content="Jekyll is a powerful tool for static HTTP webpages. The concept is that you generate content dynamically on your local machine and push the result to your ho...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html">
-  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://kurbaitis.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/2015/11/08/Jekyll-v3-overview.html">
+  <link rel="alternate" type="application/rss+xml" title="Kristijonas Urbaitis" href="http://localhost:4000/feed.xml" />
 </head>
 
 
@@ -80,18 +80,18 @@
 <p><a href="https://jekyllrb.com">Jekyll</a> is a powerful tool for static HTTP webpages. The concept is that you generate content dynamically on your local machine and push the result to your hosting. It can work well on any hosting provider platform. The content itself must be static though. In this short blog post I’ll share some ideas how it started to work like I want.</p>
 <h2>Posting</h2>
 <p>Posting should be fun and easy. This is why I created an executable for my posting process. It creates post files and stores all data in one data file. I dislike when data is distributed among a lot of files. Maybe you think different and that’s ok, less complications with the default jekyll approach.
-Jekyll supports data storing in various formats, I like <code>.yml</code> so I decided to put there my posts data and call it <code>_data/posts.yml</code>. The format of that data is simple: <br /><br /> 1. date in YYYY-mm-dd format as a key <br /> 2. post text as a part of value <br /> 3. hrefs with urls (key-value) used for links in post text as a part of value <br /><br />
-<a href="https://gist.github.com/kurbaitis/210bb198a573026f301f">Here</a> it is the <code>bin/post</code> file which should be run like this: <code>bash bin/post "The title of your new post"</code>. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your post information will be stored. The interface for that is  Vim. After completing the writing part you’re redirected to shell where your jekyll boots up.</p>
+Jekyll supports data storing in various formats, I like <code class="highlighter-rouge">.yml</code> so I decided to put there my posts data and call it <code class="highlighter-rouge">_data/posts.yml</code>. The format of that data is simple: <br /><br /> 1. date in YYYY-mm-dd format as a key <br /> 2. post text as a part of value <br /> 3. hrefs with urls (key-value) used for links in post text as a part of value <br /><br />
+<a href="https://gist.github.com/kurbaitis/210bb198a573026f301f">Here</a> it is the <code class="highlighter-rouge">bin/post</code> file which should be run like this: <code class="highlighter-rouge">bash bin/post "The title of your new post"</code>. This script eases the creation of post at least for me, because after entering the blog post title you get to the file where your post information will be stored. The interface for that is  Vim. After completing the writing part you’re redirected to shell where your jekyll boots up.</p>
 <h2>Publishing</h2>
-<p>Publishing your <code>_site</code> directory where the static content is generated is a bit tricky when it comes to Github Pages. In other words, if you aren’t using Github, you can direct traffic to <code>_site</code> directory where any visitor will see the same result. <br /><br /> If you’re using Github Pages, please be aware that you need to push your <code>_site</code> directory to <code>gh-pages</code> branch. So this is totally not in sync with your master branch where the actual your content for generation is being kept. <br /><br /> There is a work around for this situation when it comes to Git. You can use this executable <a href="https://gist.github.com/kurbaitis/728d6fb551be21450659">here</a>.</p>
+<p>Publishing your <code class="highlighter-rouge">_site</code> directory where the static content is generated is a bit tricky when it comes to Github Pages. In other words, if you aren’t using Github, you can direct traffic to <code class="highlighter-rouge">_site</code> directory where any visitor will see the same result. <br /><br /> If you’re using Github Pages, please be aware that you need to push your <code class="highlighter-rouge">_site</code> directory to <code class="highlighter-rouge">gh-pages</code> branch. So this is totally not in sync with your master branch where the actual your content for generation is being kept. <br /><br /> There is a work around for this situation when it comes to Git. You can use this executable <a href="https://gist.github.com/kurbaitis/728d6fb551be21450659">here</a>.</p>
 <h2>Some thoughts for future</h2>
-<p>It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is <a href="http://kramdown.gettalong.org">kramdown</a> which is not working as expected if using <code>_includes</code> directory contents. Anyway, for now Github Gists is working good. Hopefully, Jekyll won’t stop improving as I like it so much.</p>
+<p>It would be nice to have working code highlighting in V3 of Jekyll. The default markdown is <a href="http://kramdown.gettalong.org">kramdown</a> which is not working as expected if using <code class="highlighter-rouge">_includes</code> directory contents. Anyway, for now Github Gists is working good. Hopefully, Jekyll won’t stop improving as I like it so much.</p>
 
 <div id="share-page">
   Share this on &rarr; 
-  <a href="https://twitter.com/intent/tweet?text=Jekyll v3 overview&amp;url=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
-  <a href="https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
-  <a href="https://plus.google.com/share?url=http://kurbaitis.io/2015/11/08/jekyll-v3-overview.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+  <a href="https://twitter.com/intent/tweet?text=Jekyll v3 overview&amp;url=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html&amp;via=KristijonasU&amp;related=KristijonasU" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+  <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

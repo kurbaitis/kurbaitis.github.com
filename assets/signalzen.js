@@ -4,6 +4,23 @@ function SignalZen(options) {
   this.height = 70;
   this.width = 65;
 
+  this.load = function() {
+    var self = this;
+    this.createFrame();
+
+    this.setFrameStyle();
+
+    window.onresize = function() {
+      self.setFrameStyle();
+    };
+
+    window.onscroll = function() {
+      self.setFrameStyle();
+    };
+
+    this.bindMessageFromFrameEvent();
+  };
+
   this.getTopPx = function() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     var topPx = this.windowHeight() - this.height;
@@ -82,20 +99,3 @@ function SignalZen(options) {
     }
   };
 }
-window.onload = function() {
-  var signalZen = new SignalZen(_sz);
-
-  signalZen.createFrame();
-
-  signalZen.setFrameStyle();
-
-  window.onresize = function() {
-    signalZen.setFrameStyle();
-  };
-
-  window.onscroll = function() {
-    signalZen.setFrameStyle();
-  };
-
-  signalZen.bindMessageFromFrameEvent();
-};

@@ -6,24 +6,16 @@ function SignalZen(options) {
 
   this.getTopPx = function() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    var topPx = this.windowHeight() - this.height + scrollTop;
-    var clientHeight = document.body.offsetHeight - this.height;
-    if (topPx > clientHeight) {
-      topPx = clientHeight;
-    }
+    var topPx = this.windowHeight() - this.height;
     return topPx;
   };
   this.getLeftPx = function() {
     var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
-    var leftPx = this.windowWidth() - this.width + scrollLeft;
-    var clientWidth = document.body.offsetWidth - this.width;
-    if (leftPx > clientWidth) {
-      leftPx = clientWidth;
-    }
+    var leftPx = this.windowWidth() - this.width;
     return leftPx;
   };
   this.frameStyle = function() {
-    return 'position: absolute; top: ' + this.getTopPx() + 'px; left: ' + this.getLeftPx() + 'px; z-index:10000; height: ' + this.height + 'px; width: ' + this.width + 'px; padding-right: 10px;';
+    return 'position: fixed; top: ' + this.getTopPx() + 'px; left: ' + this.getLeftPx() + 'px; z-index:10000; height: ' + this.height + 'px; width: ' + this.width + 'px;';
   };
   this.getFrame = function() {
     return document.getElementById('signal_zen_frame');
@@ -66,6 +58,7 @@ function SignalZen(options) {
     g = d.getElementsByTagName('body')[0];
     return w.innerHeight|| e.clientHeight|| g.clientHeight;
   };
+
   this.windowWidth = function() {
     var w = window,
     d = document,
@@ -79,7 +72,7 @@ function SignalZen(options) {
     iframe.src = 'http://localhost:4201/' + this.options.appId;
     iframe.frameBorder = 'none';
     iframe.id = 'signal_zen_frame';
-    document.body.appendChild(iframe)
+    document.body.appendChild(iframe);
   };
 
   this.sendUserDataIfAny = function() {

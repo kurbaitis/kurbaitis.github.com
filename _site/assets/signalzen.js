@@ -6,8 +6,8 @@ var SignalZen = (function() {
       throw new Error("Signalzen client can only be instantiated once.");
     }
     this.options = options;
-    this.height = 70;
-    this.width = 65;
+    this.height = 0;
+    this.width = 0;
 
     this.getTopPx = function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -41,15 +41,12 @@ var SignalZen = (function() {
     this.bindMessageFromFrameEvent = function() {
       var self = this;
       this.bindEvent(window, 'message', function (e) {
-        if (e.data == 'chat') {
-          self.width = 300;
-          self.height = 530;
+        var data = window.JSON.parse(e.data);
+        if (data.event == 'resize') {
+          self.width = data.params.width;
+          self.height = data.params.height;
         }
-        if (e.data == 'icon') {
-          self.width = 65;
-          self.height = 70;
-        }
-        if (e.data == 'loaded') {
+        if (data.event == 'loaded') {
           self.sendUserDataIfAny();
         }
         self.setFrameStyle();
@@ -83,7 +80,8 @@ var SignalZen = (function() {
     this.sendUserDataIfAny = function() {
       var self = this;
       if (this.options.userData !== undefined && this.options.userData !== null) {
-        this.getFrame().contentWindow.postMessage({ call: 'setUserData', value: this.options.userData }, '*');
+        var data = window.JSON.stringify({ event: 'setUserData', params: this.options.userData });
+        this.getFrame().contentWindow.postMessage(data, '*');
       }
     };
 
@@ -98,13 +96,9 @@ var SignalZen = (function() {
 
     this.setFrameStyle();
 
-    window.onresize = function() {
+    this.bindEvent(window, 'resize', function (e) {
       self.setFrameStyle();
-    };
-
-    window.onscroll = function() {
-      self.setFrameStyle();
-    };
+    });
 
     this.bindMessageFromFrameEvent();
   };

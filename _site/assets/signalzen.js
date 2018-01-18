@@ -48,6 +48,7 @@ var SignalZen = (function() {
         }
         if (data.event == 'loaded') {
           self.sendUserDataIfAny();
+          self.sendUserURL();
         }
         self.setFrameStyle();
       });
@@ -85,6 +86,11 @@ var SignalZen = (function() {
       }
     };
 
+    this.sendUserURL = function() {
+      var data = window.JSON.stringify({ event: 'setUserURL', params: { url: window.location.href } });
+      this.getFrame().contentWindow.postMessage(data, '*');
+    };
+
     // Keep a closured reference to the instance
     instance = this;
   }
@@ -106,6 +112,7 @@ var SignalZen = (function() {
   SignalZen.reloadOptions = function(options) {
     SignalZen.getInstance().options = options;
     SignalZen.getInstance().sendUserDataIfAny();
+    SignalZen.getInstance().sendUserURL();
   };
 
   SignalZen.getInstance = function() {

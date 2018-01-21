@@ -51,6 +51,9 @@ var SignalZen = (function() {
           self.sendUserURL();
         }
         self.setFrameStyle();
+        if (data.event == 'resize') {
+          self.postMessage({ event: 'resized', params: {} });
+        }
       });
     };
 
@@ -79,18 +82,19 @@ var SignalZen = (function() {
     };
 
     this.sendUserDataIfAny = function() {
-      var self = this;
       if (this.options.userData !== undefined && this.options.userData !== null) {
-        var data = window.JSON.stringify({ event: 'setUserData', params: this.options.userData });
-        this.getFrame().contentWindow.postMessage(data, '*');
+        this.postMessage({ event: 'setUserData', params: this.options.userData });
       }
     };
 
     this.sendUserURL = function() {
-      var data = window.JSON.stringify({ event: 'setUserURL', params: { url: window.location.href } });
-      this.getFrame().contentWindow.postMessage(data, '*');
+      this.postMessage({ event: 'setUserURL', params: { url: window.location.href } });
     };
 
+    this.postMessage = function(data) {
+      var jsonData = window.JSON.stringify(data);
+      this.getFrame().contentWindow.postMessage(jsonData, '*');
+    };
     // Keep a closured reference to the instance
     instance = this;
   }

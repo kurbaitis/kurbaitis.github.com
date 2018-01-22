@@ -62,7 +62,17 @@ var SignalZen = (function() {
       d = document,
       e = d.documentElement,
       g = d.getElementsByTagName('body')[0];
-      return w.innerHeight|| e.clientHeight|| g.clientHeight;
+      a = [];
+      if (w.innerHeight > 0) {
+        a.push(w.innerHeight);
+      }
+      if (e.clientHeight > 0) {
+        a.push(e.clientHeight);
+      }
+      if (g.clientHeight > 0) {
+        a.push(g.clientHeight);
+      }
+      return Math.min.apply(null, a);
     };
 
     this.windowWidth = function() {
@@ -70,7 +80,17 @@ var SignalZen = (function() {
       d = document,
       e = d.documentElement,
       g = d.getElementsByTagName('body')[0];
-      return w.innerWidth || e.clientWidth || g.clientWidth;
+      a = [];
+      if (w.innerWidth > 0) {
+        a.push(w.innerWidth);
+      }
+      if (e.clientWidth > 0) {
+        a.push(e.clientWidth);
+      }
+      if (g.clientWidth > 0) {
+        a.push(g.clientWidth);
+      }
+      return Math.min.apply(null, a);
     };
 
     this.createFrame = function() {

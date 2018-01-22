@@ -116,18 +116,17 @@ var SignalZen = (function() {
       this.getFrame().contentWindow.postMessage(jsonData, '*');
     };
 
-    this.checkScrollbars = function() {
+    this.checkForSizeChanges = function() {
       var self = this;
-      if (window.scrollbars === undefined) {
-        return;
-      }
-      if (this.scrollbarsVisible !== window.scrollbars.visible) {
-        alert(this.setFrameStyle);
+      var width = this.windowWidth();
+      var height = this.windowHeight();
+      if (this.currentWindowWidth !== width || this.currentWindowHeight !== height) {
         this.setFrameStyle();
       }
-      this.scrollbarsVisible = window.scrollbars.visible;
+      this.currentWindowWidth = width;
+      this.currentWindowHeight = height;
       setTimeout(function() {
-        self.checkScrollbars();
+        self.checkForSizeChanges();
       }, 1000);
     };
     // Keep a closured reference to the instance
@@ -144,7 +143,7 @@ var SignalZen = (function() {
     this.bindEvent(window, 'resize', function (e) {
       self.setFrameStyle();
     });
-    this.checkScrollbars();
+    this.checkForSizeChanges();
     this.bindMessageFromFrameEvent();
   };
 

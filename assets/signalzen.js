@@ -61,7 +61,7 @@ var SignalZen = (function() {
       var w = window,
       d = document,
       e = d.documentElement,
-      g = d.getElementsByTagName('body')[0];
+      // g = d.getElementsByTagName('body')[0];
       a = [];
       if (w.innerHeight > 0) {
         a.push(w.innerHeight);
@@ -69,9 +69,9 @@ var SignalZen = (function() {
       if (e.clientHeight > 0) {
         a.push(e.clientHeight);
       }
-      if (g.clientHeight > 0) {
-        a.push(g.clientHeight);
-      }
+      // if (g.clientHeight > 0) {
+      //   a.push(g.clientHeight);
+      // }
       return Math.min.apply(null, a);
     };
 
@@ -79,7 +79,7 @@ var SignalZen = (function() {
       var w = window,
       d = document,
       e = d.documentElement,
-      g = d.getElementsByTagName('body')[0];
+      // g = d.getElementsByTagName('body')[0];
       a = [];
       if (w.innerWidth > 0) {
         a.push(w.innerWidth);
@@ -87,9 +87,9 @@ var SignalZen = (function() {
       if (e.clientWidth > 0) {
         a.push(e.clientWidth);
       }
-      if (g.clientWidth > 0) {
-        a.push(g.clientWidth);
-      }
+      // if (g.clientWidth > 0) {
+      //   a.push(g.clientWidth);
+      // }
       return Math.min.apply(null, a);
     };
 

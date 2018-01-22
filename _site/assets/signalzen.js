@@ -121,6 +121,7 @@ var SignalZen = (function() {
         return;
       }
       if (this.scrollbarsVisible !== window.scrollbars.visible) {
+        alert('test');
         this.setFrameStyle();
       }
       this.scrollbarsVisible = window.scrollbars.visible;

@@ -117,15 +117,18 @@ var SignalZen = (function() {
     };
 
     this.checkScrollbars = function() {
+      var self = this;
       if (window.scrollbars === undefined) {
         return;
       }
       if (this.scrollbarsVisible !== window.scrollbars.visible) {
-        alert('test');
+        alert(this.setFrameStyle);
         this.setFrameStyle();
       }
       this.scrollbarsVisible = window.scrollbars.visible;
-      setTimeout(this.checkScrollbars, 1000);
+      setTimeout(function() {
+        self.checkScrollbars();
+      }, 1000);
     };
     // Keep a closured reference to the instance
     instance = this;

@@ -8,6 +8,7 @@ var SignalZen = (function() {
     this.options = options;
     this.height = 0;
     this.width = 0;
+    this.appUrl = 'http://localhost:4201';
 
     this.getTopPx = function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -41,6 +42,9 @@ var SignalZen = (function() {
     this.bindMessageFromFrameEvent = function() {
       var self = this;
       this.bindEvent(window, 'message', function (e) {
+        if (typeof event.data === 'object') {
+          return;
+        }
         var data = window.JSON.parse(e.data);
         if (data.event == 'resize') {
           self.width = data.params.width;
@@ -95,7 +99,7 @@ var SignalZen = (function() {
 
     this.createFrame = function() {
       var iframe = document.createElement("IFRAME");
-      iframe.src = 'http://localhost:4201/' + this.options.appId;
+      iframe.src = this.appUrl + '/' + this.options.appId;
       iframe.frameBorder = 'none';
       iframe.id = 'signal_zen_frame';
       document.body.appendChild(iframe);
@@ -149,6 +153,12 @@ var SignalZen = (function() {
 
   SignalZen.reloadOptions = function(options) {
     SignalZen.getInstance().options = options;
+    SignalZen.getInstance().sendUserDataIfAny();
+    SignalZen.getInstance().sendUserURL();
+  };
+
+  SignalZen.pushUserData = function(userData) {
+    SignalZen.getInstance().options.userData = userData;
     SignalZen.getInstance().sendUserDataIfAny();
     SignalZen.getInstance().sendUserURL();
   };

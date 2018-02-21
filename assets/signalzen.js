@@ -1,11 +1,11 @@
 var SignalZen = (function() {
   var instance;
   var Cookie = {
-    set: function set(name, value, domain, days) {
+    set: function set(name, value, domain, years) {
       var domain, domainParts, date, expires, host;
 
       date = new Date();
-      date.setTime(date.getTime() + 10 * 365 * 24 * 60 * 60 * 1000);
+      date.setTime(date.getTime() + years * 365 * 24 * 60 * 60 * 1000);
       expires = "; expires=" + date.toGMTString();
 
       host = location.host;
@@ -106,7 +106,7 @@ var SignalZen = (function() {
         }
 
         if (data.event == 'setCookie') {
-          Cookie.set(data.name, data.value, data.domain);
+          Cookie.set(data.name, data.value, data.domain, 10);
         }
 
         if (data.event == 'deleteCookie') {

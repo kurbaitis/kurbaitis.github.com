@@ -131,7 +131,10 @@ var SignalZen = (function() {
 
         if (data.event == 'getCookie') {
           self.postMessage({
-            event: 'getCookie', name: data.name, value: Cookie.get(data.name), identifier: data.identifier
+            event: 'getCookie',
+            name: data.name,
+            value: Cookie.get(data.name),
+            identifier: data.identifier
           });
         }
       });

@@ -1,16 +1,12 @@
 var SignalZen = (function() {
   var instance;
   var Cookie = {
-    set: function set(name, value, days) {
+    set: function set(name, value, domain, days) {
       var domain, domainParts, date, expires, host;
 
-      if (days) {
-        date = new Date();
-        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-        expires = "; expires=" + date.toGMTString();
-      } else {
-        expires = "";
-      }
+      date = new Date();
+      date.setTime(date.getTime() + 10 * 365 * 24 * 60 * 60 * 1000);
+      expires = "; expires=" + date.toGMTString();
 
       host = location.host;
       if (host.split(".").length === 1) {
@@ -26,21 +22,9 @@ var SignalZen = (function() {
         // If the cookie will not be set, it means ".com"
         // is a top level domain and we need to
         // set the cookie to ".foo.com"
-        domainParts = host.split(".");
-        domainParts.shift();
-        domain = "." + domainParts.join(".");
 
         document.cookie =
           name + "=" + value + expires + "; path=/; domain=" + domain;
-
-        // check if cookie was successfuly set to the given domain
-        // (otherwise it was a Top-Level Domain)
-        if (Cookie.get(name) == null || Cookie.get(name) != value) {
-          // append "." to current domain
-          domain = "." + host;
-          document.cookie =
-            name + "=" + value + expires + "; path=/; domain=" + domain;
-        }
       }
     },
 
@@ -58,8 +42,8 @@ var SignalZen = (function() {
       return null;
     },
 
-    erase: function erase(name) {
-      Cookie.set(name, "", -1);
+    erase: function erase(name, domain) {
+      Cookie.set(name, "", domain, -1);
     }
   };
 
@@ -114,7 +98,7 @@ var SignalZen = (function() {
         }
         if (data.event == 'loaded') {
           self.sendUserDataIfAny();
-          self.sendUserURL();
+          self.sendUserBrowserData();
         }
         self.setFrameStyle();
         if (data.event == 'resize') {
@@ -122,19 +106,16 @@ var SignalZen = (function() {
         }
 
         if (data.event == 'setCookie') {
-          Cookie.set(data.name, data.value);
+          Cookie.set(data.name, data.value, data.domain);
         }
 
         if (data.event == 'deleteCookie') {
-          Cookie.erase(data.name);
+          Cookie.erase(data.name, data.domain);
         }
 
         if (data.event == 'getCookie') {
           self.postMessage({
-            event: 'getCookie',
-            name: data.name,
-            value: Cookie.get(data.name),
-            identifier: data.identifier
+            event: 'getCookie', name: data.name, value: Cookie.get(data.name), identifier: data.identifier
           });
         }
       });
@@ -190,8 +171,8 @@ var SignalZen = (function() {
       }
     };
 
-    this.sendUserURL = function() {
-      this.postMessage({ event: 'setUserURL', params: { url: window.location.href } });
+    this.sendUserBrowserData = function() {
+      this.postMessage({ event: 'setUserBrowserData', params: { url: window.location.href, host: window.location.host } });
     };
 
     this.postMessage = function(data) {
@@ -233,13 +214,13 @@ var SignalZen = (function() {
   SignalZen.reloadOptions = function(options) {
     SignalZen.getInstance().options = options;
     SignalZen.getInstance().sendUserDataIfAny();
-    SignalZen.getInstance().sendUserURL();
+    SignalZen.getInstance().sendUserBrowserData();
   };
 
   SignalZen.pushUserData = function(userData) {
     SignalZen.getInstance().options.userData = userData;
     SignalZen.getInstance().sendUserDataIfAny();
-    SignalZen.getInstance().sendUserURL();
+    SignalZen.getInstance().sendUserBrowserData();
   };
 
   SignalZen.getInstance = function() {

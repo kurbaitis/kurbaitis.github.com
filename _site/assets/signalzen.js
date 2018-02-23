@@ -107,6 +107,7 @@ var SignalZen = (function() {
 
         if (data.event == 'setCookie') {
           Cookie.set(data.name, data.value, data.domain, 10);
+          self.postMessage({ event: 'setCookie', name: data.name, identifier: data.identifier });
         }
 
         if (data.event == 'deleteCookie') {

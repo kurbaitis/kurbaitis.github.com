@@ -10,19 +10,8 @@ var SignalZen = (function() {
 
       host = location.host;
       if (host.split(".").length === 1) {
-        // no "." in a domain - it's localhost or something similar
         document.cookie = name + "=" + value + expires + "; path=/";
       } else {
-        // Remember the cookie on all subdomains.
-        //
-        // Start with trying to set cookie to the top domain.
-        // (example: if user is on foo.com, try to set
-        //  cookie to domain ".com")
-        //
-        // If the cookie will not be set, it means ".com"
-        // is a top level domain and we need to
-        // set the cookie to ".foo.com"
-
         document.cookie =
           name + "=" + value + expires + "; path=/; domain=" + domain;
       }
@@ -112,6 +101,7 @@ var SignalZen = (function() {
 
         if (data.event == 'deleteCookie') {
           Cookie.erase(data.name, data.domain);
+          self.postMessage({ event: 'deleteCookie', name: data.name, identifier: data.identifier });
         }
 
         if (data.event == 'getCookie') {

@@ -56,7 +56,7 @@ var SignalZen = (function() {
       return leftPx;
     };
     this.frameStyle = function() {
-      return 'position: fixed; border:none; top: ' + this.getTopPx() + 'px; left: ' + this.getLeftPx() + 'px; z-index:10000; height: ' + this.height + 'px; width: ' + this.width + 'px;';
+      return 'position: fixed; overflow: hidden; border:none; top: ' + this.getTopPx() + 'px; left: ' + this.getLeftPx() + 'px; z-index:10000; height: ' + this.height + 'px; width: ' + this.width + 'px;';
     };
     this.getFrame = function() {
       return document.getElementById('signal_zen_frame');

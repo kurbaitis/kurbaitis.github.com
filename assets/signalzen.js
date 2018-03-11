@@ -109,6 +109,13 @@ var SignalZen = (function() {
             event: 'getCookie', name: data.name, value: Cookie.get(data.name), identifier: data.identifier
           });
         }
+
+        if (data.event == 'getBrowserSizes') {
+          self.postMessage({
+            event: 'getBrowserSizes', identifier: data.identifier,
+            sizes: { height: self.windowHeight(), width: self.windowWidth() }
+          });
+        }
       });
     };
 

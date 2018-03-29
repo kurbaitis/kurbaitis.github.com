@@ -3,10 +3,10 @@
   <channel>
     <title>Kristijonas Urbaitis</title>
     <description>Senior Ruby Developer</description>
-    <link>http://kurbaitis.io/</link>
-    <atom:link href="http://kurbaitis.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Mar 2018 16:40:23 +0200</pubDate>
-    <lastBuildDate>Sun, 11 Mar 2018 16:40:23 +0200</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 29 Mar 2018 15:20:16 +0300</pubDate>
+    <lastBuildDate>Thu, 29 Mar 2018 15:20:16 +0300</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -20,9 +20,9 @@
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Ember.js file uploads easily&amp;amp;url=http://kurbaitis.io/2016/09/10/Ember-js-file-uploads-easily.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/09/10/Ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2016/09/10/Ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Ember.js file uploads easily&amp;amp;url=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -41,8 +41,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Sat, 10 Sep 2016 12:04:31 +0300</pubDate>
-        <link>http://kurbaitis.io/2016/09/10/Ember-js-file-uploads-easily.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2016/09/10/Ember-js-file-uploads-easily.html</guid>
+        <link>http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/10/Ember-js-file-uploads-easily.html</guid>
         
         
       </item>
@@ -57,9 +57,9 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=SSH tunneling from remote to local machine&amp;amp;url=http://kurbaitis.io/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=SSH tunneling from remote to local machine&amp;amp;url=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -78,8 +78,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Sat, 06 Feb 2016 12:56:23 +0200</pubDate>
-        <link>http://kurbaitis.io/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html</guid>
+        <link>http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/02/06/SSH-tunneling-from-remote-to-local-machine.html</guid>
         
         
       </item>
@@ -108,9 +108,9 @@ It consists from:&lt;/p&gt;
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;amp;url=http://kurbaitis.io/2015/11/29/I-choose-Bayesian-Rating.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/29/I-choose-Bayesian-Rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/29/I-choose-Bayesian-Rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=I choose Bayesian Rating&amp;amp;url=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -129,8 +129,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Sun, 29 Nov 2015 17:09:21 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/29/I-choose-Bayesian-Rating.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/29/I-choose-Bayesian-Rating.html</guid>
+        <link>http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/29/I-choose-Bayesian-Rating.html</guid>
         
         
       </item>
@@ -146,9 +146,9 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V4 of hosting.games-monitor.net&amp;amp;url=http://kurbaitis.io/2015/11/22/V4-of-hosting.games-monitor.net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/22/V4-of-hosting.games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/22/V4-of-hosting.games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=V4 of hosting.games-monitor.net&amp;amp;url=http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -167,8 +167,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Sun, 22 Nov 2015 16:27:11 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/22/V4-of-hosting.games-monitor.net.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/22/V4-of-hosting.games-monitor.net.html</guid>
+        <link>http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/22/V4-of-hosting.games-monitor.net.html</guid>
         
         
       </item>
@@ -190,9 +190,9 @@ The last issue which made me sad was TLS configuration which is awful in WEBrick
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=WEBrick and others&amp;amp;url=http://kurbaitis.io/2015/11/19/WEBrick-and-others.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/19/WEBrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/19/WEBrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=WEBrick and others&amp;amp;url=http://localhost:4000/2015/11/19/WEBrick-and-others.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/19/WEBrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/19/WEBrick-and-others.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -211,8 +211,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Thu, 19 Nov 2015 21:07:49 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/19/WEBrick-and-others.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/19/WEBrick-and-others.html</guid>
+        <link>http://localhost:4000/2015/11/19/WEBrick-and-others.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/19/WEBrick-and-others.html</guid>
         
         
       </item>
@@ -228,9 +228,9 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Simple text cacher&amp;amp;url=http://kurbaitis.io/2015/11/13/Simple-text-cacher.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/13/Simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/13/Simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Simple text cacher&amp;amp;url=http://localhost:4000/2015/11/13/Simple-text-cacher.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/13/Simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/13/Simple-text-cacher.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -249,8 +249,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Fri, 13 Nov 2015 12:00:59 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/13/Simple-text-cacher.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/13/Simple-text-cacher.html</guid>
+        <link>http://localhost:4000/2015/11/13/Simple-text-cacher.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/13/Simple-text-cacher.html</guid>
         
         
       </item>
@@ -270,9 +270,9 @@ Jekyll supports data storing in various formats, I like &lt;code class=&quot;hig
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Jekyll v3 overview&amp;amp;url=http://kurbaitis.io/2015/11/08/Jekyll-v3-overview.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/11/08/Jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/11/08/Jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Jekyll v3 overview&amp;amp;url=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/11/08/Jekyll-v3-overview.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -291,8 +291,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Sun, 08 Nov 2015 23:29:20 +0200</pubDate>
-        <link>http://kurbaitis.io/2015/11/08/Jekyll-v3-overview.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/11/08/Jekyll-v3-overview.html</guid>
+        <link>http://localhost:4000/2015/11/08/Jekyll-v3-overview.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/08/Jekyll-v3-overview.html</guid>
         
         
       </item>
@@ -317,9 +317,9 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Release of games-monitor.net&amp;amp;url=http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Release of games-monitor.net&amp;amp;url=http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -338,8 +338,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Wed, 30 Sep 2015 18:44:42 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/30/Release-of-games-monitor.net.html</guid>
+        <link>http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/30/Release-of-games-monitor.net.html</guid>
         
         
       </item>
@@ -367,9 +367,9 @@ For instance, my legacy app’s &lt;a href=&quot;https://gist.github.com/kurbait
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Legacy apps fix&amp;amp;url=http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=Legacy apps fix&amp;amp;url=http://localhost:4000/2015/09/27/Legacy-apps-fix.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/09/27/Legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/09/27/Legacy-apps-fix.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -388,8 +388,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Sun, 27 Sep 2015 18:32:14 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/27/Legacy-apps-fix.html</guid>
+        <link>http://localhost:4000/2015/09/27/Legacy-apps-fix.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/27/Legacy-apps-fix.html</guid>
         
         
       </item>
@@ -417,9 +417,9 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 &lt;div id=&quot;share-page&quot;&gt;
   Share this on &amp;rarr; 
-  &lt;a href=&quot;https://twitter.com/intent/tweet?text=RDBMS optimization&amp;amp;url=http://kurbaitis.io/2015/09/25/RDBMS-optimization.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
-  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://kurbaitis.io/2015/09/25/RDBMS-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
-  &lt;a href=&quot;https://plus.google.com/share?url=http://kurbaitis.io/2015/09/25/RDBMS-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/intent/tweet?text=RDBMS optimization&amp;amp;url=http://localhost:4000/2015/09/25/RDBMS-optimization.html&amp;amp;via=KristijonasU&amp;amp;related=KristijonasU&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;Twitter&lt;/a&gt;
+  &lt;a href=&quot;https://facebook.com/sharer.php?u=http://localhost:4000/2015/09/25/RDBMS-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Facebook&quot;&gt;Facebook&lt;/a&gt;
+  &lt;a href=&quot;https://plus.google.com/share?url=http://localhost:4000/2015/09/25/RDBMS-optimization.html&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; title=&quot;Share on Google+&quot;&gt;Google+&lt;/a&gt;
 &lt;/div&gt;
 &lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -438,8 +438,8 @@ var disqus_shortname = 'kristijonasurbaitisblog';
 
 </description>
         <pubDate>Fri, 25 Sep 2015 18:26:25 +0300</pubDate>
-        <link>http://kurbaitis.io/2015/09/25/RDBMS-optimization.html</link>
-        <guid isPermaLink="true">http://kurbaitis.io/2015/09/25/RDBMS-optimization.html</guid>
+        <link>http://localhost:4000/2015/09/25/RDBMS-optimization.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/25/RDBMS-optimization.html</guid>
         
         
       </item>

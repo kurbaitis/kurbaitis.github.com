@@ -22,10 +22,20 @@ skills:
   - TDD
   - BDD
 experience:
+  - employer: SignalZen
+    position: Founder
+    period: 2017-present
+    description: Working on a side project started by myself from scratch for making chat between website owners and visitors easier. Ruby on Rails, React, EmberJS.
+    site: https://www.signalzen.com
+  - employer: SameSystem
+    position: Senior Ruby Developer
+    period: 2018-present
+    description: Working as a Senior Ruby developer in a project for Retail industry. We use Ruby on Rails for backend, moving to React for frontend.
+    site: https://www.samesystem.com
   - employer: Smart Pension Ltd
     position: Senior Ruby Developer
-    period: 2014-present
-    description: Working as a Senior Ruby developer in a project related with UK pensions in London, UK. We use Ruby on Rails for backend and EmberJS for frontend. 
+    period: 2014-2018
+    description: Worked as a Senior Ruby developer in a project related with UK pensions in London, UK. We used Ruby on Rails for backend and EmberJS for frontend.
     site: https://www.autoenrolment.co.uk
   - employer: Freelancing
     position: Senior WEB Developer
